@@ -38,8 +38,8 @@ Welcome to **IDeV Advanced Pro v3.8.9**, a production release of the privacy-fir
 
 | Asset | Size | SHA-256 Checksum |
 |---|---|---|
-| [IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe) | 89.68 MB | `d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19` |
-| [IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256) | 102 bytes | Plaintext checksum verification file |
+| [IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe) | 89.68 MB | `d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19` |
+| [IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256) | 102 bytes | Plaintext checksum verification file |
 
 ---
 

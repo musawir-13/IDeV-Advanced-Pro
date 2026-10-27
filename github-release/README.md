@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe">
+  <a href="https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe">
     <img src="https://img.shields.io/badge/Download%20for%20Windows-v3.8.9%20(64--bit)-0066cc?style=for-the-badge&logo=windows&logoColor=white" alt="Download IDeV Advanced Pro for Windows" />
   </a>
 </p>
@@ -160,8 +160,8 @@ The genuine, production-verified Windows setup executable is available from the 
 | **Installer Filename** | `IDeV-Advanced-Pro-Setup-3.8.9.exe` |
 | **File Size** | 94,040,662 bytes (~89.68 MB) |
 | **SHA-256 Checksum** | `d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19` |
-| **Direct Download Link** | [Download IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe) |
-| **Checksum File** | [IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256) |
+| **Direct Download Link** | [Download IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe) |
+| **Checksum File** | [IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256) |
 
 ### Cryptographic Checksum Verification (PowerShell)
 To verify binary integrity before installation, execute in PowerShell:
@@ -193,7 +193,7 @@ SHA256          D5375FEAA52D3E91C6A1DC7D3C720E6585E70B533055A0C06ED70D7F5D7D5B19
 ## 9. Installation Instructions
 
 1. **Download the Setup Wizard**:
-   Obtain [`IDeV-Advanced-Pro-Setup-3.8.9.exe`](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe).
+   Obtain [`IDeV-Advanced-Pro-Setup-3.8.9.exe`](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe).
 2. **Launch the Installer**:
    Double-click the downloaded executable to start the IDeV Setup Wizard.
 3. **Choose Installation Options**:

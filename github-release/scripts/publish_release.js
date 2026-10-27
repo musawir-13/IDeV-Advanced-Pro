@@ -61,6 +61,9 @@ function uploadAsset(uploadUrl, filePath, contentType) {
       res.on('data', c => d += c);
       res.on('end', () => {
         console.log(`Asset ${filename} upload status:`, res.statusCode);
+        if (res.statusCode !== 201) {
+          console.error(`Upload error for ${filename}:`, d);
+        }
         resolve({ status: res.statusCode, body: d });
       });
     });
@@ -117,7 +120,8 @@ async function main() {
       name: 'IDeV Advanced Pro v3.8.9',
       body: releaseNotes,
       draft: false,
-      prerelease: false
+      prerelease: false,
+      make_latest: 'true'
     });
 
     if (createRes.status === 201 && createRes.data.id) {

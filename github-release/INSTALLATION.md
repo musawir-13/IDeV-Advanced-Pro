@@ -20,7 +20,7 @@ This guide walks you through installing, configuring, and updating **IDeV Advanc
 
 ### Step 1: Download the Setup Wizard
 Download the official Windows installer executable:
-- **Direct Download**: [IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe)
+- **Direct Download**: [IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe)
 - **Verified SHA-256 Checksum**:
   ```text
   d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19
