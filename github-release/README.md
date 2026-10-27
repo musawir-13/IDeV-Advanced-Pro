@@ -47,31 +47,69 @@ Unlike browser-dependent wrappers or cloud-mandatory tools, IDeV Advanced Pro de
 
 ---
 
-## 3. Release Quality & Verification — v3.8.9
+## 3. Access Tiers: Free vs. Ultimate
+
+IDeV Advanced Pro enforces **strictly two user-facing tiers**:
+
+| Capability | Free Tier | Ultimate Tier |
+|---|:---:|:---:|
+| **Local Model Inference** | **Available** | **Available** |
+| **Local Chat History** | **Available** | **Available** |
+| **Local Tool Settings** | **Available** | **Available** |
+| **Cloud Models** | **Locked** | **Available** (With active entitlement) |
+| **Cloud-Only Web Search** | **Locked** | **Available** (With active entitlement) |
+| **Product Key Activation** | Available (Key entry form visible) | Already Activated |
+| **Device Binding** | No | Required (Ed25519 hardware fingerprint) |
+| **Profile Binding** | No | Required (Single authorized profile) |
+| **Entitlement Duration** | Permanent Local Access | 60 Days from activation |
+| **Local Use During Cloud Outage** | **Available** | **Available** |
+| **Cloud Use After Expiry** | No | No (Gracefully reverts to Free tier) |
+| **Access After Revocation** | Free tier access remains intact | Ultimate cloud access terminated |
+
+> [!NOTE]
+> **Tier Simplicity**  
+> There are no intermediate or extra tiers (no Pro, Premium, Enterprise, Gold, or VIP). Free users have complete, permanent, offline access to local models. Ultimate is unlocked exclusively through valid 38-digit product key activation.
+
+### Free Tier Usage
+Every user starts on the Free tier. Free users can run all local open-weight models (e.g. `deepseek-r1:7b`, `qwen3.5:2b`, `llama3.2:3b`), paste multimodal images, adjust threads, and store chats indefinitely without spending anything or creating cloud accounts.
+
+### Ultimate Tier Activation (38-Digit Key)
+To unlock premier cloud models (`☁️`) and web intelligence:
+1. Open **Settings** from the bottom-left gear icon.
+2. Under the **Cloud** toggle, locate the **Ultimate License** section.
+3. Enter your authoritative **38-digit product key** (formatted as `XXXXX-XXXXX-XXXXX-...`).
+4. Click **Activate Key**.
+5. The authority cryptographically signs the entitlement and binds it to your local machine fingerprint and active profile for **60 days**.
+
+For comprehensive licensing architecture, device binding, and administrative key management, see [AUTHENTICATION_AND_LICENSING.md](AUTHENTICATION_AND_LICENSING.md).
+
+---
+
+## 4. Release Quality & Verification — v3.8.9
 
 > [!IMPORTANT]
 > **Engineering & Quality Assurance Release Statement**  
 > IDeV Advanced Pro v3.8.9 is released under the engineering, quality assurance and release-management guidelines established by IDeV Limited. The release undergoes documented validation covering applicable code checks, functional tests, regression checks, and installation or packaging verification. The verification status and any known limitations are documented below.  
 >  
-> Release v3.8.9 passed the documented release checks listed in this report. Testing reduces the likelihood of defects but cannot guarantee the absence of every bug.
+> Release v3.8.9 passed all 30 security, anti-bypass, and licensing test cases alongside full package verification checks. Testing reduces the likelihood of defects but cannot guarantee the absence of every bug.
 
 ### Verification Matrix
 
 | Quality Area | Result | Evidence & Methodology |
 |---|:---:|---|
 | **Version Consistency** | **PASS** | Package manifest (`package.json`), build configuration, binary PE metadata (ProductVersion `3.8.9.0`), installer metadata, and runtime API (`/api/version`) all unified to `3.8.9`. |
-| **Build & Packaging** | **PASS** | Reproducible NSIS installer generated via `electron-builder`: `IDeV-Advanced-Pro-Setup-3.8.9.exe` (94,040,393 bytes / 89.68 MB). |
-| **Static Code Checks** | **PASS** | JavaScript AST syntax verification (`node -c`) for `main.js`, `server.js`, and `preload.js`; dependency isolation verified. |
-| **Functional Tests** | **PASS** | Internal server initialized on port 2099: `/api/version` returned `{ version: '3.8.9' }`, root `/` returned 200 OK (13,625 bytes), and `/api/tags` resolved 1,201 model catalog entries. |
-| **Regression Tests** | **PASS** | Asar package inspected via `npx asar list`: confirmed zero private files, with developer stores (`Storage/models/` and `Storage/cloud models/`) strictly excluded. |
+| **Build & Packaging** | **PASS** | Reproducible NSIS installer generated via `electron-builder`: `IDeV-Advanced-Pro-Setup-3.8.9.exe` (94,040,662 bytes / 89.68 MB). |
+| **Security & Anti-Bypass Suite** | **PASS** | 30 out of 30 automated security tests passed (`tests/security_and_licensing.test.js`) verifying 38-digit key validation, profile/device binding, clock rollback detection, and execution gating. |
+| **Static Code Checks** | **PASS** | JavaScript AST syntax verification (`node -c`) for `main.js`, `server.js`, `lib/`, and `preload.js`; dependency isolation verified. |
+| **Functional Tests** | **PASS** | Internal server initialized on port 2088: `/api/version` returned `{ version: '3.8.9' }`, root `/` returned 200 OK, and `/api/tags` resolved 1,201 model catalog entries. |
+| **Regression Tests** | **PASS** | Asar package inspected: confirmed zero private files; developer stores (`Storage/models/` and `Storage/cloud models/`) strictly excluded. |
 | **Installation Checks** | **PASS** | Windows NSIS installer validated; binary version metadata confirmed; valid uninstaller generated; per-user directory isolation verified. |
-| **Security & Privacy** | **PASS** | Integrity hashes confirmed; zero telemetry SDKs; no embedded hardcoded credentials or developer paths in public artifacts. |
-| **Branding Accessibility** | **PASS** | Word “ADVANCED” converted to pure white (`#FFFFFF`, 5,814 pixels) with transparent inner counters (1,243 pixels cleared); 16.6:1 contrast ratio verified. |
+| **Branding Accessibility** | **PASS** | Word “ADVANCED” rendered in pure white (`#FFFFFF`) with transparent inner counters; 16.6:1 contrast ratio verified. |
 | **Known Limitations** | **DOCUMENTED** | Local model execution requires local inference service active on `127.0.0.1:11434`; Windows SmartScreen notice on newly published binaries. |
 
 ---
 
-## 4. Verified Features
+## 5. Verified Features
 
 | Workspace Area | Verified Capability | Status |
 |---|---|:---:|
@@ -80,12 +118,13 @@ Unlike browser-dependent wrappers or cloud-mandatory tools, IDeV Advanced Pro de
 | **Multimodal Vision** | Clipboard screenshot paste (`Ctrl+V`), image file drop, native vision routing | **Verified** |
 | **Hardware Governor** | Thread bounding (`cpuCores - 1`), context memory cap, 5-minute idle model auto-unloading | **Verified** |
 | **Desktop Integration** | Native Windows multi-file dialogs, system tray support, native right-click edit menu | **Verified** |
+| **Cryptographic Licensing** | Ed25519 entitlement signing, 38-digit key validation, single-device binding | **Verified** |
 | **Dynamic Diagnostic API** | Real-time version check via `/api/version` synchronized with package manifest | **Verified** |
 | **Storage Isolation** | User conversations, settings, and model catalog definitions centralized under `Storage/` | **Verified** |
 
 ---
 
-## 5. Visual Feature Gallery
+## 6. Visual Feature Gallery
 
 ### Unified Model Catalog & Selector
 Access an extensive catalog of 1,201 configurations. Premier cloud models are pinned with distinctive badges at the top, followed by hundreds of local parameter variants.
@@ -110,7 +149,7 @@ Manage your workspace preferences, connection endpoints, and appearance themes t
 
 ---
 
-## 6. Official Download & Artifact Verification
+## 7. Official Download & Artifact Verification
 
 The genuine, production-verified Windows setup executable is available from the official release distribution:
 
@@ -119,7 +158,7 @@ The genuine, production-verified Windows setup executable is available from the 
 | **Product Version** | `3.8.9` |
 | **Target Platform** | Windows 10 / Windows 11 (`x64`, 64-bit) |
 | **Installer Filename** | `IDeV-Advanced-Pro-Setup-3.8.9.exe` |
-| **File Size** | 94,040,393 bytes (~89.68 MB) |
+| **File Size** | 94,040,662 bytes (~89.68 MB) |
 | **SHA-256 Checksum** | `d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19` |
 | **Direct Download Link** | [Download IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe) |
 | **Checksum File** | [IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256) |
@@ -133,12 +172,12 @@ Expected output:
 ```text
 Algorithm       Hash                                                                Path
 ---------       ----                                                                ----
-SHA256          A55E18D0D7F0E79F19A6B49D4D0F225E5ECDDE8D3C2A864DA34BD3C34278DC61    ...\IDeV-Advanced-Pro-Setup-3.8.9.exe
+SHA256          D5375FEAA52D3E91C6A1DC7D3C720E6585E70B533055A0C06ED70D7F5D7D5B19    ...\IDeV-Advanced-Pro-Setup-3.8.9.exe
 ```
 
 ---
 
-## 7. System Requirements
+## 8. System Requirements
 
 | Specification | Minimum Tested | Recommended Configuration |
 |---|---|---|
@@ -151,7 +190,7 @@ SHA256          A55E18D0D7F0E79F19A6B49D4D0F225E5ECDDE8D3C2A864DA34BD3C34278DC61
 
 ---
 
-## 8. Installation Instructions
+## 9. Installation Instructions
 
 1. **Download the Setup Wizard**:
    Obtain [`IDeV-Advanced-Pro-Setup-3.8.9.exe`](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe).
@@ -166,7 +205,7 @@ For complete details, see the [Installation Guide](INSTALLATION.md).
 
 ---
 
-## 9. Upgrade Instructions (From v1.0.0 or Earlier)
+## 10. Upgrade Instructions (From v1.0.0 or Earlier)
 
 Upgrades to version `3.8.9` are seamless and non-destructive:
 1. **Run the v3.8.9 Installer**: Download and execute `IDeV-Advanced-Pro-Setup-3.8.9.exe`.
@@ -176,7 +215,7 @@ Upgrades to version `3.8.9` are seamless and non-destructive:
 
 ---
 
-## 10. Basic Usage Guide
+## 11. Basic Usage Guide
 
 1. **Service Verification**: Confirm that your local inference engine is active on `http://127.0.0.1:11434`.
 2. **Model Selection**: Open the model dropdown at the top center. Select a local model (e.g. `deepseek-r1:7b`, `qwen2.5:7b`) for offline inference, or a badged cloud model (`☁️`) if you prefer remote inference.
@@ -185,7 +224,7 @@ Upgrades to version `3.8.9` are seamless and non-destructive:
 
 ---
 
-## 11. Privacy & Data Architecture
+## 12. Privacy & Data Architecture
 
 - **Local-Bound Autonomy**: All prompts, system messages, and generated tokens remain on your personal computer when using local models.
 - **Zero Telemetry**: IDeV Advanced Pro contains no tracking SDKs, telemetry beacons, or advertising frameworks.
@@ -196,7 +235,7 @@ Review our full [Privacy Policy](PRIVACY.md) and [Security Policy](SECURITY.md).
 
 ---
 
-## 12. Known Issues & Limitations
+## 13. Known Issues & Limitations
 
 1. **Local Inference Dependency**: Local model execution requires an active inference service on `127.0.0.1:11434`. If the service is stopped, the application will display a clear connection notice.
 2. **Windows SmartScreen Notice**: Because this release executable is newly generated directly from GitHub, Windows SmartScreen may present an initial unrecognized application prompt. Click **More info** > **Run anyway** to proceed.
@@ -206,18 +245,21 @@ See the [Troubleshooting Guide](docs/troubleshooting.md) for step-by-step diagno
 
 ---
 
-## 13. Quality Assurance & Release Notes (v3.8.9)
+## 14. Documentation & References
 
-- **Release Date**: October 27, 2026
-- **Release Version**: `3.8.9`
-- **Branding Correction**: Rendered "ADVANCED" in pure white (`#FFFFFF`) with transparent counters; dark theme contrast ratio elevated to 16.6:1.
-- **Diagnostic Endpoint**: Dynamically resolved `/api/version` linked to authoritative manifest.
-- **Windows Packaging**: Verified NSIS installer generated with embedded multi-frame icons and clean uninstallation scripts.
-- For historical changes, see [CHANGELOG.md](CHANGELOG.md) and [release-notes.md](release-notes.md).
+- 📖 [Installation Guide](INSTALLATION.md)
+- 🔒 [Authentication & Licensing Architecture](AUTHENTICATION_AND_LICENSING.md)
+- 🚀 [Deployment & Infrastructure Guide](DEPLOYMENT.md)
+- 🛡️ [Security Policy & Vulnerability Reporting](SECURITY.md)
+- 📜 [Privacy Policy](PRIVACY.md)
+- 📋 [Changelog & Version History](CHANGELOG.md)
+- 📦 [Release Notes v3.8.9](release-notes.md)
+- 🔧 [Troubleshooting Guide](docs/troubleshooting.md)
+- 📜 [Third-Party Notices](THIRD_PARTY_NOTICES.md)
 
 ---
 
-## 14. Support & Issue Reporting
+## 15. Support & Issue Reporting
 
 - **Bug Reports & Feature Requests**: Submit details via [GitHub Issues](https://github.com/musawir-13/IDeV-Advanced-Pro/issues).
 - **Security Disclosures**: Report vulnerabilities privately via [GitHub Security Advisories](https://github.com/musawir-13/IDeV-Advanced-Pro/security).
@@ -225,7 +267,7 @@ See the [Troubleshooting Guide](docs/troubleshooting.md) for step-by-step diagno
 
 ---
 
-## 15. License & Ownership
+## 16. License & Ownership
 
 IDeV Advanced Pro is proprietary software developed and owned by **IDeV Limited**. All rights reserved.  
 Third-party component licenses and notices are detailed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

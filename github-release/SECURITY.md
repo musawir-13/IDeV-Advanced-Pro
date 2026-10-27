@@ -18,6 +18,18 @@ Only the latest release of IDeV Advanced Pro receives active security patches.
 
 ---
 
+## Security Architecture & Safeguards
+
+IDeV Advanced Pro v3.8.9 employs defense-in-depth principles:
+- **Server-Side Authorization Boundary**: Client UI elements cannot grant access to cloud models or features. Requests to remote cloud endpoints (`:cloud`) and web intelligence are verified server-side against cryptographic entitlements.
+- **Cryptographic Entitlement Signatures**: Entitlements are signed with Ed25519 digital signatures. Any local modification or tampering results in signature verification failure and immediate fallback to the Free tier.
+- **Device & Profile Binding**: Entitlements are bound to unique hardware fingerprints and specific profile IDs, preventing unauthorized copy/paste migrations between machines.
+- **Clock Rollback Detection**: Backwards system clock tampering exceeding 1 hour triggers immediate state invalidation (`TAMPERED`).
+- **Zero Plaintext Secrets**: Passwords are protected using PBKDF2 with SHA-512 (100,000 iterations and 32-byte salts). Product keys are stored as SHA-256 hashes in the authoritative registry.
+- **Private Storage Isolation**: Developer models (`Storage/models/` and `Storage/cloud models/`) are excluded from repository tracking, installer builds, and runtime distributions.
+
+---
+
 ## Reporting a Vulnerability
 
 If you discover a security vulnerability in IDeV Advanced Pro:

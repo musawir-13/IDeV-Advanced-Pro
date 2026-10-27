@@ -1,7 +1,7 @@
 # Release Checksum Generator — IDeV Advanced Pro
 param (
-    [string]$InstallerPath = "..\release\IDeV-Advanced-Pro-Setup-1.0.0.exe",
-    [string]$OutputPath = "..\github-release\output\IDeV-Advanced-Pro-Setup-1.0.0.exe.sha256"
+    [string]$InstallerPath = "..\release\IDeV-Advanced-Pro-Setup-3.8.9.exe",
+    [string]$OutputPath = "..\github-release\output\IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256"
 )
 
 if (-not (Test-Path $InstallerPath)) {

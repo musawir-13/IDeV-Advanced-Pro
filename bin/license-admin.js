@@ -59,7 +59,8 @@ switch (command) {
     console.log(`Raw Key:          ${issued.key}`);
     console.log(`Display Grouped:  ${formatProductKeyDisplay(issued.key)}`);
     console.log(`License ID:       ${issued.licenseId}`);
-    console.log(`Entitlement:      ${issued.permittedDurationDays}-day Cloud Access (Single Device, Single Profile)`);
+    console.log(`Tier Granted:     Ultimate`);
+    console.log(`Entitlement:      ${issued.permittedDurationDays}-day Ultimate Cloud Access (Single Device, Single Profile)`);
     console.log(`Status:           ${issued.state}`);
     console.log('=======================================\n');
     break;

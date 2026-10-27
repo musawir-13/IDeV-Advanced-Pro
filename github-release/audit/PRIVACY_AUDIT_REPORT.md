@@ -1,14 +1,14 @@
-# Privacy & Security Audit Report — IDeV Advanced Pro v1.0.0
+# Privacy & Security Audit Report — IDeV Advanced Pro v3.8.9
 
 **Audit Date:** October 27, 2026  
 **Auditor:** QA & Security Release Engineering  
-**Target:** IDeV Advanced Pro Production Release (v1.0.0)  
+**Target:** IDeV Advanced Pro Production Release (v3.8.9)  
 
 ---
 
 ## 1. Executive Summary
 
-This report provides the formal privacy and security audit for the public release of **IDeV Advanced Pro** (v1.0.0). The audit verified that personal development paths, user conversations, and third-party secrets are completely absent from the distribution package, and that local processing is strictly isolated from cloud connections.
+This report provides the formal privacy and security audit for the public release of **IDeV Advanced Pro** (v3.8.9). The audit verified that personal development paths, user conversations, and third-party secrets are completely absent from the distribution package, and that local processing is strictly isolated from cloud connections.
 
 ---
 

@@ -26,7 +26,15 @@
     "hardwareGovernor": true,
     "clipboardScreenshotPaste": true,
     "nativeFileDialogs": true,
-    "centralizedStorage": true
+    "centralizedStorage": true,
+    "ed25519CryptographicLicensing": true,
+    "productKey38Digits": true
+  },
+  "tiers": {
+    "supportedTiers": ["free", "ultimate"],
+    "defaultTier": "free",
+    "cloudEntitlementDurationDays": 60,
+    "productKeyFormat": "38-digit decimal string"
   },
   "systemRequirements": {
     "os": "Windows 10 or Windows 11 (64-bit)",

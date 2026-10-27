@@ -106,6 +106,7 @@ async function runAllTests() {
     });
     assert.strictEqual(res.status, 403);
     assert.strictEqual(res.body.code, 'ENTITLEMENT_REQUIRED');
+    assert.strictEqual(res.body.tier, 'free');
   });
 
   // Test 2: A malformed product key is rejected
@@ -153,6 +154,7 @@ async function runAllTests() {
   await test('An already redeemed key cannot be redeemed again', () => {
     const act1 = activateProductKey(testKey, 'user_a');
     assert.strictEqual(act1.success, true);
+    assert.strictEqual(act1.entitlement.tier, 'ultimate');
     const act2 = activateProductKey(testKey, 'user_b', { fingerprint: 'fp_diff_device' });
     assert.strictEqual(act2.success, false);
     assert.strictEqual(act2.code, 'DEVICE_MISMATCH');
@@ -219,7 +221,7 @@ async function runAllTests() {
   // Test 13: Altered entitlement data fails cryptographic verification
   await test('Altered entitlement data fails cryptographic verification', () => {
     const validEnt = getActiveEntitlement('user_rev');
-    validEnt.tier = 'cloud_pro';
+    validEnt.tier = 'ultimate';
     validEnt.isRevoked = false;
     validEnt.expiresAtMs = Date.now() + 100000000;
     fs.writeFileSync(ACTIVE_ENTITLEMENT_FILE, JSON.stringify(validEnt, null, 2));
@@ -444,7 +446,7 @@ async function runAllTests() {
     // Simulate restart by re-reading from disk
     const reloaded = getActiveEntitlement('default_user');
     assert.strictEqual(reloaded.evaluation.active, true);
-    assert.strictEqual(reloaded.tier, 'cloud_pro');
+    assert.strictEqual(reloaded.tier, 'ultimate');
     assert.strictEqual(reloaded.licenseId, act.entitlement.licenseId);
   });
 

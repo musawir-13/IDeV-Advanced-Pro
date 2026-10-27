@@ -49,8 +49,8 @@ To analyze images or documents:
 - Paste a screenshot using `Ctrl+V` directly into the input composer, or click the attachment button to select images.
 - If your selected model is text-only, the engine automatically routes the image through your installed vision model (e.g. `qwen3.5:2b` or `qwen3.5:4b`) to provide visual explanations without crashing.
 
-### Exploring Cloud Models
-Models marked with a cloud badge (`☁️`) at the top of the dropdown offer access to frontier cloud models (`deepseek-v4.1-flash:cloud`, `gemma4:31b-cloud`, `glm-5.3-flash:cloud`, etc.). Ensure you have internet connectivity when interacting with cloud models.
+### Exploring Cloud Models (Ultimate Tier)
+Models marked with a cloud badge (`☁️`) at the top of the dropdown offer access to frontier cloud models (`deepseek-v4.1-flash:cloud`, `gemma4:31b-cloud`, `glm-5.3-flash:cloud`, etc.). Accessing cloud models requires an active **Ultimate tier** entitlement. Enter your 38-digit product key in **Settings** under **Ultimate License** to activate 60 days of cloud access. Free tier users continue to enjoy full, unlimited access to all local models offline.
 
 ---
 

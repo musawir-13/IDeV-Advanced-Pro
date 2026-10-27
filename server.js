@@ -564,11 +564,12 @@ const server = http.createServer(async (req, res) => {
   if (pathname === '/api/v1/license/status') {
     const active = getActiveEntitlement(currentProfileId);
     const device = getDeviceIdentity();
+    const isAct = Boolean(active.evaluation && active.evaluation.active);
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
-      tier: active.tier || 'free',
+      tier: isAct ? 'ultimate' : 'free',
       status: active.evaluation ? active.evaluation.status : (active.status || 'FREE'),
-      active: Boolean(active.evaluation && active.evaluation.active),
+      active: isAct,
       licenseId: active.licenseId || 'free_tier_local_only',
       boundProfile: active.boundProfileId || null,
       boundDevice: active.boundDeviceFingerprint || device.fingerprint,
@@ -589,9 +590,9 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
           success: true,
-          message: 'Product key activated successfully! 60-day Cloud Entitlement active.',
+          message: 'Product key activated successfully! 60-day Ultimate Cloud Entitlement active.',
           entitlement: {
-            tier: result.entitlement.tier,
+            tier: 'ultimate',
             status: result.entitlement.status,
             expiresAt: result.entitlement.expiresAt,
             boundProfile: result.entitlement.boundProfileId

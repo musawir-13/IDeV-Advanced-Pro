@@ -81,12 +81,12 @@ async function main() {
   const notesPath = path.join(__dirname, '..', 'release-notes.md');
   const releaseNotes = fs.readFileSync(notesPath, 'utf8');
 
-  console.log('1. Checking or creating GitHub release for tag v1.0.0...');
+  console.log('1. Checking or creating GitHub release for tag v3.8.9...');
   
   // Check if release already exists
   const checkRes = await requestJson({
     hostname: 'api.github.com',
-    path: '/repos/musawir-13/IDeV-Advanced-Pro/releases/tags/v1.0.0',
+    path: '/repos/musawir-13/IDeV-Advanced-Pro/releases/tags/v3.8.9',
     method: 'GET',
     headers: {
       'User-Agent': 'IDeV-Release-Engine',
@@ -97,7 +97,7 @@ async function main() {
 
   let releaseData = null;
   if (checkRes.status === 200 && checkRes.data.id) {
-    console.log('Existing release found for v1.0.0 with id:', checkRes.data.id);
+    console.log('Existing release found for v3.8.9 with id:', checkRes.data.id);
     releaseData = checkRes.data;
   } else {
     // Create new release
@@ -112,16 +112,16 @@ async function main() {
         'Content-Type': 'application/json'
       }
     }, {
-      tag_name: 'v1.0.0',
+      tag_name: 'v3.8.9',
       target_commitish: 'main',
-      name: 'IDeV Advanced Pro v1.0.0',
+      name: 'IDeV Advanced Pro v3.8.9',
       body: releaseNotes,
       draft: false,
       prerelease: false
     });
 
     if (createRes.status === 201 && createRes.data.id) {
-      console.log('Created GitHub Release v1.0.0 with id:', createRes.data.id);
+      console.log('Created GitHub Release v3.8.9 with id:', createRes.data.id);
       releaseData = createRes.data;
     } else {
       console.error('Failed to create release:', createRes.status, createRes.data);
@@ -133,11 +133,11 @@ async function main() {
   console.log('Release URL:', releaseData.html_url);
 
   // Upload SHA256 file
-  const sha256File = path.join(__dirname, '..', 'output', 'IDeV-Advanced-Pro-Setup-1.0.0.exe.sha256');
+  const sha256File = path.join(__dirname, '..', 'output', 'IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256');
   await uploadAsset(uploadUrl, sha256File, 'text/plain');
 
   // Upload Installer executable
-  const installerFile = path.join(__dirname, '..', 'output', 'IDeV-Advanced-Pro-Setup-1.0.0.exe');
+  const installerFile = path.join(__dirname, '..', 'output', 'IDeV-Advanced-Pro-Setup-3.8.9.exe');
   await uploadAsset(uploadUrl, installerFile, 'application/vnd.microsoft.portable-executable');
 
   console.log('\nAll assets published to GitHub Release successfully!');

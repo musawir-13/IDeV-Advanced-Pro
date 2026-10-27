@@ -8,6 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.8.9] — 2026-10-27
 
+### Added
+- **Two-Tier System (Free & Ultimate)**:
+  - **Free Tier**: 100% offline local model inference, unlimited conversations, and full workspace settings with zero cost.
+  - **Ultimate Tier**: 60-day cloud model execution, multimodal vision intelligence, and web search activated via 38-digit product keys.
+- **Cryptographic Licensing Engine**:
+  - Ed25519-signed entitlements with device identity binding (`Storage/security/device_identity.json`) and profile binding.
+  - 38-digit product key generation, HMAC-SHA256 checksums, and single-use registry tracking.
+  - Clock rollback and system tampering detection.
+  - Settings UI "Account Tier" and "Ultimate License" management interface.
+  - Administrative CLI tool (`bin/license-admin.js`) for key lifecycle operations.
+  - 30-case automated security and anti-bypass QA test suite (`tests/security_and_licensing.test.js`).
+
 ### Changed
 - **Authoritative Version Upgrade**: Upgraded application and package metadata across all desktop, runtime, installer, and documentation layers to `3.8.9`.
 - **Dynamic Version API**: Updated internal HTTP server `/api/version` to dynamically resolve version from authoritative manifest with high-reliability fallback.

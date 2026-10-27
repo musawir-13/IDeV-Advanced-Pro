@@ -6,6 +6,15 @@ Welcome to **IDeV Advanced Pro v3.8.9**, a production release of the privacy-fir
 
 ## What's New in v3.8.9
 
+### 🔐 Two-Tier Licensing & 38-Digit Product Key System
+- **Strictly Two Tiers (Free & Ultimate)**:
+  - **Free**: Default out-of-the-box tier for all profiles. 100% offline local model inference, unlimited conversations, and local tool settings with zero fees and no internet requirement.
+  - **Ultimate**: Unlocked exclusively through an authoritative 38-digit product key. Grants 60-day access to premier cloud models (`☁️`), multimodal reasoning, and web search intelligence.
+- **Cryptographic Entitlement Engine**: Server-side Ed25519 digital signatures, machine-bound identity fingerprints, single-profile bindings, and clock rollback tamper detection.
+- **Settings UI Integration**: Dedicated "Account Tier" and "Ultimate License" card with real-time hyphen formatting, status badges, profile/device binding display, and expiration countdown.
+- **Administrative CLI**: Integrated `bin/license-admin.js` for issuing, listing, and revoking 38-digit licenses.
+- **Comprehensive QA Test Suite**: 30 passing automated security and anti-bypass tests (`tests/security_and_licensing.test.js`).
+
 ### 🎨 Brand Identity & Visual Accessibility Correction
 - **Pure White "ADVANCED" Typography**: Corrected the word **“ADVANCED”** across all master logos, web marks, downscaled assets, and Windows application icons to pure white (`#FFFFFF`, `rgb(255, 255, 255)`).
 - **Clean Transparent Inner Counters**: Cleared all accidental opaque fills in the enclosed counters of `A` and `D`, eliminating rendering artifacts and visual dropouts on dark backgrounds.
