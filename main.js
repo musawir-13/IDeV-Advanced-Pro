@@ -87,7 +87,7 @@ function createWindow() {
     height: 820,
     minWidth: 800,
     minHeight: 600,
-    title: 'IDeV Advanced Pro',
+    title: 'Exciting AI',
     icon: path.join(__dirname, 'assets', 'icon.ico'),
     backgroundColor: '#ffffff',
     show: false,

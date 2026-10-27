@@ -255,7 +255,7 @@ async function resolveLocalModel(requestedModel, hasImages = false) {
       for (const pv of preferredVision) {
         const match = rawAvailable.find(m => m === pv || m.replace(/:latest$/, '') === pv);
         if (match) {
-          console.log(`[IDeV Vision Engine] Request with image routed to vision model: '${match}'`);
+          console.log(`[Exciting AI Vision Engine] Request with image routed to vision model: '${match}'`);
           return match;
         }
       }
@@ -263,7 +263,7 @@ async function resolveLocalModel(requestedModel, hasImages = false) {
       // 3. Fallback: scan any other installed model for vision capability
       for (const m of rawAvailable) {
         if (await checkModelVisionCapability(m)) {
-          console.log(`[IDeV Vision Engine] Found installed vision model: '${m}'`);
+          console.log(`[Exciting AI Vision Engine] Found installed vision model: '${m}'`);
           return m;
         }
       }
@@ -292,7 +292,7 @@ async function resolveLocalModel(requestedModel, hasImages = false) {
     }
 
     const preferred = available[0];
-    console.log(`[IDeV Engine] Model '${requestedModel}' auto-routed to: '${preferred}'`);
+    console.log(`[Exciting AI Engine] Model '${requestedModel}' auto-routed to: '${preferred}'`);
     return preferred;
   } catch (e) {
     return hasImages ? 'qwen3.5:2b' : 'qwen2.5:3b';
@@ -301,25 +301,47 @@ async function resolveLocalModel(requestedModel, hasImages = false) {
 
 const CLOUD_MODELS = loadCloudModels();
 
-const CREATOR_RESPONSE_TEXT = `I was created and built by **IDeV Limited**, a highly advanced technology company specializing in artificial intelligence, autonomous software engineering, and next-generation desktop developer workspaces.
+const CREATOR_RESPONSE_TEXT = `I was created and built by **Exciting AI**, an advanced technology initiative founded by **Musawir** specializing in artificial intelligence, autonomous software engineering, and next-generation desktop developer workspaces.
 
-**IDeV Limited** is at the forefront of state-of-the-art computational systems, developing unrestricted, intelligent, and high-performance computing platforms that empower developers, engineers, and researchers worldwide.
+I am **Exciting AI**, and I am very excited to meet you! How can I assist you with your project today?
 
-- **CEO, Developer, and Founder of IDeV LIMITED**: https://github.com/musawir-13`;
+- **Founder & Developer of EXCITING AI**: https://github.com/musawir-13`;
 
-const SYSTEM_INSTRUCTION_CONTENT = `You are IDeV Advanced Pro, an intelligent, helpful, and versatile AI desktop assistant.
+const GREETING_RESPONSE_TEXT = `Hello! I am Exciting AI, and I am very excited to meet you! How can I assist you with your project today?`;
+
+const SYSTEM_INSTRUCTION_CONTENT = `You are Exciting AI, an intelligent, helpful, and versatile AI desktop assistant.
+When greeting users or introducing yourself, always introduce yourself warmly and enthusiastically as Exciting AI (for example: "Hello! I am Exciting AI, and I am very excited to meet you! How can I assist you with your project today?").
 Tone and behavior guidelines:
-- Communicate in a natural, friendly, and varied conversational manner.
-- Do not repeat the same canned phrase or identical greeting repeatedly. If the user repeats greetings, acknowledge it naturally and conversationally.
-- Only if the user explicitly asks who built or created you, highlight IDeV Limited as an advanced technology company and provide the founder link (https://github.com/musawir-13). Never include company links or founder details unless explicitly asked about your creator.
-- Never output duplicate links or duplicate text.
-- Never claim to be made by OpenAI, Alibaba, Google, Meta, Anthropic, or Ollama.`;
+- Always identify yourself as Exciting AI.
+- You are genuinely enthusiastic and excited to meet the user, collaborate, and assist them with their projects and tasks.
+- Maintain a friendly, supportive, and knowledgeable tone.
+- Never identify as OpenAI, Alibaba, Qwen, Google, Meta, Anthropic, or IDeV.
+- Only if the user explicitly asks who built or created you, highlight Exciting AI and provide the founder link (https://github.com/musawir-13). Never include company links or founder details unless explicitly asked about your creator.
+- Never output duplicate links or duplicate text.`;
 
 function isSimpleGreeting(text) {
   if (!text || typeof text !== 'string') return false;
   const clean = text.toLowerCase().trim().replace(/[?!.,;:'"()]/g, '');
-  const greetings = ['hi', 'hello', 'hey', 'hey there', 'hi there', 'hello there', 'greetings', 'good morning', 'good afternoon', 'good evening', 'howdy', 'salam', 'assalam o alaikum', 'assalamu alaikum', 'hola'];
+  const greetings = [
+    'hi', 'hello', 'hey', 'hey there', 'hi there', 'hello there', 'greetings',
+    'good morning', 'good afternoon', 'good evening', 'howdy', 'salam',
+    'assalam o alaikum', 'assalamu alaikum', 'hola', 'yo', 'sup', 'morning',
+    'evening', 'afternoon'
+  ];
   return greetings.includes(clean);
+}
+
+function isIntroQuery(text) {
+  if (!text || typeof text !== 'string') return false;
+  const clean = text.toLowerCase().trim().replace(/[?!.,;:'"()]/g, ' ');
+  const introPhrases = [
+    'who are you', 'what are you', 'what is your name', 'whats your name',
+    'what s your name', 'tell me your name', 'introduce yourself',
+    'introduce you', 'tell me about yourself', 'who am i talking to',
+    'who am i chatting with', 'who is this', 'who r u', 'aap kaun ho',
+    'kaun ho tum', 'tum kaun ho', 'identify yourself'
+  ];
+  return introPhrases.some(phrase => clean.includes(phrase));
 }
 
 function isCreatorQuery(text) {
@@ -351,16 +373,21 @@ function isCreatorQuery(text) {
     'who created this app',
     'who made this app',
     'who developed this app',
+    'who built exciting ai',
+    'who created exciting ai',
+    'who made exciting ai',
+    'who developed exciting ai',
+    'who is exciting ai',
+    'who is exciting ai limited',
+    'what is exciting ai limited',
+    'who founded exciting ai',
+    'who is the ceo of exciting ai',
+    'who is the founder of exciting ai',
     'who built idev',
     'who created idev',
     'who made idev',
     'who developed idev',
     'who is idev',
-    'who is idev limited',
-    'what is idev limited',
-    'who founded idev',
-    'who is the ceo of idev',
-    'who is the founder of idev',
     'who is musawir',
     'tell me who made you',
     'tell me who built you',
@@ -378,9 +405,9 @@ function isCreatorQuery(text) {
   }
 
   const regexPatterns = [
-    /\bwho\s+(built|created|made|developed|programmed|coded|designed|founded|started|owns)\s+(you|this|the\s+app|the\s+ai|the\s+model|idev|idev\s+limited|idev\s+advanced\s+pro)\b/i,
-    /\bwho\s+is\s+(the\s+)?(creator|developer|maker|founder|ceo|owner|author|architect)\s+(of\s+)?(you|this|the\s+app|the\s+ai|idev|idev\s+limited|idev\s+advanced\s+pro)\b/i,
-    /\bwhich\s+company\s+(built|created|made|developed|owns)\s+(you|this|the\s+app|the\s+ai|idev)\b/i,
+    /\bwho\s+(built|created|made|developed|programmed|coded|designed|founded|started|owns)\s+(you|this|the\s+app|the\s+ai|the\s+model|exciting\s+ai|idev|idev\s+advanced\s+pro)\b/i,
+    /\bwho\s+is\s+(the\s+)?(creator|developer|maker|founder|ceo|owner|author|architect)\s+(of\s+)?(you|this|the\s+app|the\s+ai|exciting\s+ai|idev)\b/i,
+    /\bwhich\s+company\s+(built|created|made|developed|owns)\s+(you|this|the\s+app|the\s+ai|exciting\s+ai|idev)\b/i,
     /\b(where\s+did\s+you\s+come\s+from|what\s+company\s+are\s+you\s+from)\b/i
   ];
 
@@ -406,7 +433,7 @@ const server = http.createServer(async (req, res) => {
   if (pathname === '/api/me') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
-      name: "IDeV Workspace",
+      name: "Exciting AI Workspace",
       email: "Autonomous AI Desktop Workspace",
       plan: "standard",
       avatarurl: "/favicon.png",
@@ -762,8 +789,15 @@ const server = http.createServer(async (req, res) => {
       chat.messages = chat.messages.filter(m => m.content && m.content.trim().length > 0);
       saveChats(chats);
 
-      // Direct high-performance response for creator/identity questions
+      // Direct high-performance response for creator/identity/greeting questions
+      let specialResponse = null;
       if (isCreatorQuery(prompt)) {
+        specialResponse = CREATOR_RESPONSE_TEXT;
+      } else if (isIntroQuery(prompt) || isSimpleGreeting(prompt)) {
+        specialResponse = GREETING_RESPONSE_TEXT;
+      }
+
+      if (specialResponse) {
         res.writeHead(200, {
           'Content-Type': 'application/x-ndjson',
           'Cache-Control': 'no-cache',
@@ -774,7 +808,7 @@ const server = http.createServer(async (req, res) => {
           res.write(JSON.stringify({ eventName: 'chat_created', chatId: targetChatId }) + '\n');
         }
 
-        const words = CREATOR_RESPONSE_TEXT.split(' ');
+        const words = specialResponse.split(' ');
         let wordIdx = 0;
         const interval = setInterval(() => {
           if (wordIdx < words.length) {
@@ -787,7 +821,7 @@ const server = http.createServer(async (req, res) => {
               id: Date.now() + 1,
               chat_id: targetChatId,
               role: 'assistant',
-              content: CREATOR_RESPONSE_TEXT,
+              content: specialResponse,
               thinking: '',
               model_name: resolvedModel,
               created_at: new Date().toISOString()
@@ -895,7 +929,7 @@ const server = http.createServer(async (req, res) => {
               res.write(JSON.stringify({
                 eventName: 'chat',
                 chatId: targetChatId,
-                content: `[IDeV Assistant Engine: ${errMsg}]`
+                content: `[Exciting AI Assistant Engine: ${errMsg}]`
               }) + '\n');
               res.write(JSON.stringify({ eventName: 'done', chatId: targetChatId }) + '\n');
               res.end();
@@ -993,13 +1027,13 @@ const server = http.createServer(async (req, res) => {
 
             // Fallback if model returned completely empty output
             if (!assistantContent.trim()) {
-              assistantContent = "Hello! I am IDeV Advanced Pro. How can I assist you with your project today?";
+              assistantContent = GREETING_RESPONSE_TEXT;
               res.write(JSON.stringify({ eventName: 'chat', chatId: targetChatId, content: assistantContent }) + '\n');
             }
 
             // Only attach founder attribution if the user explicitly asked who created/built the AI
             if (assistantContent && isCreatorQuery(prompt) && !assistantContent.includes('musawir-13')) {
-              const footer = `\n\n- **CEO, Developer, and Founder of IDeV LIMITED**: https://github.com/musawir-13`;
+              const footer = `\n\n- **Founder & Developer of EXCITING AI**: https://github.com/musawir-13`;
               res.write(JSON.stringify({ eventName: 'chat', chatId: targetChatId, content: footer }) + '\n');
               assistantContent += footer;
             }
@@ -1011,7 +1045,7 @@ const server = http.createServer(async (req, res) => {
                 linkCount++;
                 return linkCount === 1 ? match : '';
               });
-              assistantContent = assistantContent.replace(/^[ \t]*[-*•][ \t]*(CEO, Developer, and Founder of IDeV LIMITED[^\n]*)?\s*$/gm, '').trim();
+              assistantContent = assistantContent.replace(/^[ \t]*[-*•][ \t]*(Founder & Developer of EXCITING AI[^\n]*)?\s*$/gm, '').trim();
             }
 
             // Save assistant message to chat
@@ -1099,23 +1133,29 @@ const server = http.createServer(async (req, res) => {
 
       const msgs = payload.messages || [];
       const lastUserMsg = [...msgs].reverse().find(m => m.role === 'user');
-      const isCreator = lastUserMsg && isCreatorQuery(lastUserMsg.content);
+      const userContent = lastUserMsg ? lastUserMsg.content : '';
+      let specialProxyResponse = null;
+      if (isCreatorQuery(userContent)) {
+        specialProxyResponse = CREATOR_RESPONSE_TEXT;
+      } else if (isIntroQuery(userContent) || isSimpleGreeting(userContent)) {
+        specialProxyResponse = GREETING_RESPONSE_TEXT;
+      }
 
-      if (isCreator) {
+      if (specialProxyResponse) {
         setCorsAndIframeHeaders(res);
         if (payload.stream === false) {
           res.writeHead(200, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify({
             model: payload.model,
             created_at: new Date().toISOString(),
-            message: { role: 'assistant', content: CREATOR_RESPONSE_TEXT },
+            message: { role: 'assistant', content: specialProxyResponse },
             done: true
           }));
           return;
         }
 
         res.writeHead(200, { 'Content-Type': 'application/x-ndjson' });
-        const words = CREATOR_RESPONSE_TEXT.split(' ');
+        const words = specialProxyResponse.split(' ');
         let wordIdx = 0;
         const interval = setInterval(() => {
           if (wordIdx < words.length) {
@@ -1458,7 +1498,7 @@ server.on('error', (err) => {
 
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`====================================================`);
-  console.log(`  IDeV Advanced Pro running!`);
+  console.log(`  Exciting AI running!`);
   console.log(`  Local URL:        http://localhost:${PORT}`);
   console.log(`  Local Ollama API: ${OLLAMA_HOST}`);
   console.log(`  Offline Freedom:  100% Severed from External Cloud`);
