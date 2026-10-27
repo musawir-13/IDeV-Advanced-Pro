@@ -28,7 +28,7 @@ $requiredFiles = @(
     "github-release\THIRD_PARTY_NOTICES.md",
     "github-release\release-notes.md",
     "github-release\release-manifest.json",
-    "github-release\output\IDeV-Advanced-Pro-Setup-1.0.0.exe.sha256"
+    "github-release\output\IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256"
 )
 
 foreach ($f in $requiredFiles) {
@@ -63,7 +63,7 @@ Check-Result "main.js has no hardcoded developer user paths" (-not ($mainJs -mat
 Check-Result "server.js has no hardcoded developer user paths" (-not ($serverJs -match "C:\\\\Users\\\\"))
 
 # 3. Installer validation
-$installerPath = "release\IDeV-Advanced-Pro-Setup-1.0.0.exe"
+$installerPath = "release\IDeV-Advanced-Pro-Setup-3.8.9.exe"
 $installerExists = Test-Path $installerPath
 Check-Result "Installer executable exists" $installerExists
 

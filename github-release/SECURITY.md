@@ -1,7 +1,7 @@
 # Security Policy — IDeV Advanced Pro
 
 **Product:** IDeV Advanced Pro  
-**Developer:** IDeV  
+**Developer:** IDeV Limited  
 
 We take the security of IDeV Advanced Pro seriously. This document describes our supported versions and the process for reporting security vulnerabilities.
 
@@ -13,8 +13,8 @@ Only the latest release of IDeV Advanced Pro receives active security patches.
 
 | Version | Supported |
 |---|---|
-| 1.0.x | :white_check_mark: Supported |
-| < 1.0.0 | :x: End of Life |
+| 3.8.x | :white_check_mark: Supported |
+| < 3.8.9 | :x: End of Life |
 
 ---
 

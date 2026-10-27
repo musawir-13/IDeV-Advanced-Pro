@@ -7,6 +7,12 @@ const os = require('os');
 const PORT = process.env.PORT || 2020;
 let OLLAMA_HOST = process.env.OLLAMA_HOST || 'http://127.0.0.1:11434';
 
+let APP_VERSION = '3.8.9';
+try {
+  const pkg = require('./package.json');
+  if (pkg && pkg.version) APP_VERSION = pkg.version;
+} catch (e) {}
+
 // App Storage Architecture (Per-user runtime storage)
 const STORAGE_DIR = path.join(__dirname, 'Storage');
 const MODELS_DIR = path.join(STORAGE_DIR, 'models');
@@ -1125,7 +1131,7 @@ const server = http.createServer(async (req, res) => {
 
   if (pathname === '/api/version') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ version: '1.0.0' }));
+    res.end(JSON.stringify({ version: APP_VERSION }));
     return;
   }
 

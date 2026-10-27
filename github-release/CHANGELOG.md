@@ -6,10 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [3.8.9] — 2026-10-27
+
+### Changed
+- **Authoritative Version Upgrade**: Upgraded application and package metadata across all desktop, runtime, installer, and documentation layers to `3.8.9`.
+- **Dynamic Version API**: Updated internal HTTP server `/api/version` to dynamically resolve version from authoritative manifest with high-reliability fallback.
+- **Enterprise Release Quality**: Implemented release verification and engineering standards following IDeV Limited QA guidelines.
+
+### Fixed
+- **Brand Visual Defect Resolved**: Corrected the word **“ADVANCED”** across all master raster images, downscaled logos, favicons, and multi-resolution Windows `.ico` icon sets to pure white (`#FFFFFF`) with transparent inner letter counters, restoring full legibility on dark themes and surfaces (GitHub dark theme contrast ratio: 16.6:1).
+- **Setup Wizard Branding**: Rebuilt Windows NSIS installer and application binary embedding corrected branding icons.
+- **Private Storage Protection**: Confirmed strict segregation and zero-leakage of private developer model stores (`Storage/models/` and `Storage/cloud models/`).
+
+---
+
 ## [1.0.0] — 2026-10-27
 
 ### Added
-- **Complete Local AI Architecture**: 100% offline desktop workspace with native Ollama backend integration.
+- **Complete Local AI Architecture**: 100% offline desktop workspace with native local inference engine integration.
 - **Universal Model Catalog (1,201 Entries)**:
   - 26 Cloud models (`:cloud` variants) pinned at the top with cloud badges.
   - 1,175 Local models and size variants indexed with all specific parameter types (`deepseek-r1:1.5b` through `671b`, `qwen2.5:0.5b` through `72b`, `d3:2b` through `27b`, `codellama`, etc.).

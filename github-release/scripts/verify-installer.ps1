@@ -1,14 +1,14 @@
 # Installer Verification Script — IDeV Advanced Pro
 param (
-    [string]$InstallerPath = "release\IDeV-Advanced-Pro-Setup-1.0.0.exe",
-    [string]$ExpectedHash = "a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58"
+    [string]$InstallerPath = "release\IDeV-Advanced-Pro-Setup-3.8.9.exe",
+    [string]$ExpectedHash = "a55e18d0d7f0e79f19a6b49d4d0f225e5ecdde8d3c2a864da34bd3c34278dc61"
 )
 
 if (-not (Test-Path $InstallerPath)) {
-    if (Test-Path "..\release\IDeV-Advanced-Pro-Setup-1.0.0.exe") {
-        $InstallerPath = "..\release\IDeV-Advanced-Pro-Setup-1.0.0.exe"
-    } elseif (Test-Path "github-release\output\IDeV-Advanced-Pro-Setup-1.0.0.exe") {
-        $InstallerPath = "github-release\output\IDeV-Advanced-Pro-Setup-1.0.0.exe"
+    if (Test-Path "..\release\IDeV-Advanced-Pro-Setup-3.8.9.exe") {
+        $InstallerPath = "..\release\IDeV-Advanced-Pro-Setup-3.8.9.exe"
+    } elseif (Test-Path "github-release\output\IDeV-Advanced-Pro-Setup-3.8.9.exe") {
+        $InstallerPath = "github-release\output\IDeV-Advanced-Pro-Setup-3.8.9.exe"
     }
 }
 

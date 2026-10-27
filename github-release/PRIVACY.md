@@ -1,8 +1,7 @@
 # Privacy Policy & Data Architecture — IDeV Advanced Pro
 
-**Last Updated:** October 27, 2026  
-**Product:** IDeV Advanced Pro (v1.0.0)  
-**Developer:** IDeV  
+**Product:** IDeV Advanced Pro (v3.8.9)  
+**Developer:** IDeV Limited  
 
 IDeV Advanced Pro is built with a privacy-first foundation, empowering users with complete control and transparency over their conversations, documents, and data.
 
@@ -10,7 +9,7 @@ IDeV Advanced Pro is built with a privacy-first foundation, empowering users wit
 
 ## 1. Local Processing vs. Cloud Processing
 
-IDeV Advanced Pro clearly differentiates between **Local Model Processing** and **Optional Cloud Model Connections**:
+IDeV Advanced Pro strictly differentiates between **Local Model Processing** and **Optional Cloud Model Connections**:
 
 ### A. Local Model Processing
 When you select and interact with local models (such as `deepseek-r1`, `qwen2.5`, `llama3.3`, `d3`, `phi4`, etc.):

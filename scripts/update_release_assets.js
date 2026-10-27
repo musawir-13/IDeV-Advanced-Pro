@@ -82,7 +82,7 @@ async function main() {
   const relRes = await new Promise((resolve) => {
     https.get({
       hostname: 'api.github.com',
-      path: '/repos/musawir-13/IDeV-Advanced-Pro/releases/tags/v1.0.0',
+      path: '/repos/musawir-13/IDeV-Advanced-Pro/releases/tags/v3.8.9',
       headers: {
         'User-Agent': 'IDeV-Release-Engine',
         'Authorization': 'token ' + token,
@@ -98,8 +98,8 @@ async function main() {
   const uploadUrl = relRes.upload_url;
   console.log('Upload URL:', uploadUrl);
 
-  const sha256File = path.join(__dirname, '..', 'github-release', 'output', 'IDeV-Advanced-Pro-Setup-1.0.0.exe.sha256');
-  const installerFile = path.join(__dirname, '..', 'release', 'IDeV-Advanced-Pro-Setup-1.0.0.exe');
+  const sha256File = path.join(__dirname, '..', 'github-release', 'output', 'IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256');
+  const installerFile = path.join(__dirname, '..', 'release', 'IDeV-Advanced-Pro-Setup-3.8.9.exe');
 
   console.log('3. Uploading clean sha256 file...');
   await uploadAsset(uploadUrl, sha256File, 'text/plain');

@@ -12,24 +12,24 @@ This guide walks you through installing, configuring, and updating **IDeV Advanc
 | **Processor** | Intel Core i3 (8th Gen+) or AMD Ryzen 3 | Intel Core i5/i7 or AMD Ryzen 5/7 |
 | **Memory (RAM)** | 8 GB RAM | 16 GB RAM or higher |
 | **Disk Space** | 250 MB free disk space for app installation | SSD with 20+ GB for local model weights |
-| **Local Inference** | Ollama installed and running (`127.0.0.1:11434`) | Ollama v0.3.0 or higher with GPU acceleration |
+| **Local Inference Engine** | Compatible local inference engine on `127.0.0.1:11434` | Local engine with hardware/GPU acceleration |
 
 ---
 
 ## 2. Download & Installation
 
 ### Step 1: Download the Setup Wizard
-Download the official Windows installer executable from the GitHub Releases page:
-- **Download Link**: [IDeV-Advanced-Pro-Setup-1.0.0.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe)
+Download the official Windows installer executable:
+- **Direct Download**: [IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe)
 - **Verified SHA-256 Checksum**:
   ```text
-  a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58
+  a55e18d0d7f0e79f19a6b49d4d0f225e5ecdde8d3c2a864da34bd3c34278dc61
   ```
 
 ### Step 2: Run the Installer
-1. Double-click `IDeV-Advanced-Pro-Setup-1.0.0.exe` to launch the IDeV Setup Wizard.
-2. Select your desired installation destination (default: `%LOCALAPPDATA%\Programs\IDeV Advanced Pro`).
-3. Click **Install**. The wizard will copy the application files and configure your desktop and start menu shortcuts.
+1. Double-click `IDeV-Advanced-Pro-Setup-3.8.9.exe` to launch the IDeV Setup Wizard.
+2. Select your desired installation destination (defaults to `%LOCALAPPDATA%\Programs\IDeV Advanced Pro`).
+3. Click **Install**. The wizard will copy application assets and configure desktop and start menu shortcuts.
 4. On the completion screen, check **Run IDeV Advanced Pro** and click **Finish**.
 
 ---
@@ -37,20 +37,20 @@ Download the official Windows installer executable from the GitHub Releases page
 ## 3. First-Run & Model Configuration
 
 ### Connecting to Local Models
-IDeV Advanced Pro connects automatically to your local Ollama runtime:
-1. Ensure your local Ollama engine is running in the system tray or background (`http://127.0.0.1:11434`).
+IDeV Advanced Pro connects automatically to your local inference engine:
+1. Ensure your local inference engine service is active on `http://127.0.0.1:11434`.
 2. Launch **IDeV Advanced Pro**.
-3. Open the **Model Selector** dropdown at the top of the interface.
-4. Your installed local models (such as `deepseek-r1:7b`, `qwen3.5:2b`, `qwen2.5:3b`, etc.) will appear ready to use.
+3. Open the **Model Selector** dropdown at the top center of the interface.
+4. Your installed local models (such as `deepseek-r1:7b`, `qwen3.5:2b`, `qwen2.5:3b`, etc.) appear ready to use.
 5. Select any model to start chatting immediately.
 
 ### Multimodal Vision & Image Input
 To analyze images or documents:
-- Simply paste a screenshot using `Ctrl+V` directly into the chat box, or click the `+` attachment button to select images.
+- Paste a screenshot using `Ctrl+V` directly into the input composer, or click the attachment button to select images.
 - If your selected model is text-only, the engine automatically routes the image through your installed vision model (e.g. `qwen3.5:2b` or `qwen3.5:4b`) to provide visual explanations without crashing.
 
 ### Exploring Cloud Models
-Models marked with a cloud badge (`☁️`) at the top of the dropdown offer access to frontier models (`deepseek-v4.1-flash:cloud`, `gemma4:31b-cloud`, `glm-5.3-flash:cloud`, etc.). Ensure you have internet connectivity when interacting with cloud models.
+Models marked with a cloud badge (`☁️`) at the top of the dropdown offer access to frontier cloud models (`deepseek-v4.1-flash:cloud`, `gemma4:31b-cloud`, `glm-5.3-flash:cloud`, etc.). Ensure you have internet connectivity when interacting with cloud models.
 
 ---
 
@@ -75,6 +75,7 @@ To remove IDeV Advanced Pro from your system:
 
 ## 6. Troubleshooting
 
-- **App displays "Unable to connect to Ollama"**: Verify that Ollama is running by visiting `http://127.0.0.1:11434` in your web browser. If it is not running, start Ollama from your Start menu.
-- **Windows SmartScreen prompt**: Because this is a newly built open release, click **More info** > **Run anyway** if prompted by Windows SmartScreen.
+- **App displays connection notice**: Verify that your local inference engine is running on `http://127.0.0.1:11434`.
+- **Windows SmartScreen prompt**: Because this is a newly built release, click **More info** > **Run anyway** if prompted by Windows SmartScreen.
 - **Port 2020 conflict**: If another application uses port 2020, set the environment variable `PORT=2021` before launching.
+- For complete diagnostics, see [docs/troubleshooting.md](docs/troubleshooting.md).

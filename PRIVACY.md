@@ -1,7 +1,7 @@
 # Privacy Policy & Data Architecture — IDeV Advanced Pro
 
-**Product:** IDeV Advanced Pro (v1.0.0)  
-**Developer:** IDeV  
+**Product:** IDeV Advanced Pro (v3.8.9)  
+**Developer:** IDeV Limited  
 
 IDeV Advanced Pro is built with a privacy-first foundation, empowering users with complete control and transparency over their conversations, documents, and data.
 

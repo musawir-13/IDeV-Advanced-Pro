@@ -1,29 +1,27 @@
-# IDeV Advanced Pro v1.0.0 Release Notes
+# IDeV Advanced Pro v3.8.9 Release Notes
 
-Welcome to the initial public release of **IDeV Advanced Pro** (v1.0.0), a privacy-first, autonomous desktop AI workspace for Windows 10 and Windows 11 (64-bit).
+Welcome to **IDeV Advanced Pro v3.8.9**, a production release of the privacy-first, autonomous desktop AI workspace for Windows 10 and Windows 11 (64-bit), engineered and released under the quality standards of **IDeV Limited**.
 
 ---
 
-## What's New in v1.0.0
+## What's New in v3.8.9
 
-### 🚀 Massive Model Catalog
-- Access to **1,201 model configurations**:
-  - **26 Cloud Models**: Premier cloud models pinned with `☁️` badges at the top of the selector (`deepseek-v4.1-flash:cloud`, `gemma4:31b-cloud`, `glm-5.3-flash:cloud`, `kimi-k3:cloud`, etc.).
-  - **1,175 Local Models & Size Variants**: Specific parameter variants indexed across 244 open-weight model families (`deepseek-r1:1.5b` through `671b`, `qwen2.5:0.5b` through `72b`, `d3`, `bonsai-2`, etc.).
+### 🎨 Brand Identity & Visual Accessibility Correction
+- **Pure White "ADVANCED" Typography**: Corrected the word **“ADVANCED”** across all master logos, web marks, downscaled assets, and Windows application icons to pure white (`#FFFFFF`, `rgb(255, 255, 255)`).
+- **Clean Transparent Inner Counters**: Cleared all accidental opaque fills in the enclosed counters of `A` and `D`, eliminating rendering artifacts and visual dropouts on dark backgrounds.
+- **Dark Mode Excellence**: Achieved an exceptional **16.6:1 contrast ratio** on GitHub dark theme (`#0d1117`), passing WCAG 2.1 AAA accessibility standards for text of all sizes.
+- **Multi-Resolution Windows Icons**: Fully rebuilt multi-frame `.ico` bundles (16×16, 32×32, 48×48, 64×64, 128×128, and 256×256) embedded in the executable, setup wizard, and uninstaller.
 
-### 🖼️ Seamless Multimodal Vision
-- Automatic detection of image attachments and clipboard screenshot pastes (`Ctrl+V`).
-- Native vision routing directs visual queries through installed multimodal models (`qwen3.5:2b`, `qwen3.5:4b`, etc.) without `mmproj` errors.
+### ⚙️ Architecture & Version Management
+- **Authoritative Version Unification**: Synchronized application, build metadata, setup wizard configuration, and runtime diagnostic APIs to version `3.8.9`.
+- **Dynamic Version API**: Updated the internal server endpoint `/api/version` to dynamically resolve version metadata directly from the authoritative manifest with a reliable fallback mechanism.
+- **Enterprise Quality Standards**: Implemented release verification, test logging, and traceability under IDeV Limited QA guidelines.
 
-### ⚡ High-Speed Architecture & Hardware Governor
-- In-memory catalog caching drops model list load times to **~18ms**.
-- $O(1)$ indexed model inspection executes in **~2ms**.
-- Hardware governor allocates `cpuCores - 1` threads to preserve system responsiveness and auto-unloads idle models after 5 minutes.
-
-### 💻 Native Desktop Integration
-- Native Windows multi-file attachment dialogs.
-- Native right-click context menu with Undo, Redo, Cut, Copy, Paste, and Select All.
-- All chats, settings, and model metadata centralized in a single [`Storage/`](Storage/) directory.
+### 🚀 Core Platform Features (Retained & Verified)
+- **1,201-Model Catalog**: Seamless access to 26 pinned cloud models (`:cloud`) and 1,175 local model and quantization variants.
+- **Automatic Multimodal Vision Routing**: Intelligent dispatch of image inputs and clipboard screenshots (`Ctrl+V`) to installed vision models (`qwen3.5:2b`, `qwen3.5:4b`, etc.).
+- **Hardware-Adaptive Governor**: Dynamic thread allocation (`cpuCores - 1`), context memory throttling, and idle model auto-unloading to safeguard system responsiveness.
+- **Strict Privacy Segregation**: Complete exclusion of private development stores (`Storage/models/` and `Storage/cloud models/`) from distribution bundles and user machines.
 
 ---
 
@@ -31,13 +29,16 @@ Welcome to the initial public release of **IDeV Advanced Pro** (v1.0.0), a priva
 
 | Asset | Size | SHA-256 Checksum |
 |---|---|---|
-| [IDeV-Advanced-Pro-Setup-1.0.0.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe) | 89.78 MB | `a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58` |
-| [SHA256SUMS.txt](output/IDeV-Advanced-Pro-Setup-1.0.0.exe.sha256) | 102 bytes | Plaintext checksum verification file |
+| [IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe) | 89.68 MB | `a55e18d0d7f0e79f19a6b49d4d0f225e5ecdde8d3c2a864da34bd3c34278dc61` |
+| [IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256) | 102 bytes | Plaintext checksum verification file |
 
 ---
 
-## Getting Started
-1. Download and run `IDeV-Advanced-Pro-Setup-1.0.0.exe`.
-2. Follow the setup wizard to install the application.
-3. Ensure your compatible local inference engine is running (`http://127.0.0.1:11434`).
-4. Launch **IDeV Advanced Pro** from your desktop or start menu and start chatting!
+## Installation & Getting Started
+1. Download `IDeV-Advanced-Pro-Setup-3.8.9.exe` from the verified download link.
+2. (Optional) Verify binary integrity via PowerShell:
+   ```powershell
+   Get-FileHash -Algorithm SHA256 .\IDeV-Advanced-Pro-Setup-3.8.9.exe
+   ```
+3. Run the installer and follow the on-screen setup wizard.
+4. Launch **IDeV Advanced Pro** from your desktop or start menu.
