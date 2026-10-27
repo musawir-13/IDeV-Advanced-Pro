@@ -23,7 +23,7 @@ Download the official Windows installer executable from the GitHub Releases page
 - **Download Link**: [IDeV-Advanced-Pro-Setup-1.0.0.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe)
 - **Verified SHA-256 Checksum**:
   ```text
-  e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc
+  a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58
   ```
 
 ### Step 2: Run the Installer

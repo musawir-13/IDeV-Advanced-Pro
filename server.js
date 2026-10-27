@@ -7,7 +7,7 @@ const os = require('os');
 const PORT = process.env.PORT || 2020;
 let OLLAMA_HOST = process.env.OLLAMA_HOST || 'http://127.0.0.1:11434';
 
-// App Storage Root: C:\Users\FAROOQ AHMAD\Downloads\ollama\Storage
+// App Storage Architecture (Per-user runtime storage)
 const STORAGE_DIR = path.join(__dirname, 'Storage');
 const MODELS_DIR = path.join(STORAGE_DIR, 'models');
 const CLOUD_MODELS_DIR = path.join(STORAGE_DIR, 'cloud models');
@@ -18,11 +18,13 @@ const CHATS_FILE = path.join(CHATS_DIR, 'chats.json');
 const SETTINGS_FILE = path.join(SETTINGS_DIR, 'settings.json');
 const PUBLIC_DIR = path.join(__dirname, 'public');
 
-// Configure Ollama models storage path
-process.env.OLLAMA_MODELS = MODELS_DIR;
+// Optional developer model path: only configure if present in developer environment
+if (fs.existsSync(MODELS_DIR)) {
+  process.env.OLLAMA_MODELS = MODELS_DIR;
+}
 
-// Ensure all Storage directories exist
-[STORAGE_DIR, MODELS_DIR, CLOUD_MODELS_DIR, CHATS_DIR, SETTINGS_DIR].forEach(dir => {
+// Ensure ONLY per-user runtime storage exists (NEVER create private model storage on client machines)
+[STORAGE_DIR, CHATS_DIR, SETTINGS_DIR].forEach(dir => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
@@ -33,6 +35,9 @@ let cloudModelsMap = new Map();
 let lastCloudMtime = 0;
 
 function loadCloudModels() {
+  if (!fs.existsSync(CLOUD_MODELS_DIR)) {
+    return cachedCloudModels || [];
+  }
   const catalogPath = path.join(CLOUD_MODELS_DIR, 'catalog.json');
   try {
     if (fs.existsSync(catalogPath)) {
@@ -61,6 +66,9 @@ let localCatalogMap = new Map();
 let lastLocalMtime = 0;
 
 function loadLocalCatalog() {
+  if (!fs.existsSync(MODELS_DIR)) {
+    return cachedLocalCatalog || [];
+  }
   const catalogPath = path.join(MODELS_DIR, 'catalog.json');
   try {
     if (fs.existsSync(catalogPath)) {

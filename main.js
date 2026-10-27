@@ -4,8 +4,11 @@ const fs = require('fs');
 
 const PORT = process.env.PORT || 2020;
 
-// App Storage Root: C:\Users\FAROOQ AHMAD\Downloads\ollama\Storage
-process.env.OLLAMA_MODELS = path.join(__dirname, 'Storage', 'models');
+// Local developer storage: only configure private model path if present in local development environment
+const devModelsDir = path.join(__dirname, 'Storage', 'models');
+if (fs.existsSync(devModelsDir)) {
+  process.env.OLLAMA_MODELS = devModelsDir;
+}
 
 // Start internal HTTP server directly inside the Electron main process
 try {

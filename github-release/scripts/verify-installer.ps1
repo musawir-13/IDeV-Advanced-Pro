@@ -1,7 +1,7 @@
 # Installer Verification Script — IDeV Advanced Pro
 param (
     [string]$InstallerPath = "release\IDeV-Advanced-Pro-Setup-1.0.0.exe",
-    [string]$ExpectedHash = "e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc"
+    [string]$ExpectedHash = "a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58"
 )
 
 if (-not (Test-Path $InstallerPath)) {

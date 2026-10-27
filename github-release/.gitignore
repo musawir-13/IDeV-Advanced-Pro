@@ -5,6 +5,12 @@ output/*.exe
 *.zip
 *.tar.gz
 
+# Developer Private Model Storage
+Storage/models/
+Storage/cloud models/
+/Storage/models/
+/Storage/cloud models/
+
 # OS artifacts
 Thumbs.db
 .DS_Store

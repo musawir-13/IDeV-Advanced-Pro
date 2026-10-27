@@ -13,11 +13,11 @@ build/
 *.zip
 *.tar.gz
 
-# Large Model Blobs & Local Weights (Linked to local Ollama)
-Storage/models/blobs/
-Storage/models/manifests/
-Storage/models/manifests-v2/
-Storage/models/metadata/
+# Developer Private Model Storage (Strictly Exclusive to Developer Environment)
+/Storage/models/
+/Storage/cloud models/
+Storage/models/
+Storage/cloud models/
 
 # User Private Data & Conversation History
 Storage/chats/

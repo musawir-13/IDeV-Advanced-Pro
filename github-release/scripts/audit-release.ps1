@@ -1,8 +1,8 @@
-# Release Audit Script — IDeV Advanced Pro v1.0.0
+# Release Audit & Privacy Safeguard Script — IDeV Advanced Pro
 $ErrorActionPreference = "Continue"
 
 Write-Host "=================================================="
-Write-Host "  IDeV Advanced Pro v1.0.0 -- Release Audit Script"
+Write-Host "  IDeV Advanced Pro -- Automated Release Safeguards"
 Write-Host "=================================================="
 
 $passCount = 0
@@ -35,7 +35,34 @@ foreach ($f in $requiredFiles) {
     Check-Result "File exists: $f" (Test-Path $f)
 }
 
-# 2. Installer validation
+# 2. Strict Developer Storage Isolation Safeguards
+Check-Result "Storage/models absent from public staging" (-not (Test-Path "github-release\Storage\models"))
+Check-Result "Storage/cloud models absent from public staging" (-not (Test-Path "github-release\Storage\cloud models"))
+
+# Check Git tracked index (must be 0 files in private model storage)
+$trackedModels = (git ls-files "Storage/models" "Storage/cloud models")
+Check-Result "Git tracking excludes private Storage/models and cloud models" ($null -eq $trackedModels -or $trackedModels.Length -eq 0) "Found: $($trackedModels.Length) tracked files"
+
+# Check .gitignore rules
+$gi = Get-Content .gitignore -Raw
+Check-Result ".gitignore blocks Storage/models/" ($gi -match "Storage/models/")
+Check-Result ".gitignore blocks Storage/cloud models/" ($gi -match "Storage/cloud models/")
+Check-Result ".gitignore blocks release executables" ($gi -match "\*\.exe")
+Check-Result ".gitignore blocks private chats" ($gi -match "Storage/chats/")
+
+# Check package.json exclusion rules
+$pkg = Get-Content package.json -Raw
+Check-Result "package.json excludes !Storage/models/**" ($pkg -match "!Storage/models/\*\*")
+Check-Result "package.json excludes !Storage/cloud models/**" ($pkg -match "!Storage/cloud models/\*\*")
+Check-Result "package.json does not bundle private descriptors" (-not ($pkg -match '"Storage/models/descriptors'))
+
+# Check for hardcoded developer paths
+$mainJs = Get-Content main.js -Raw
+$serverJs = Get-Content server.js -Raw
+Check-Result "main.js has no hardcoded developer user paths" (-not ($mainJs -match "C:\\\\Users\\\\"))
+Check-Result "server.js has no hardcoded developer user paths" (-not ($serverJs -match "C:\\\\Users\\\\"))
+
+# 3. Installer validation
 $installerPath = "release\IDeV-Advanced-Pro-Setup-1.0.0.exe"
 $installerExists = Test-Path $installerPath
 Check-Result "Installer executable exists" $installerExists
@@ -43,36 +70,14 @@ Check-Result "Installer executable exists" $installerExists
 if ($installerExists) {
     $size = (Get-Item $installerPath).Length
     Check-Result "Installer size exceeds 50 MB" ($size -gt 52428800) "Size: $size bytes"
-    
-    $hash = (Get-FileHash -Path $installerPath -Algorithm SHA256).Hash.ToLower()
-    $expected = "e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc"
-    Check-Result "SHA256 checksum matches release manifest" ($hash -eq $expected) "Hash: $hash"
 }
-
-# 3. Model catalog validation
-$localCatalogPath = "Storage\models\catalog.json"
-$cloudCatalogPath = "Storage\cloud models\catalog.json"
-
-Check-Result "Local catalog exists" (Test-Path $localCatalogPath)
-Check-Result "Cloud catalog exists" (Test-Path $cloudCatalogPath)
-
-if ((Test-Path $localCatalogPath) -and (Test-Path $cloudCatalogPath)) {
-    $localModels = (Get-Content $localCatalogPath -Raw | ConvertFrom-Json)
-    $cloudModels = (Get-Content $cloudCatalogPath -Raw | ConvertFrom-Json)
-    Check-Result "Local models count exceeds 1000" ($localModels.Length -gt 1000) "Found: $($localModels.Length)"
-    Check-Result "Cloud models count exceeds 20" ($cloudModels.Length -gt 20) "Found: $($cloudModels.Length)"
-}
-
-# 4. Gitignore safety
-$gi = Get-Content .gitignore -Raw
-Check-Result ".gitignore blocks release executables" ($gi -match "\*\.exe")
-Check-Result ".gitignore blocks private chats" ($gi -match "Storage/chats/")
-Check-Result ".gitignore blocks model blobs" ($gi -match "Storage/models/blobs/")
 
 Write-Host "=================================================="
 Write-Host "Audit Results: $passCount passed, $failCount failed"
 if ($failCount -eq 0) {
-    Write-Host "ALL RELEASE CHECKS PASSED SUCCESSFULLY!" -ForegroundColor Green
+    Write-Host "ALL RELEASE CHECKS AND PRIVACY SAFEGUARDS PASSED!" -ForegroundColor Green
+    exit 0
 } else {
-    Write-Host "SOME CHECKS FAILED -- REVIEW LOGS" -ForegroundColor Yellow
+    Write-Host "CRITICAL SAFEGUARD FAILED -- REVIEW LOGS" -ForegroundColor Red
+    exit 1
 }

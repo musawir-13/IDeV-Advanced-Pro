@@ -122,7 +122,7 @@ Manage your workspace preferences, connection endpoints, and appearance themes t
    Confirm installer authenticity using PowerShell:
    ```powershell
    Get-FileHash -Algorithm SHA256 .\IDeV-Advanced-Pro-Setup-1.0.0.exe
-   # Expected Hash: e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc
+   # Expected Hash: a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58
    ```
 
 3. **Install & Launch**:
@@ -139,8 +139,8 @@ For comprehensive first-run steps and network configuration, see the [Installati
 | **Product Version** | `1.0.0` |
 | **Target Architecture** | Windows `x64` (64-bit) |
 | **Installer Name** | `IDeV-Advanced-Pro-Setup-1.0.0.exe` |
-| **Installer Size** | 93,950,109 bytes (~89.59 MB) |
-| **SHA-256 Checksum** | `e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc` |
+| **Installer Size** | 94,144,413 bytes (~89.78 MB) |
+| **SHA-256 Checksum** | `a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58` |
 | **Release Status** | Official Production Release |
 
 ---

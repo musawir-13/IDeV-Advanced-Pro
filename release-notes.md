@@ -31,7 +31,7 @@ Welcome to the initial public release of **IDeV Advanced Pro** (v1.0.0), a priva
 
 | Asset | Size | SHA-256 Checksum |
 |---|---|---|
-| [IDeV-Advanced-Pro-Setup-1.0.0.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe) | 89.59 MB | `e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc` |
+| [IDeV-Advanced-Pro-Setup-1.0.0.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe) | 89.78 MB | `a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58` |
 | [SHA256SUMS.txt](output/IDeV-Advanced-Pro-Setup-1.0.0.exe.sha256) | 102 bytes | Plaintext checksum verification file |
 
 ---

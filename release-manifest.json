@@ -1,23 +1,27 @@
 {
   "productName": "IDeV Advanced Pro",
   "version": "1.0.0",
-  "buildDate": "2026-10-27T12:32:50Z",
+  "buildDate": "2026-10-27T13:46:00Z",
   "platform": "win32",
   "architecture": "x64",
   "developer": "IDeV",
   "repository": "https://github.com/musawir-13/IDeV-Advanced-Pro",
   "installer": {
     "filename": "IDeV-Advanced-Pro-Setup-1.0.0.exe",
-    "sizeBytes": 93950109,
-    "sizeFormatted": "89.59 MB",
-    "sha256": "e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc",
+    "sizeBytes": 94144413,
+    "sizeFormatted": "89.78 MB",
+    "sha256": "a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58",
     "downloadUrl": "https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe"
   },
+  "privacySafeguards": {
+    "privateStorageExcluded": true,
+    "storageModelsExcluded": true,
+    "storageCloudModelsExcluded": true,
+    "localEngineAutonomy": true,
+    "zeroTelemetry": true
+  },
   "capabilities": {
-    "totalCatalogModels": 1201,
-    "localModelFamilies": 244,
-    "localModelVariants": 1175,
-    "cloudModelVariants": 26,
+    "localModelInference": true,
     "multimodalVision": true,
     "hardwareGovernor": true,
     "clipboardScreenshotPaste": true,
