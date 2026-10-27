@@ -1,0 +1,27 @@
+{
+  "name": "llama3-gradient:8b",
+  "model": "llama3-gradient:8b",
+  "description": "This model extends LLama-3 8B's context length from 8k to over 1m tokens. (Type: 8b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "8b"
+  ],
+  "updated": "May 5, 2024",
+  "downloads": "1,036,831",
+  "digest": "local-llama3-gradient_8b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llama3-gradient",
+    "format": "local",
+    "family": "llama3",
+    "families": [
+      "llama3"
+    ],
+    "parameter_size": "8B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

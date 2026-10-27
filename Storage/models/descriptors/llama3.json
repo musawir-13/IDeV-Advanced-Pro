@@ -1,0 +1,33 @@
+{
+  "name": "llama3",
+  "model": "llama3",
+  "description": "Meta Llama 3: The most capable openly available LLM to date",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "8b",
+    "70b",
+    "instruct",
+    "text",
+    "8b-text",
+    "70b-instruct",
+    "70b-text"
+  ],
+  "updated": "May 21, 2024",
+  "downloads": "25,812,441",
+  "digest": "local-llama3",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "llama3",
+    "families": [
+      "llama3"
+    ],
+    "parameter_size": "8b, 70b, instruct, text, 8b-text, 70b-instruct, 70b-text",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "mistral-small3.2",
+  "model": "mistral-small3.2",
+  "description": "An update to Mistral Small that improves on function calling, instruction following, and less repetition errors.",
+  "capabilities": [
+    "vision",
+    "tools"
+  ],
+  "parameter_sizes": [
+    "24b"
+  ],
+  "updated": "June 20, 2025",
+  "downloads": "2,511,212",
+  "digest": "local-mistral-small3_2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "mistral",
+    "families": [
+      "mistral"
+    ],
+    "parameter_size": "24b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

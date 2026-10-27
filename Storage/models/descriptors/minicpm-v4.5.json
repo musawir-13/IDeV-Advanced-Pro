@@ -1,0 +1,38 @@
+{
+  "name": "minicpm-v4.5",
+  "model": "minicpm-v4.5",
+  "description": "A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video Understanding on Your Phone",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "8b",
+    "q4_0",
+    "q4_1",
+    "q4_k_s",
+    "q4_k_m",
+    "q5_0",
+    "q5_1",
+    "q5_k_s",
+    "q5_k_m",
+    "q6_k",
+    "q8_0",
+    "f16"
+  ],
+  "updated": "June 2, 2026",
+  "downloads": "64,084",
+  "digest": "local-minicpm-v4_5",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "minicpm",
+    "families": [
+      "minicpm"
+    ],
+    "parameter_size": "8b, q4_0, q4_1, q4_k_s, q4_k_m, q5_0, q5_1, q5_k_s, q5_k_m, q6_k, q8_0, f16",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

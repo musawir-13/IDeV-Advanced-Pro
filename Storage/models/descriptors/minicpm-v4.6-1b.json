@@ -1,0 +1,27 @@
+{
+  "name": "minicpm-v4.6:1b",
+  "model": "minicpm-v4.6:1b",
+  "description": "A Pocket-Sized MLLM for Ultra-Efficient Image and Video Understanding on Your Phone (Type: 1b)",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "1b"
+  ],
+  "updated": "June 2, 2026",
+  "downloads": "80,144",
+  "digest": "local-minicpm-v4_6_1b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "minicpm-v4.6",
+    "format": "local",
+    "family": "minicpm",
+    "families": [
+      "minicpm"
+    ],
+    "parameter_size": "1B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

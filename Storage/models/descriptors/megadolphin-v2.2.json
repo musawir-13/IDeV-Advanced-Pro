@@ -1,0 +1,27 @@
+{
+  "name": "megadolphin:v2.2",
+  "model": "megadolphin:v2.2",
+  "description": "MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by interleaving the model with itself. (Type: v2.2)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "v2.2"
+  ],
+  "updated": "January 11, 2024",
+  "downloads": "588,035",
+  "digest": "local-megadolphin_v2_2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "megadolphin",
+    "format": "local",
+    "family": "megadolphin",
+    "families": [
+      "megadolphin"
+    ],
+    "parameter_size": "V2.2",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

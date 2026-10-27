@@ -1,0 +1,26 @@
+{
+  "name": "laya",
+  "model": "laya",
+  "description": "Laya is a 421M decision model from Convai Innovations, fine-tuned from ModernBERT-large.",
+  "capabilities": [
+    "embedding",
+    "decision"
+  ],
+  "parameter_sizes": [],
+  "updated": "October 16, 2026",
+  "downloads": "16,364",
+  "digest": "local-laya",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "laya",
+    "families": [
+      "laya"
+    ],
+    "parameter_size": "local",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

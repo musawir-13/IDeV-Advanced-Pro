@@ -1,0 +1,27 @@
+{
+  "name": "bge-large:335m",
+  "model": "bge-large:335m",
+  "description": "Embedding model from BAAI mapping texts to vectors. (Type: 335m)",
+  "capabilities": [
+    "embedding"
+  ],
+  "parameter_sizes": [
+    "335m"
+  ],
+  "updated": "August 7, 2024",
+  "downloads": "297,136",
+  "digest": "local-bge-large_335m",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "bge-large",
+    "format": "local",
+    "family": "bge",
+    "families": [
+      "bge"
+    ],
+    "parameter_size": "335M",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

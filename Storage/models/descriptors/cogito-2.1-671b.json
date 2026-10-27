@@ -1,0 +1,27 @@
+{
+  "name": "cogito-2.1:671b",
+  "model": "cogito-2.1:671b",
+  "description": "The Cogito v2.1 LLMs are instruction tuned generative models. All models are released under MIT license for commercial use. (Type: 671b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "671b"
+  ],
+  "updated": "November 19, 2025",
+  "downloads": "232,315",
+  "digest": "local-cogito-2_1_671b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "cogito-2.1",
+    "format": "local",
+    "family": "cogito",
+    "families": [
+      "cogito"
+    ],
+    "parameter_size": "671B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

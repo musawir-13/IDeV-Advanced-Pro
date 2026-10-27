@@ -1,0 +1,27 @@
+{
+  "name": "stable-code:code",
+  "model": "stable-code:code",
+  "description": "Stable Code 3B is a coding model with instruct and code completion variants on par with models such as Code Llama 7B that are 2.5x larger. (Type: code)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "code"
+  ],
+  "updated": "March 26, 2024",
+  "downloads": "1,105,763",
+  "digest": "local-stable-code_code",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "stable-code",
+    "format": "local",
+    "family": "stable",
+    "families": [
+      "stable"
+    ],
+    "parameter_size": "CODE",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

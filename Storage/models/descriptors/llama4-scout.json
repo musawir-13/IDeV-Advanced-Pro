@@ -1,0 +1,28 @@
+{
+  "name": "llama4:scout",
+  "model": "llama4:scout",
+  "description": "Meta's latest collection of multimodal models. (Type: scout)",
+  "capabilities": [
+    "vision",
+    "tools"
+  ],
+  "parameter_sizes": [
+    "scout"
+  ],
+  "updated": "June 16, 2025",
+  "downloads": "1,887,541",
+  "digest": "local-llama4_scout",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llama4",
+    "format": "local",
+    "family": "llama4",
+    "families": [
+      "llama4"
+    ],
+    "parameter_size": "SCOUT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

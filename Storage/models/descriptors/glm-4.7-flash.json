@@ -1,0 +1,30 @@
+{
+  "name": "glm-4.7-flash",
+  "model": "glm-4.7-flash",
+  "description": "As the strongest model in the 30B class, GLM-4.7-Flash offers a new option for lightweight deployment that balances performance and efficiency.",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "q4_k_m",
+    "q8_0",
+    "bf16"
+  ],
+  "updated": "June 5, 2026",
+  "downloads": "2,113,477",
+  "digest": "local-glm-4_7-flash",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "glm",
+    "families": [
+      "glm"
+    ],
+    "parameter_size": "q4_k_m, q8_0, bf16",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

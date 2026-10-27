@@ -1,0 +1,28 @@
+{
+  "name": "nemotron-3.5-lightning:30b-a3b-nvfp4",
+  "model": "nemotron-3.5-lightning:30b-a3b-nvfp4",
+  "description": "NVIDIA Nemotron 3.5 Lightning is an open 30B mixture-of-experts (MoE) model with 3B active parameters built for always-on agents. (Type: 30b-a3b-nvfp4)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "30b-a3b-nvfp4"
+  ],
+  "updated": "October 16, 2026",
+  "downloads": "269,472",
+  "digest": "local-nemotron-3_5-lightning_30b-a3b-nvfp4",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "nemotron-3.5-lightning",
+    "format": "local",
+    "family": "nemotron",
+    "families": [
+      "nemotron"
+    ],
+    "parameter_size": "30B-A3B-NVFP4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

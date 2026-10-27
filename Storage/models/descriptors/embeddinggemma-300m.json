@@ -1,0 +1,27 @@
+{
+  "name": "embeddinggemma:300m",
+  "model": "embeddinggemma:300m",
+  "description": "EmbeddingGemma is a 300M parameter embedding model from Google. (Type: 300m)",
+  "capabilities": [
+    "embedding"
+  ],
+  "parameter_sizes": [
+    "300m"
+  ],
+  "updated": "September 9, 2025",
+  "downloads": "2,623,700",
+  "digest": "local-embeddinggemma_300m",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "embeddinggemma",
+    "format": "local",
+    "family": "embeddinggemma",
+    "families": [
+      "embeddinggemma"
+    ],
+    "parameter_size": "300M",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

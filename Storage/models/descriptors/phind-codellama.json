@@ -1,0 +1,29 @@
+{
+  "name": "phind-codellama",
+  "model": "phind-codellama",
+  "description": "Code generation model based on Code Llama.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "34b",
+    "34b-python",
+    "34b-v2"
+  ],
+  "updated": "December 28, 2023",
+  "downloads": "1,018,220",
+  "digest": "local-phind-codellama",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "phind",
+    "families": [
+      "phind"
+    ],
+    "parameter_size": "34b, 34b-python, 34b-v2",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

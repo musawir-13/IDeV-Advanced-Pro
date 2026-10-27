@@ -1,0 +1,30 @@
+{
+  "name": "gemma4:e2b-it-qat",
+  "model": "gemma4:e2b-it-qat",
+  "description": "Gemma 4 models are designed to deliver frontier-level performance at each size. They are well-suited for reasoning, agentic workflows, coding, and multimodal understanding. (Type: e2b-it-qat)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "audio"
+  ],
+  "parameter_sizes": [
+    "e2b-it-qat"
+  ],
+  "updated": "October 12, 2026",
+  "downloads": "27,930,246",
+  "digest": "local-gemma4_e2b-it-qat",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "gemma4",
+    "format": "local",
+    "family": "gemma4",
+    "families": [
+      "gemma4"
+    ],
+    "parameter_size": "E2B-IT-QAT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

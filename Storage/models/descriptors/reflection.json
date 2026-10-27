@@ -1,0 +1,27 @@
+{
+  "name": "reflection",
+  "model": "reflection",
+  "description": "A high-performing model trained with a new technique called Reflection-tuning that teaches a LLM to detect mistakes in its reasoning and correct course.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "70b"
+  ],
+  "updated": "September 9, 2024",
+  "downloads": "634,433",
+  "digest": "local-reflection",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "reflection",
+    "families": [
+      "reflection"
+    ],
+    "parameter_size": "70b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

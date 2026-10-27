@@ -1,0 +1,27 @@
+{
+  "name": "wizardcoder:33b-v1.1",
+  "model": "wizardcoder:33b-v1.1",
+  "description": "State-of-the-art code generation model (Type: 33b-v1.1)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "33b-v1.1"
+  ],
+  "updated": "January 5, 2024",
+  "downloads": "1,655,505",
+  "digest": "local-wizardcoder_33b-v1_1",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "wizardcoder",
+    "format": "local",
+    "family": "wizardcoder",
+    "families": [
+      "wizardcoder"
+    ],
+    "parameter_size": "33B-V1.1",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

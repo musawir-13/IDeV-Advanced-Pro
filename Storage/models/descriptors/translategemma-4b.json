@@ -1,0 +1,27 @@
+{
+  "name": "translategemma:4b",
+  "model": "translategemma:4b",
+  "description": "A new collection of open translation models built on Gemma 3, helping people communicate across 55 languages. (Type: 4b)",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "4b"
+  ],
+  "updated": "January 16, 2026",
+  "downloads": "2,758,447",
+  "digest": "local-translategemma_4b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "translategemma",
+    "format": "local",
+    "family": "translategemma",
+    "families": [
+      "translategemma"
+    ],
+    "parameter_size": "4B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

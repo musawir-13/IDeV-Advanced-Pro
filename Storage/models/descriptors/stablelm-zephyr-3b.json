@@ -1,0 +1,27 @@
+{
+  "name": "stablelm-zephyr:3b",
+  "model": "stablelm-zephyr:3b",
+  "description": "A lightweight chat model allowing accurate, and responsive output without requiring high-end hardware. (Type: 3b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "3b"
+  ],
+  "updated": "December 27, 2023",
+  "downloads": "551,514",
+  "digest": "local-stablelm-zephyr_3b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "stablelm-zephyr",
+    "format": "local",
+    "family": "stablelm",
+    "families": [
+      "stablelm"
+    ],
+    "parameter_size": "3B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

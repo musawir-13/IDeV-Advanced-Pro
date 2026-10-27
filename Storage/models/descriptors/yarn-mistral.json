@@ -1,0 +1,29 @@
+{
+  "name": "yarn-mistral",
+  "model": "yarn-mistral",
+  "description": "An extension of Mistral to support context windows of 64K or 128K.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b",
+    "7b-128k",
+    "7b-64k"
+  ],
+  "updated": "November 4, 2023",
+  "downloads": "934,071",
+  "digest": "local-yarn-mistral",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "yarn",
+    "families": [
+      "yarn"
+    ],
+    "parameter_size": "7b, 7b-128k, 7b-64k",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

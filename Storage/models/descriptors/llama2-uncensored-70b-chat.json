@@ -1,0 +1,27 @@
+{
+  "name": "llama2-uncensored:70b-chat",
+  "model": "llama2-uncensored:70b-chat",
+  "description": "Uncensored Llama 2 model by George Sung and Jarrad Hope. (Type: 70b-chat)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "70b-chat"
+  ],
+  "updated": "October 29, 2023",
+  "downloads": "2,749,980",
+  "digest": "local-llama2-uncensored_70b-chat",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llama2-uncensored",
+    "format": "local",
+    "family": "llama2",
+    "families": [
+      "llama2"
+    ],
+    "parameter_size": "70B-CHAT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

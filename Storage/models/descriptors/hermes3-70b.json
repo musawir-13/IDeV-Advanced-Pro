@@ -1,0 +1,27 @@
+{
+  "name": "hermes3:70b",
+  "model": "hermes3:70b",
+  "description": "Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous Research (Type: 70b)",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "70b"
+  ],
+  "updated": "December 16, 2024",
+  "downloads": "1,766,137",
+  "digest": "local-hermes3_70b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "hermes3",
+    "format": "local",
+    "family": "hermes3",
+    "families": [
+      "hermes3"
+    ],
+    "parameter_size": "70B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

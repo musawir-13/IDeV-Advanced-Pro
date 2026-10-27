@@ -1,0 +1,28 @@
+{
+  "name": "openthinker",
+  "model": "openthinker",
+  "description": "A fully open-source family of reasoning models built using a dataset derived by distilling DeepSeek-R1.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b",
+    "32b"
+  ],
+  "updated": "April 4, 2025",
+  "downloads": "1,181,146",
+  "digest": "local-openthinker",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "openthinker",
+    "families": [
+      "openthinker"
+    ],
+    "parameter_size": "7b, 32b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

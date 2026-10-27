@@ -1,0 +1,28 @@
+{
+  "name": "qwen3-next:80b",
+  "model": "qwen3-next:80b",
+  "description": "The first installment in the Qwen3-Next series with strong performance in terms of both parameter efficiency and inference speed. (Type: 80b)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "80b"
+  ],
+  "updated": "December 5, 2025",
+  "downloads": "606,703",
+  "digest": "local-qwen3-next_80b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen3-next",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "80B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

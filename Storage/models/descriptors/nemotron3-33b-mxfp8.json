@@ -1,0 +1,30 @@
+{
+  "name": "nemotron3:33b-mxfp8",
+  "model": "nemotron3:33b-mxfp8",
+  "description": "NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that unifies video, audio, image, and text understanding to support enterprise-grade Q&A, summarization, transcription, and document intelligence workflows. (Type: 33b-mxfp8)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "audio"
+  ],
+  "parameter_sizes": [
+    "33b-mxfp8"
+  ],
+  "updated": "October 18, 2026",
+  "downloads": "702,109",
+  "digest": "local-nemotron3_33b-mxfp8",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "nemotron3",
+    "format": "local",
+    "family": "nemotron3",
+    "families": [
+      "nemotron3"
+    ],
+    "parameter_size": "33B-MXFP8",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

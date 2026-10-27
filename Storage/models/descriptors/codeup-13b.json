@@ -1,0 +1,27 @@
+{
+  "name": "codeup:13b",
+  "model": "codeup:13b",
+  "description": "Great code generation model based on Llama2. (Type: 13b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "13b"
+  ],
+  "updated": "October 29, 2023",
+  "downloads": "615,275",
+  "digest": "local-codeup_13b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "codeup",
+    "format": "local",
+    "family": "codeup",
+    "families": [
+      "codeup"
+    ],
+    "parameter_size": "13B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "command-a",
+  "model": "command-a",
+  "description": "111 billion parameter model optimized for demanding enterprises that require fast, secure, and high-quality AI",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "111b"
+  ],
+  "updated": "March 13, 2025",
+  "downloads": "239,673",
+  "digest": "local-command-a",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "command",
+    "families": [
+      "command"
+    ],
+    "parameter_size": "111b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

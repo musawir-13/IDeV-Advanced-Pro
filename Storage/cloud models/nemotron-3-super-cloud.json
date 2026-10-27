@@ -1,0 +1,26 @@
+{
+  "name": "nemotron-3-super:cloud",
+  "model": "nemotron-3-super:cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-nemotron-3-super_cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "nemotron",
+    "families": [
+      "nemotron",
+      "cloud"
+    ],
+    "parameter_size": "CLOUD",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "NVIDIA Nemotron 3 Super is a 120B open MoE model activating just 12B parameters to deliver maximum compute efficiency and accuracy for complex multi-agent applications."
+}

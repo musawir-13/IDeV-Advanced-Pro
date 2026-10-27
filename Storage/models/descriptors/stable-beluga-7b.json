@@ -1,0 +1,27 @@
+{
+  "name": "stable-beluga:7b",
+  "model": "stable-beluga:7b",
+  "description": "Llama 2 based model fine tuned on an Orca-style dataset. Originally called Free Willy. (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "October 29, 2023",
+  "downloads": "988,523",
+  "digest": "local-stable-beluga_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "stable-beluga",
+    "format": "local",
+    "family": "stable",
+    "families": [
+      "stable"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

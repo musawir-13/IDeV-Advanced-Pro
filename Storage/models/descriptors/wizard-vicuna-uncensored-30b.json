@@ -1,0 +1,27 @@
+{
+  "name": "wizard-vicuna-uncensored:30b",
+  "model": "wizard-vicuna-uncensored:30b",
+  "description": "Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on Llama 2 uncensored by Eric Hartford. (Type: 30b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "30b"
+  ],
+  "updated": "October 28, 2023",
+  "downloads": "1,324,440",
+  "digest": "local-wizard-vicuna-uncensored_30b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "wizard-vicuna-uncensored",
+    "format": "local",
+    "family": "wizard",
+    "families": [
+      "wizard"
+    ],
+    "parameter_size": "30B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

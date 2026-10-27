@@ -1,0 +1,27 @@
+{
+  "name": "samantha-mistral:7b-text",
+  "model": "samantha-mistral:7b-text",
+  "description": "A companion assistant trained in philosophy, psychology, and personal relationships. Based on Mistral. (Type: 7b-text)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b-text"
+  ],
+  "updated": "October 15, 2023",
+  "downloads": "1,052,178",
+  "digest": "local-samantha-mistral_7b-text",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "samantha-mistral",
+    "format": "local",
+    "family": "samantha",
+    "families": [
+      "samantha"
+    ],
+    "parameter_size": "7B-TEXT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

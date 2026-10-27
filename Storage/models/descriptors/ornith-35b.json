@@ -1,0 +1,28 @@
+{
+  "name": "ornith:35b",
+  "model": "ornith:35b",
+  "description": "A self-improving family of open-source models for agentic coding (Type: 35b)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "35b"
+  ],
+  "updated": "June 27, 2026",
+  "downloads": "689,849",
+  "digest": "local-ornith_35b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "ornith",
+    "format": "local",
+    "family": "ornith",
+    "families": [
+      "ornith"
+    ],
+    "parameter_size": "35B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

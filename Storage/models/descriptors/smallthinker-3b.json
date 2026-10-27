@@ -1,0 +1,27 @@
+{
+  "name": "smallthinker:3b",
+  "model": "smallthinker:3b",
+  "description": "A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model. (Type: 3b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "3b"
+  ],
+  "updated": "December 30, 2024",
+  "downloads": "268,611",
+  "digest": "local-smallthinker_3b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "smallthinker",
+    "format": "local",
+    "family": "smallthinker",
+    "families": [
+      "smallthinker"
+    ],
+    "parameter_size": "3B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

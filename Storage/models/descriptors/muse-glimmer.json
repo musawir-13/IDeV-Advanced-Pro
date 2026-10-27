@@ -1,0 +1,31 @@
+{
+  "name": "muse-glimmer",
+  "model": "muse-glimmer",
+  "description": "Meta's latest open model built for always-on local agents. 30B parameters, licensed under Apache 2.0 and runs on a single GPU — tuned for tool use, long tasks, and failure recovery.",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "30b",
+    "30b-mxfp8",
+    "30b-nvfp4"
+  ],
+  "updated": "August 28, 2026",
+  "downloads": "339,675",
+  "digest": "local-muse-glimmer",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "muse",
+    "families": [
+      "muse"
+    ],
+    "parameter_size": "30b, 30b-mxfp8, 30b-nvfp4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

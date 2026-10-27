@@ -1,0 +1,28 @@
+{
+  "name": "everythinglm",
+  "model": "everythinglm",
+  "description": "Uncensored Llama2 based model with support for a 16K context window.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "13b",
+    "13b-16k"
+  ],
+  "updated": "December 27, 2023",
+  "downloads": "587,270",
+  "digest": "local-everythinglm",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "everythinglm",
+    "families": [
+      "everythinglm"
+    ],
+    "parameter_size": "13b, 13b-16k",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

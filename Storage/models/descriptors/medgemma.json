@@ -1,0 +1,28 @@
+{
+  "name": "medgemma",
+  "model": "medgemma",
+  "description": "MedGemma is a collection of Gemma 3 variants that are trained for performance on medical text and image comprehension.",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "4b",
+    "27b"
+  ],
+  "updated": "April 16, 2026",
+  "downloads": "464,845",
+  "digest": "local-medgemma",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "medgemma",
+    "families": [
+      "medgemma"
+    ],
+    "parameter_size": "4b, 27b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "granite4.1-guardian",
+  "model": "granite4.1-guardian",
+  "description": "Granite Guardian 4.1 is a specialized safety and judging model from IBM Research that evaluates whether LLM prompts and responses meet specified harm criteria.",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "8b"
+  ],
+  "updated": "June 10, 2026",
+  "downloads": "43,214",
+  "digest": "local-granite4_1-guardian",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "granite4",
+    "families": [
+      "granite4"
+    ],
+    "parameter_size": "8b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

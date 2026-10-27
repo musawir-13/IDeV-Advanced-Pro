@@ -1,0 +1,28 @@
+{
+  "name": "gemma3n",
+  "model": "gemma3n",
+  "description": "Gemma 3n models are designed for efficient execution on everyday devices such as laptops, tablets or phones.",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "e2b",
+    "e4b"
+  ],
+  "updated": "October 14, 2026",
+  "downloads": "2,371,760",
+  "digest": "local-gemma3n",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "gemma3n",
+    "families": [
+      "gemma3n"
+    ],
+    "parameter_size": "e2b, e4b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

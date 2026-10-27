@@ -1,0 +1,27 @@
+{
+  "name": "starcoder:15b-plus",
+  "model": "starcoder:15b-plus",
+  "description": "StarCoder is a code generation model trained on 80&#43; programming languages. (Type: 15b-plus)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "15b-plus"
+  ],
+  "updated": "October 24, 2023",
+  "downloads": "1,764,491",
+  "digest": "local-starcoder_15b-plus",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "starcoder",
+    "format": "local",
+    "family": "starcoder",
+    "families": [
+      "starcoder"
+    ],
+    "parameter_size": "15B-PLUS",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

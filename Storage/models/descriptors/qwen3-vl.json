@@ -1,0 +1,44 @@
+{
+  "name": "qwen3-vl",
+  "model": "qwen3-vl",
+  "description": "The most powerful vision-language model in the Qwen model family to date.",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "2b",
+    "4b",
+    "8b",
+    "30b",
+    "32b",
+    "235b",
+    "2b-instruct",
+    "2b-thinking",
+    "4b-instruct",
+    "4b-thinking",
+    "8b-instruct",
+    "8b-thinking",
+    "30b-a3b",
+    "32b-instruct",
+    "32b-thinking",
+    "235b-a22b"
+  ],
+  "updated": "October 20, 2026",
+  "downloads": "6,865,431",
+  "digest": "local-qwen3-vl",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "2b, 4b, 8b, 30b, 32b, 235b, 2b-instruct, 2b-thinking, 4b-instruct, 4b-thinking, 8b-instruct, 8b-thinking, 30b-a3b, 32b-instruct, 32b-thinking, 235b-a22b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

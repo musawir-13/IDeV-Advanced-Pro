@@ -1,0 +1,27 @@
+{
+  "name": "marco-o1:7b",
+  "model": "marco-o1:7b",
+  "description": "An open large reasoning model for real-world solutions by the Alibaba International Digital Commerce Group (AIDC-AI). (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "December 4, 2024",
+  "downloads": "220,912",
+  "digest": "local-marco-o1_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "marco-o1",
+    "format": "local",
+    "family": "marco",
+    "families": [
+      "marco"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

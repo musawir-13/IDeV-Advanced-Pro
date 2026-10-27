@@ -1,0 +1,27 @@
+{
+  "name": "starcoder:3b-base",
+  "model": "starcoder:3b-base",
+  "description": "StarCoder is a code generation model trained on 80&#43; programming languages. (Type: 3b-base)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "3b-base"
+  ],
+  "updated": "October 24, 2023",
+  "downloads": "1,764,491",
+  "digest": "local-starcoder_3b-base",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "starcoder",
+    "format": "local",
+    "family": "starcoder",
+    "families": [
+      "starcoder"
+    ],
+    "parameter_size": "3B-BASE",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

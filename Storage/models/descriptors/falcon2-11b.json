@@ -1,0 +1,27 @@
+{
+  "name": "falcon2:11b",
+  "model": "falcon2:11b",
+  "description": "Falcon2 is an 11B parameters causal decoder-only model built by TII and trained over 5T tokens. (Type: 11b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "11b"
+  ],
+  "updated": "May 14, 2024",
+  "downloads": "558,829",
+  "digest": "local-falcon2_11b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "falcon2",
+    "format": "local",
+    "family": "falcon2",
+    "families": [
+      "falcon2"
+    ],
+    "parameter_size": "11B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

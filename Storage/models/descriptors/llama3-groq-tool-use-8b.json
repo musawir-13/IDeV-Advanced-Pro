@@ -1,0 +1,27 @@
+{
+  "name": "llama3-groq-tool-use:8b",
+  "model": "llama3-groq-tool-use:8b",
+  "description": "A series of models from Groq that represent a significant advancement in open-source AI capabilities for tool use/function calling. (Type: 8b)",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "8b"
+  ],
+  "updated": "July 25, 2024",
+  "downloads": "1,037,313",
+  "digest": "local-llama3-groq-tool-use_8b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llama3-groq-tool-use",
+    "format": "local",
+    "family": "llama3",
+    "families": [
+      "llama3"
+    ],
+    "parameter_size": "8B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

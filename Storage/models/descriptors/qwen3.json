@@ -1,0 +1,43 @@
+{
+  "name": "qwen3",
+  "model": "qwen3",
+  "description": "Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models.",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "0.6b",
+    "1.7b",
+    "4b",
+    "8b",
+    "14b",
+    "30b",
+    "32b",
+    "235b",
+    "4b-instruct",
+    "4b-thinking",
+    "30b-a3b",
+    "30b-instruct",
+    "30b-thinking",
+    "235b-a22b",
+    "235b-instruct",
+    "235b-thinking"
+  ],
+  "updated": "October 10, 2025",
+  "downloads": "41,632,422",
+  "digest": "local-qwen3",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "0.6b, 1.7b, 4b, 8b, 14b, 30b, 32b, 235b, 4b-instruct, 4b-thinking, 30b-a3b, 30b-instruct, 30b-thinking, 235b-a22b, 235b-instruct, 235b-thinking",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

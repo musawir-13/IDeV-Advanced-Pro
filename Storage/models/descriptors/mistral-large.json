@@ -1,0 +1,27 @@
+{
+  "name": "mistral-large",
+  "model": "mistral-large",
+  "description": "Mistral Large 2 is Mistral's new flagship model that is significantly more capable in code generation, mathematics, and reasoning with 128k context window and support for dozens of languages.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "123b"
+  ],
+  "updated": "November 22, 2024",
+  "downloads": "1,340,209",
+  "digest": "local-mistral-large",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "mistral",
+    "families": [
+      "mistral"
+    ],
+    "parameter_size": "123b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

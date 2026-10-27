@@ -1,0 +1,27 @@
+{
+  "name": "deepseek-llm:67b-base",
+  "model": "deepseek-llm:67b-base",
+  "description": "An advanced language model crafted with 2 trillion bilingual tokens. (Type: 67b-base)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "67b-base"
+  ],
+  "updated": "December 11, 2023",
+  "downloads": "1,275,333",
+  "digest": "local-deepseek-llm_67b-base",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "deepseek-llm",
+    "format": "local",
+    "family": "deepseek",
+    "families": [
+      "deepseek"
+    ],
+    "parameter_size": "67B-BASE",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

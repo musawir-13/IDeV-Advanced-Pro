@@ -1,0 +1,28 @@
+{
+  "name": "granite3.2-vision:2b",
+  "model": "granite3.2-vision:2b",
+  "description": "A compact and efficient vision-language model, specifically designed for visual document understanding, enabling automated content extraction from tables, charts, infographics, plots, diagrams, and more. (Type: 2b)",
+  "capabilities": [
+    "vision",
+    "tools"
+  ],
+  "parameter_sizes": [
+    "2b"
+  ],
+  "updated": "February 27, 2025",
+  "downloads": "1,026,195",
+  "digest": "local-granite3_2-vision_2b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "granite3.2-vision",
+    "format": "local",
+    "family": "granite3",
+    "families": [
+      "granite3"
+    ],
+    "parameter_size": "2B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

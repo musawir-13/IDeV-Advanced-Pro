@@ -1,0 +1,27 @@
+{
+  "name": "xwinlm:7b-v0.1",
+  "model": "xwinlm:7b-v0.1",
+  "description": "Conversational model based on Llama 2 that performs competitively on various benchmarks. (Type: 7b-v0.1)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b-v0.1"
+  ],
+  "updated": "November 4, 2023",
+  "downloads": "1,064,465",
+  "digest": "local-xwinlm_7b-v0_1",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "xwinlm",
+    "format": "local",
+    "family": "xwinlm",
+    "families": [
+      "xwinlm"
+    ],
+    "parameter_size": "7B-V0.1",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

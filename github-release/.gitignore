@@ -1,0 +1,11 @@
+# Ignore large binary installers in git history (release assets belong on GitHub Releases)
+output/*.exe
+*.exe
+*.msi
+*.zip
+*.tar.gz
+
+# OS artifacts
+Thumbs.db
+.DS_Store
+desktop.ini

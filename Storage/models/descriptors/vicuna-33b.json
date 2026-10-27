@@ -1,0 +1,27 @@
+{
+  "name": "vicuna:33b",
+  "model": "vicuna:33b",
+  "description": "General use chat model based on Llama and Llama 2 with 2K to 16K context sizes. (Type: 33b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "33b"
+  ],
+  "updated": "October 28, 2023",
+  "downloads": "1,303,741",
+  "digest": "local-vicuna_33b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "vicuna",
+    "format": "local",
+    "family": "vicuna",
+    "families": [
+      "vicuna"
+    ],
+    "parameter_size": "33B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

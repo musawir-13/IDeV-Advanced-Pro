@@ -1,0 +1,31 @@
+{
+  "name": "starcoder2",
+  "model": "starcoder2",
+  "description": "StarCoder2 is the next generation of transparently trained open code LLMs that comes in three sizes: 3B, 7B and 15B parameters.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "3b",
+    "7b",
+    "15b",
+    "instruct",
+    "15b-instruct"
+  ],
+  "updated": "September 6, 2024",
+  "downloads": "3,056,136",
+  "digest": "local-starcoder2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "starcoder2",
+    "families": [
+      "starcoder2"
+    ],
+    "parameter_size": "3b, 7b, 15b, instruct, 15b-instruct",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

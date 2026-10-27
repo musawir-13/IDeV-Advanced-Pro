@@ -1,0 +1,27 @@
+{
+  "name": "llama2:text",
+  "model": "llama2:text",
+  "description": "Llama 2 is a collection of foundation language models ranging from 7B to 70B parameters. (Type: text)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "text"
+  ],
+  "updated": "December 27, 2023",
+  "downloads": "7,595,086",
+  "digest": "local-llama2_text",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llama2",
+    "format": "local",
+    "family": "llama2",
+    "families": [
+      "llama2"
+    ],
+    "parameter_size": "TEXT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

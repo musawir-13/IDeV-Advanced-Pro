@@ -1,0 +1,27 @@
+{
+  "name": "bakllava:7b",
+  "model": "bakllava:7b",
+  "description": "BakLLaVA is a multimodal model consisting of the Mistral 7B base model augmented with the LLaVA  architecture. (Type: 7b)",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "December 13, 2023",
+  "downloads": "910,493",
+  "digest": "local-bakllava_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "bakllava",
+    "format": "local",
+    "family": "bakllava",
+    "families": [
+      "bakllava"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

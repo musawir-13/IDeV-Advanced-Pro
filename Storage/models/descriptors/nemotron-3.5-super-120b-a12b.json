@@ -1,0 +1,29 @@
+{
+  "name": "nemotron-3.5-super:120b-a12b",
+  "model": "nemotron-3.5-super:120b-a12b",
+  "description": "Nemotron 3.5 Super is NVIDIA’s vision-language model for coding, reasoning, tool use, and document understanding (Type: 120b-a12b)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "120b-a12b"
+  ],
+  "updated": "October 15, 2026",
+  "downloads": "17,006",
+  "digest": "local-nemotron-3_5-super_120b-a12b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "nemotron-3.5-super",
+    "format": "local",
+    "family": "nemotron",
+    "families": [
+      "nemotron"
+    ],
+    "parameter_size": "120B-A12B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

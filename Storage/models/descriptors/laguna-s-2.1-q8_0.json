@@ -1,0 +1,28 @@
+{
+  "name": "laguna-s-2.1:q8_0",
+  "model": "laguna-s-2.1:q8_0",
+  "description": "Our most capable model to date, designed for long-horizon work. 70.2% on Terminal-Bench 2.1 at 118B-A8B. (Type: q8_0)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "q8_0"
+  ],
+  "updated": "August 28, 2026",
+  "downloads": "182,301",
+  "digest": "local-laguna-s-2_1_q8_0",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "laguna-s-2.1",
+    "format": "local",
+    "family": "laguna",
+    "families": [
+      "laguna"
+    ],
+    "parameter_size": "Q8_0",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

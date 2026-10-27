@@ -1,0 +1,34 @@
+{
+  "name": "stablelm2",
+  "model": "stablelm2",
+  "description": "Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model trained on multilingual data in English, Spanish, German, Italian, French, Portuguese, and Dutch.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "1.6b",
+    "12b",
+    "chat",
+    "zephyr",
+    "1.6b-chat",
+    "1.6b-zephyr",
+    "12b-chat",
+    "12b-text"
+  ],
+  "updated": "May 7, 2024",
+  "downloads": "1,141,794",
+  "digest": "local-stablelm2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "stablelm2",
+    "families": [
+      "stablelm2"
+    ],
+    "parameter_size": "1.6b, 12b, chat, zephyr, 1.6b-chat, 1.6b-zephyr, 12b-chat, 12b-text",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

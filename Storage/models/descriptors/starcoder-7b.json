@@ -1,0 +1,27 @@
+{
+  "name": "starcoder:7b",
+  "model": "starcoder:7b",
+  "description": "StarCoder is a code generation model trained on 80&#43; programming languages. (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "October 24, 2023",
+  "downloads": "1,764,491",
+  "digest": "local-starcoder_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "starcoder",
+    "format": "local",
+    "family": "starcoder",
+    "families": [
+      "starcoder"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

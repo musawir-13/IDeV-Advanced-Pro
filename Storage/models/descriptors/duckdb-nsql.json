@@ -1,0 +1,27 @@
+{
+  "name": "duckdb-nsql",
+  "model": "duckdb-nsql",
+  "description": "7B parameter text-to-SQL model made by MotherDuck and Numbers Station.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "January 29, 2024",
+  "downloads": "546,177",
+  "digest": "local-duckdb-nsql",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "duckdb",
+    "families": [
+      "duckdb"
+    ],
+    "parameter_size": "7b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

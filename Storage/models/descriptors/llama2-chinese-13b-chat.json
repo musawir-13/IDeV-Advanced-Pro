@@ -1,0 +1,27 @@
+{
+  "name": "llama2-chinese:13b-chat",
+  "model": "llama2-chinese:13b-chat",
+  "description": "Llama 2 based model fine tuned to improve Chinese dialogue ability. (Type: 13b-chat)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "13b-chat"
+  ],
+  "updated": "October 28, 2023",
+  "downloads": "1,164,003",
+  "digest": "local-llama2-chinese_13b-chat",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llama2-chinese",
+    "format": "local",
+    "family": "llama2",
+    "families": [
+      "llama2"
+    ],
+    "parameter_size": "13B-CHAT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

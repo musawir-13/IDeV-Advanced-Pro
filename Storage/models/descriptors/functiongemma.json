@@ -1,0 +1,27 @@
+{
+  "name": "functiongemma",
+  "model": "functiongemma",
+  "description": "FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-tuned explicitly for function calling.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "270m"
+  ],
+  "updated": "December 18, 2025",
+  "downloads": "206,024",
+  "digest": "local-functiongemma",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "functiongemma",
+    "families": [
+      "functiongemma"
+    ],
+    "parameter_size": "270m",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

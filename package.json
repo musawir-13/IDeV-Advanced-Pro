@@ -1,0 +1,78 @@
+{
+  "name": "idev-advanced-pro",
+  "version": "1.0.0",
+  "description": "IDeV Advanced Pro - Autonomous AI Desktop Workspace with full local model support",
+  "main": "main.js",
+  "author": "IDeV",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "pack": "electron-builder --dir"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.idev.advanced.pro",
+    "productName": "IDeV Advanced Pro",
+    "copyright": "Copyright © 2026 IDeV. All rights reserved.",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "server.js",
+      "public/**/*",
+      "assets/**/*",
+      "Storage/models/catalog.json",
+      "Storage/models/descriptors/**/*",
+      "Storage/cloud models/catalog.json",
+      "Storage/cloud models/descriptors/**/*",
+      "package.json",
+      "README.md",
+      "!Storage/models/blobs/**",
+      "!Storage/models/manifests/**",
+      "!Storage/chats/**",
+      "!scratch/**",
+      "!*.ps1",
+      "!**/*.map",
+      "!**/*.pdb"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "legalTrademarks": "IDeV™",
+      "requestedExecutionLevel": "asInvoker",
+      "artifactName": "IDeV-Advanced-Pro-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "packElevateHelper": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "IDeV Advanced Pro",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false,
+      "installerIcon": "assets/installerIcon.ico",
+      "uninstallerIcon": "assets/uninstallerIcon.ico",
+      "installerHeader": "assets/installerHeader.bmp",
+      "installerHeaderIcon": "assets/installerIcon.ico",
+      "installerSidebar": "assets/installerSidebar.bmp",
+      "uninstallerSidebar": "assets/uninstallerSidebar.bmp",
+      "uninstallDisplayName": "IDeV Advanced Pro ${version}"
+    }
+  }
+}

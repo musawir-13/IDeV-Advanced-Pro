@@ -1,0 +1,29 @@
+{
+  "name": "qwen3-vl:4b-thinking",
+  "model": "qwen3-vl:4b-thinking",
+  "description": "The most powerful vision-language model in the Qwen model family to date. (Type: 4b-thinking)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "4b-thinking"
+  ],
+  "updated": "October 20, 2026",
+  "downloads": "6,865,431",
+  "digest": "local-qwen3-vl_4b-thinking",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen3-vl",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "4B-THINKING",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

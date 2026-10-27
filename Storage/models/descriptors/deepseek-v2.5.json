@@ -1,0 +1,27 @@
+{
+  "name": "deepseek-v2.5",
+  "model": "deepseek-v2.5",
+  "description": "An upgraded version of DeekSeek-V2  that integrates the general and coding abilities of both DeepSeek-V2-Chat and DeepSeek-Coder-V2-Instruct.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "236b"
+  ],
+  "updated": "September 11, 2024",
+  "downloads": "302,104",
+  "digest": "local-deepseek-v2_5",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "deepseek",
+    "families": [
+      "deepseek"
+    ],
+    "parameter_size": "236b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

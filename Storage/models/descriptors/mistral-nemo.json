@@ -1,0 +1,27 @@
+{
+  "name": "mistral-nemo",
+  "model": "mistral-nemo",
+  "description": "A state-of-the-art 12B model with 128k context length, built by Mistral AI in collaboration with NVIDIA.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "12b"
+  ],
+  "updated": "July 23, 2025",
+  "downloads": "5,754,014",
+  "digest": "local-mistral-nemo",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "mistral",
+    "families": [
+      "mistral"
+    ],
+    "parameter_size": "12b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

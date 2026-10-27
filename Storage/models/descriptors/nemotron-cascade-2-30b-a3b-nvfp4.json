@@ -1,0 +1,28 @@
+{
+  "name": "nemotron-cascade-2:30b-a3b-nvfp4",
+  "model": "nemotron-cascade-2:30b-a3b-nvfp4",
+  "description": "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers strong reasoning and agentic capabilities. (Type: 30b-a3b-nvfp4)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "30b-a3b-nvfp4"
+  ],
+  "updated": "October 19, 2026",
+  "downloads": "159,574",
+  "digest": "local-nemotron-cascade-2_30b-a3b-nvfp4",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "nemotron-cascade-2",
+    "format": "local",
+    "family": "nemotron",
+    "families": [
+      "nemotron"
+    ],
+    "parameter_size": "30B-A3B-NVFP4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

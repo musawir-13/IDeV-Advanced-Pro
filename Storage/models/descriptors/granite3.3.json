@@ -1,0 +1,28 @@
+{
+  "name": "granite3.3",
+  "model": "granite3.3",
+  "description": "IBM Granite 2B and 8B models are 128K context length language models that have been fine-tuned for improved reasoning and instruction-following capabilities.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "2b",
+    "8b"
+  ],
+  "updated": "April 16, 2025",
+  "downloads": "1,136,593",
+  "digest": "local-granite3_3",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "granite3",
+    "families": [
+      "granite3"
+    ],
+    "parameter_size": "2b, 8b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

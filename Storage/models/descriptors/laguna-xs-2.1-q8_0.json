@@ -1,0 +1,28 @@
+{
+  "name": "laguna-xs-2.1:q8_0",
+  "model": "laguna-xs-2.1:q8_0",
+  "description": "Laguna XS 2.1 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work on a local machine. (Type: q8_0)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "q8_0"
+  ],
+  "updated": "August 31, 2026",
+  "downloads": "144,433",
+  "digest": "local-laguna-xs-2_1_q8_0",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "laguna-xs-2.1",
+    "format": "local",
+    "family": "laguna",
+    "families": [
+      "laguna"
+    ],
+    "parameter_size": "Q8_0",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

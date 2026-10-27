@@ -1,0 +1,38 @@
+{
+  "name": "granite-code",
+  "model": "granite-code",
+  "description": "A family of open foundation models by IBM for Code Intelligence",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "3b",
+    "8b",
+    "20b",
+    "34b",
+    "3b-base",
+    "3b-instruct",
+    "8b-base",
+    "8b-instruct",
+    "20b-base",
+    "20b-instruct",
+    "34b-base",
+    "34b-instruct"
+  ],
+  "updated": "September 3, 2024",
+  "downloads": "1,665,932",
+  "digest": "local-granite-code",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "granite",
+    "families": [
+      "granite"
+    ],
+    "parameter_size": "3b, 8b, 20b, 34b, 3b-base, 3b-instruct, 8b-base, 8b-instruct, 20b-base, 20b-instruct, 34b-base, 34b-instruct",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

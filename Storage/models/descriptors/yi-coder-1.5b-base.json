@@ -1,0 +1,27 @@
+{
+  "name": "yi-coder:1.5b-base",
+  "model": "yi-coder:1.5b-base",
+  "description": "Yi-Coder is a series of open-source code language models that delivers state-of-the-art coding performance with fewer than 10 billion parameters. (Type: 1.5b-base)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "1.5b-base"
+  ],
+  "updated": "September 11, 2024",
+  "downloads": "1,132,233",
+  "digest": "local-yi-coder_1_5b-base",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "yi-coder",
+    "format": "local",
+    "family": "yi",
+    "families": [
+      "yi"
+    ],
+    "parameter_size": "1.5B-BASE",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

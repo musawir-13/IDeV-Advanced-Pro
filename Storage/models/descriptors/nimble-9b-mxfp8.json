@@ -1,0 +1,29 @@
+{
+  "name": "nimble:9b-mxfp8",
+  "model": "nimble:9b-mxfp8",
+  "description": "A 9B decision model from Bespoke Labs for fast, typed classification. (Type: 9b-mxfp8)",
+  "capabilities": [
+    "tools",
+    "decision",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "9b-mxfp8"
+  ],
+  "updated": "October 14, 2026",
+  "downloads": "61,426",
+  "digest": "local-nimble_9b-mxfp8",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "nimble",
+    "format": "local",
+    "family": "nimble",
+    "families": [
+      "nimble"
+    ],
+    "parameter_size": "9B-MXFP8",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

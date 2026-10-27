@@ -1,0 +1,27 @@
+{
+  "name": "phi4-reasoning:14b",
+  "model": "phi4-reasoning:14b",
+  "description": "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight reasoning models that rival much larger models on complex reasoning tasks. (Type: 14b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "14b"
+  ],
+  "updated": "May 1, 2025",
+  "downloads": "1,715,335",
+  "digest": "local-phi4-reasoning_14b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "phi4-reasoning",
+    "format": "local",
+    "family": "phi4",
+    "families": [
+      "phi4"
+    ],
+    "parameter_size": "14B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

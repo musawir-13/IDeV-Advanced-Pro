@@ -1,0 +1,30 @@
+{
+  "name": "pplx-decider",
+  "model": "pplx-decider",
+  "description": "pplx-decider is a 27B decision model from Perplexity, fine-tuned from Qwen3.8-27B",
+  "capabilities": [
+    "vision",
+    "decision"
+  ],
+  "parameter_sizes": [
+    "27b",
+    "27b-mxfp8",
+    "27b-nvfp4"
+  ],
+  "updated": "October 17, 2026",
+  "downloads": "12,503",
+  "digest": "local-pplx-decider",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "pplx",
+    "families": [
+      "pplx"
+    ],
+    "parameter_size": "27b, 27b-mxfp8, 27b-nvfp4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

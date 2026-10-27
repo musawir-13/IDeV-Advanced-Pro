@@ -1,0 +1,32 @@
+{
+  "name": "deepseek-llm",
+  "model": "deepseek-llm",
+  "description": "An advanced language model crafted with 2 trillion bilingual tokens.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b",
+    "67b",
+    "7b-base",
+    "7b-chat",
+    "67b-base",
+    "67b-chat"
+  ],
+  "updated": "December 11, 2023",
+  "downloads": "1,275,333",
+  "digest": "local-deepseek-llm",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "deepseek",
+    "families": [
+      "deepseek"
+    ],
+    "parameter_size": "7b, 67b, 7b-base, 7b-chat, 67b-base, 67b-chat",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

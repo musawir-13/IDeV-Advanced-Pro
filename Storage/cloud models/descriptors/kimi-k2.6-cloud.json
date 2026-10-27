@@ -1,0 +1,27 @@
+{
+  "name": "kimi-k2.6:cloud",
+  "model": "kimi-k2.6:cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-kimi-k2_6_cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "kimi",
+    "families": [
+      "kimi",
+      "cloud"
+    ],
+    "parameter_size": "CLOUD",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "Kimi K2.6 is an open-source, native multimodal agentic model that advances practical capabilities in long-horizon coding, coding-driven design, proactive autonomous execution, and swarm-based task orchestration."
+}

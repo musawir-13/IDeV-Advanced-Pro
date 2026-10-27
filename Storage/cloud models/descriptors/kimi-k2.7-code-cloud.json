@@ -1,0 +1,27 @@
+{
+  "name": "kimi-k2.7-code:cloud",
+  "model": "kimi-k2.7-code:cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-kimi-k2_7-code_cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "kimi",
+    "families": [
+      "kimi",
+      "cloud"
+    ],
+    "parameter_size": "CLOUD",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "Kimi K2.7 Code is Moonshot AI's coding-focused agentic model built upon Kimi K2.6, with substantial improvements on real-world long-horizon coding tasks and roughly 30% lower thinking-token usage."
+}

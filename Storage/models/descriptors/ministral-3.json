@@ -1,0 +1,30 @@
+{
+  "name": "ministral-3",
+  "model": "ministral-3",
+  "description": "The Ministral 3 family is designed for edge deployment, capable of running on a wide range of hardware.",
+  "capabilities": [
+    "vision",
+    "tools"
+  ],
+  "parameter_sizes": [
+    "3b",
+    "8b",
+    "14b"
+  ],
+  "updated": "December 13, 2025",
+  "downloads": "1,550,570",
+  "digest": "local-ministral-3",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "ministral",
+    "families": [
+      "ministral"
+    ],
+    "parameter_size": "3b, 8b, 14b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "phonon:40m-de",
+  "model": "phonon:40m-de",
+  "description": "Phonon is Gradium’s text-to-speech family. It turns written text into spoken audio as it generates, making it useful for reading assistant replies, narrating passages, and adding a voice to local apps. (Type: 40m-de)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "40m-de"
+  ],
+  "updated": "October 24, 2026",
+  "downloads": "15,302",
+  "digest": "local-phonon_40m-de",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "phonon",
+    "format": "local",
+    "family": "phonon",
+    "families": [
+      "phonon"
+    ],
+    "parameter_size": "40M-DE",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

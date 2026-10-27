@@ -1,0 +1,27 @@
+{
+  "name": "phi4:14b",
+  "model": "phi4:14b",
+  "description": "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft. (Type: 14b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "14b"
+  ],
+  "updated": "January 8, 2025",
+  "downloads": "7,772,938",
+  "digest": "local-phi4_14b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "phi4",
+    "format": "local",
+    "family": "phi4",
+    "families": [
+      "phi4"
+    ],
+    "parameter_size": "14B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

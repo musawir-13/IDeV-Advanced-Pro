@@ -1,0 +1,27 @@
+{
+  "name": "zephyr:141b-v0.1",
+  "model": "zephyr:141b-v0.1",
+  "description": "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models that are trained to act as helpful assistants. (Type: 141b-v0.1)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "141b-v0.1"
+  ],
+  "updated": "April 16, 2024",
+  "downloads": "1,302,076",
+  "digest": "local-zephyr_141b-v0_1",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "zephyr",
+    "format": "local",
+    "family": "zephyr",
+    "families": [
+      "zephyr"
+    ],
+    "parameter_size": "141B-V0.1",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "d3:9b",
+  "model": "d3:9b",
+  "description": "Turn text, structured data, and images into scored choices, yes/no answers, and ratings. (Type: 9b)",
+  "capabilities": [
+    "vision",
+    "decision"
+  ],
+  "parameter_sizes": [
+    "9b"
+  ],
+  "updated": "October 22, 2026",
+  "downloads": "15,094",
+  "digest": "local-d3_9b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "d3",
+    "format": "local",
+    "family": "d3",
+    "families": [
+      "d3"
+    ],
+    "parameter_size": "9B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

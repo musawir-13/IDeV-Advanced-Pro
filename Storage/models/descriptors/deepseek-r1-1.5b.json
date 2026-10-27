@@ -1,0 +1,28 @@
+{
+  "name": "deepseek-r1:1.5b",
+  "model": "deepseek-r1:1.5b",
+  "description": "DeepSeek-R1 is a family of open reasoning models with performance approaching that of leading models, such as O3 and Gemini 2.5 Pro. (Type: 1.5b)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "1.5b"
+  ],
+  "updated": "July 2, 2025",
+  "downloads": "94,342,650",
+  "digest": "local-deepseek-r1_1_5b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "deepseek-r1",
+    "format": "local",
+    "family": "deepseek",
+    "families": [
+      "deepseek"
+    ],
+    "parameter_size": "1.5B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

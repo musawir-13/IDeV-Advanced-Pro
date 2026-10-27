@@ -1,0 +1,27 @@
+{
+  "name": "moondream:1.8b",
+  "model": "moondream:1.8b",
+  "description": "moondream2 is a small vision language model designed to run efficiently on edge devices. (Type: 1.8b)",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "1.8b"
+  ],
+  "updated": "May 7, 2024",
+  "downloads": "2,086,954",
+  "digest": "local-moondream_1_8b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "moondream",
+    "format": "local",
+    "family": "moondream",
+    "families": [
+      "moondream"
+    ],
+    "parameter_size": "1.8B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

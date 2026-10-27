@@ -1,0 +1,28 @@
+{
+  "name": "d3:4b-nvfp4",
+  "model": "d3:4b-nvfp4",
+  "description": "Turn text, structured data, and images into scored choices, yes/no answers, and ratings. (Type: 4b-nvfp4)",
+  "capabilities": [
+    "vision",
+    "decision"
+  ],
+  "parameter_sizes": [
+    "4b-nvfp4"
+  ],
+  "updated": "October 22, 2026",
+  "downloads": "15,094",
+  "digest": "local-d3_4b-nvfp4",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "d3",
+    "format": "local",
+    "family": "d3",
+    "families": [
+      "d3"
+    ],
+    "parameter_size": "4B-NVFP4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

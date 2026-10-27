@@ -1,0 +1,28 @@
+{
+  "name": "north-mini-code-1.0:mlx-mxfp8",
+  "model": "north-mini-code-1.0:mlx-mxfp8",
+  "description": "North Mini Code is Cohere's first model for developers — a 30B Mixture-of-Experts model with 3B active parameters, built for agentic software engineering. (Type: mlx-mxfp8)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "mlx-mxfp8"
+  ],
+  "updated": "June 18, 2026",
+  "downloads": "81,405",
+  "digest": "local-north-mini-code-1_0_mlx-mxfp8",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "north-mini-code-1.0",
+    "format": "local",
+    "family": "north",
+    "families": [
+      "north"
+    ],
+    "parameter_size": "MLX-MXFP8",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

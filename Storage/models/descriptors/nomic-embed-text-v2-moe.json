@@ -1,0 +1,25 @@
+{
+  "name": "nomic-embed-text-v2-moe",
+  "model": "nomic-embed-text-v2-moe",
+  "description": "nomic-embed-text-v2-moe is a multilingual MoE text embedding model that excels at multilingual retrieval.",
+  "capabilities": [
+    "embedding"
+  ],
+  "parameter_sizes": [],
+  "updated": "December 10, 2025",
+  "downloads": "1,164,962",
+  "digest": "local-nomic-embed-text-v2-moe",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "nomic",
+    "families": [
+      "nomic"
+    ],
+    "parameter_size": "local",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

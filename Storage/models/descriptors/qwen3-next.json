@@ -1,0 +1,28 @@
+{
+  "name": "qwen3-next",
+  "model": "qwen3-next",
+  "description": "The first installment in the Qwen3-Next series with strong performance in terms of both parameter efficiency and inference speed.",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "80b"
+  ],
+  "updated": "December 5, 2025",
+  "downloads": "606,703",
+  "digest": "local-qwen3-next",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "80b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

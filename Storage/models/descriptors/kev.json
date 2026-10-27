@@ -1,0 +1,29 @@
+{
+  "name": "kev",
+  "model": "kev",
+  "description": "Kev scores answers to structured questions about a supplied text state in a single forward pass.",
+  "capabilities": [
+    "decision"
+  ],
+  "parameter_sizes": [
+    "0.8b-mxfp8",
+    "9b-nvfp4",
+    "27b-nvfp4"
+  ],
+  "updated": "October 17, 2026",
+  "downloads": "14,328",
+  "digest": "local-kev",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "kev",
+    "families": [
+      "kev"
+    ],
+    "parameter_size": "0.8b-mxfp8, 9b-nvfp4, 27b-nvfp4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

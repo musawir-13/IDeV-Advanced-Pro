@@ -1,0 +1,28 @@
+{
+  "name": "gemma4:31b-cloud",
+  "model": "gemma4:31b-cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-gemma4_31b-cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "gemma4",
+    "families": [
+      "gemma4",
+      "cloud"
+    ],
+    "parameter_size": "31B",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking",
+    "audio",
+    "cloud"
+  ],
+  "description": "Gemma 4 models are designed to deliver frontier-level performance at each size. They are well-suited for reasoning, agentic workflows, coding, and multimodal understanding."
+}

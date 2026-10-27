@@ -1,0 +1,27 @@
+{
+  "name": "command-r7b:7b",
+  "model": "command-r7b:7b",
+  "description": "The smallest model in Cohere's R series delivers top-tier speed, efficiency, and quality to build powerful AI applications on commodity GPUs and edge devices. (Type: 7b)",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "January 16, 2025",
+  "downloads": "343,276",
+  "digest": "local-command-r7b_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "command-r7b",
+    "format": "local",
+    "family": "command",
+    "families": [
+      "command"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

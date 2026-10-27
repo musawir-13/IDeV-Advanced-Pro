@@ -1,0 +1,27 @@
+{
+  "name": "sailor2:20b",
+  "model": "sailor2:20b",
+  "description": "Sailor2 are multilingual language models made for South-East Asia. Available in 1B, 8B, and 20B parameter sizes. (Type: 20b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "20b"
+  ],
+  "updated": "December 4, 2024",
+  "downloads": "430,834",
+  "digest": "local-sailor2_20b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "sailor2",
+    "format": "local",
+    "family": "sailor2",
+    "families": [
+      "sailor2"
+    ],
+    "parameter_size": "20B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

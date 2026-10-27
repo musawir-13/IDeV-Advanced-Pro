@@ -1,0 +1,26 @@
+{
+  "name": "gpt-oss:20b-cloud",
+  "model": "gpt-oss:20b-cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-gpt-oss_20b-cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "gpt",
+    "families": [
+      "gpt",
+      "cloud"
+    ],
+    "parameter_size": "20B",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases."
+}

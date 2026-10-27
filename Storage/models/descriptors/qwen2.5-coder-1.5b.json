@@ -1,0 +1,27 @@
+{
+  "name": "qwen2.5-coder:1.5b",
+  "model": "qwen2.5-coder:1.5b",
+  "description": "The latest series of Code-Specific Qwen models, with significant improvements in code generation, code reasoning, and code fixing. (Type: 1.5b)",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "1.5b"
+  ],
+  "updated": "May 28, 2025",
+  "downloads": "22,932,737",
+  "digest": "local-qwen2_5-coder_1_5b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen2.5-coder",
+    "format": "local",
+    "family": "qwen2",
+    "families": [
+      "qwen2"
+    ],
+    "parameter_size": "1.5B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

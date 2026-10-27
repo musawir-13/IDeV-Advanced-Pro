@@ -1,0 +1,25 @@
+{
+  "name": "goliath",
+  "model": "goliath",
+  "description": "A language model created by combining two fine-tuned Llama 2 70B models into one.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [],
+  "updated": "November 17, 2023",
+  "downloads": "497,120",
+  "digest": "local-goliath",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "goliath",
+    "families": [
+      "goliath"
+    ],
+    "parameter_size": "local",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

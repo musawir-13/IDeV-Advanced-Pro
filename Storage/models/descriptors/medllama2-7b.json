@@ -1,0 +1,27 @@
+{
+  "name": "medllama2:7b",
+  "model": "medllama2:7b",
+  "description": "Fine-tuned Llama 2 model to answer medical questions based on an open source medical dataset. (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "October 29, 2023",
+  "downloads": "747,226",
+  "digest": "local-medllama2_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "medllama2",
+    "format": "local",
+    "family": "medllama2",
+    "families": [
+      "medllama2"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

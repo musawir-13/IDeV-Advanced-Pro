@@ -1,0 +1,27 @@
+{
+  "name": "yarn-llama2:7b-128k",
+  "model": "yarn-llama2:7b-128k",
+  "description": "An extension of Llama 2 that supports a context of up to 128k tokens. (Type: 7b-128k)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b-128k"
+  ],
+  "updated": "November 4, 2023",
+  "downloads": "1,038,005",
+  "digest": "local-yarn-llama2_7b-128k",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "yarn-llama2",
+    "format": "local",
+    "family": "yarn",
+    "families": [
+      "yarn"
+    ],
+    "parameter_size": "7B-128K",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

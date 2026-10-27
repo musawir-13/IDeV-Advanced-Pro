@@ -1,0 +1,28 @@
+{
+  "name": "nemotron-3-super:120b",
+  "model": "nemotron-3-super:120b",
+  "description": "NVIDIA Nemotron 3 Super is a 120B open MoE model activating just 12B parameters to deliver maximum compute efficiency and accuracy for complex multi-agent applications. (Type: 120b)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "120b"
+  ],
+  "updated": "March 11, 2026",
+  "downloads": "3,021,194",
+  "digest": "local-nemotron-3-super_120b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "nemotron-3-super",
+    "format": "local",
+    "family": "nemotron",
+    "families": [
+      "nemotron"
+    ],
+    "parameter_size": "120B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

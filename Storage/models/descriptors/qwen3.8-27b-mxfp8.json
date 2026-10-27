@@ -1,0 +1,29 @@
+{
+  "name": "qwen3.8:27b-mxfp8",
+  "model": "qwen3.8:27b-mxfp8",
+  "description": "Qwen3.8 delivers substantial gains across coding, professional work, research, and long-horizon agentic tasks. (Type: 27b-mxfp8)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "27b-mxfp8"
+  ],
+  "updated": "October 26, 2026",
+  "downloads": "5,033,215",
+  "digest": "local-qwen3_8_27b-mxfp8",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen3.8",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "27B-MXFP8",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

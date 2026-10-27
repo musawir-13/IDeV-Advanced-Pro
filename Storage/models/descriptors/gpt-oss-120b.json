@@ -1,0 +1,28 @@
+{
+  "name": "gpt-oss:120b",
+  "model": "gpt-oss:120b",
+  "description": "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases. (Type: 120b)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "120b"
+  ],
+  "updated": "October 9, 2026",
+  "downloads": "14,217,399",
+  "digest": "local-gpt-oss_120b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "gpt-oss",
+    "format": "local",
+    "family": "gpt",
+    "families": [
+      "gpt"
+    ],
+    "parameter_size": "120B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "openhermes:7b-v2",
+  "model": "openhermes:7b-v2",
+  "description": "OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully open datasets. (Type: 7b-v2)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b-v2"
+  ],
+  "updated": "December 29, 2023",
+  "downloads": "1,588,648",
+  "digest": "local-openhermes_7b-v2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "openhermes",
+    "format": "local",
+    "family": "openhermes",
+    "families": [
+      "openhermes"
+    ],
+    "parameter_size": "7B-V2",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

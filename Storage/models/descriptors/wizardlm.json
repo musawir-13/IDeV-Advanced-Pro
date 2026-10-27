@@ -1,0 +1,25 @@
+{
+  "name": "wizardlm",
+  "model": "wizardlm",
+  "description": "General use model based on Llama 2.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [],
+  "updated": "October 30, 2023",
+  "downloads": "968,131",
+  "digest": "local-wizardlm",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "wizardlm",
+    "families": [
+      "wizardlm"
+    ],
+    "parameter_size": "local",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

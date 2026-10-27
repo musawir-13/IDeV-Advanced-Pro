@@ -1,0 +1,28 @@
+{
+  "name": "laguna-xs.2:bf16",
+  "model": "laguna-xs.2:bf16",
+  "description": "Laguna XS.2 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work on a local machine. (Type: bf16)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "bf16"
+  ],
+  "updated": "July 25, 2026",
+  "downloads": "39,873",
+  "digest": "local-laguna-xs_2_bf16",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "laguna-xs.2",
+    "format": "local",
+    "family": "laguna",
+    "families": [
+      "laguna"
+    ],
+    "parameter_size": "BF16",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

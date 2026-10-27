@@ -1,0 +1,27 @@
+{
+  "name": "mathstral:7b",
+  "model": "mathstral:7b",
+  "description": "MathΣtral: a 7B model designed for math reasoning and scientific discovery by Mistral AI. (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "July 16, 2024",
+  "downloads": "569,742",
+  "digest": "local-mathstral_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "mathstral",
+    "format": "local",
+    "family": "mathstral",
+    "families": [
+      "mathstral"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

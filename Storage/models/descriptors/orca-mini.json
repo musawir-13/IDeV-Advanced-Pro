@@ -1,0 +1,33 @@
+{
+  "name": "orca-mini",
+  "model": "orca-mini",
+  "description": "A general-purpose model ranging from 3 billion parameters to 70 billion, suitable for entry-level hardware.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "3b",
+    "7b",
+    "13b",
+    "70b",
+    "7b-v3",
+    "13b-v3",
+    "70b-v3"
+  ],
+  "updated": "October 29, 2023",
+  "downloads": "3,139,085",
+  "digest": "local-orca-mini",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "orca",
+    "families": [
+      "orca"
+    ],
+    "parameter_size": "3b, 7b, 13b, 70b, 7b-v3, 13b-v3, 70b-v3",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

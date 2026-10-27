@@ -1,0 +1,27 @@
+{
+  "name": "gemma3:12b-it-qat",
+  "model": "gemma3:12b-it-qat",
+  "description": "The current, most capable model that runs on a single GPU. (Type: 12b-it-qat)",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "12b-it-qat"
+  ],
+  "updated": "October 9, 2026",
+  "downloads": "41,415,866",
+  "digest": "local-gemma3_12b-it-qat",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "gemma3",
+    "format": "local",
+    "family": "gemma3",
+    "families": [
+      "gemma3"
+    ],
+    "parameter_size": "12B-IT-QAT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "llama3-chatqa:70b-v1.5",
+  "model": "llama3-chatqa:70b-v1.5",
+  "description": "A model from NVIDIA based on Llama 3 that excels at conversational question answering (QA) and retrieval-augmented generation (RAG). (Type: 70b-v1.5)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "70b-v1.5"
+  ],
+  "updated": "May 10, 2024",
+  "downloads": "1,071,332",
+  "digest": "local-llama3-chatqa_70b-v1_5",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llama3-chatqa",
+    "format": "local",
+    "family": "llama3",
+    "families": [
+      "llama3"
+    ],
+    "parameter_size": "70B-V1.5",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

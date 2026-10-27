@@ -1,0 +1,29 @@
+{
+  "name": "embeddinggemma-2:270m-mxfp8-text",
+  "model": "embeddinggemma-2:270m-mxfp8-text",
+  "description": "EmbeddingGemma 2 is a multimodal embedding model from Google built on the Gemma 4 architecture. (Type: 270m-mxfp8-text)",
+  "capabilities": [
+    "vision",
+    "embedding",
+    "audio"
+  ],
+  "parameter_sizes": [
+    "270m-mxfp8-text"
+  ],
+  "updated": "October 15, 2026",
+  "downloads": "91,964",
+  "digest": "local-embeddinggemma-2_270m-mxfp8-text",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "embeddinggemma-2",
+    "format": "local",
+    "family": "embeddinggemma",
+    "families": [
+      "embeddinggemma"
+    ],
+    "parameter_size": "270M-MXFP8-TEXT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

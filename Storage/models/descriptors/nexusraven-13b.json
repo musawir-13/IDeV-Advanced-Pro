@@ -1,0 +1,27 @@
+{
+  "name": "nexusraven:13b",
+  "model": "nexusraven:13b",
+  "description": "Nexus Raven is a 13B instruction tuned model for function calling tasks. (Type: 13b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "13b"
+  ],
+  "updated": "January 17, 2024",
+  "downloads": "927,515",
+  "digest": "local-nexusraven_13b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "nexusraven",
+    "format": "local",
+    "family": "nexusraven",
+    "families": [
+      "nexusraven"
+    ],
+    "parameter_size": "13B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

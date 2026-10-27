@@ -1,0 +1,28 @@
+{
+  "name": "mistral-small",
+  "model": "mistral-small",
+  "description": "Mistral Small 3 sets a new benchmark in the “small” Large Language Models category below 70B.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "22b",
+    "24b"
+  ],
+  "updated": "January 30, 2025",
+  "downloads": "3,168,071",
+  "digest": "local-mistral-small",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "mistral",
+    "families": [
+      "mistral"
+    ],
+    "parameter_size": "22b, 24b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

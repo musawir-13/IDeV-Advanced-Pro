@@ -1,0 +1,27 @@
+{
+  "name": "d1:3b",
+  "model": "d1:3b",
+  "description": "d1 is a 3B decision model from Liquid AI, built on LFM2.5-VL-3B (Type: 3b)",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "3b"
+  ],
+  "updated": "October 15, 2026",
+  "downloads": "21,363",
+  "digest": "local-d1_3b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "d1",
+    "format": "local",
+    "family": "d1",
+    "families": [
+      "d1"
+    ],
+    "parameter_size": "3B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "qwen3-embedding:4b",
+  "model": "qwen3-embedding:4b",
+  "description": "Building upon the foundational models of the Qwen3 series, Qwen3 Embedding provides a comprehensive range of text embeddings models in various sizes (Type: 4b)",
+  "capabilities": [
+    "embedding"
+  ],
+  "parameter_sizes": [
+    "4b"
+  ],
+  "updated": "September 23, 2025",
+  "downloads": "4,398,349",
+  "digest": "local-qwen3-embedding_4b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen3-embedding",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "4B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

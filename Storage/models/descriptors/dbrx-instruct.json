@@ -1,0 +1,27 @@
+{
+  "name": "dbrx:instruct",
+  "model": "dbrx:instruct",
+  "description": "DBRX is an open, general-purpose LLM created by Databricks. (Type: instruct)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "instruct"
+  ],
+  "updated": "April 16, 2024",
+  "downloads": "378,340",
+  "digest": "local-dbrx_instruct",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "dbrx",
+    "format": "local",
+    "family": "dbrx",
+    "families": [
+      "dbrx"
+    ],
+    "parameter_size": "INSTRUCT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

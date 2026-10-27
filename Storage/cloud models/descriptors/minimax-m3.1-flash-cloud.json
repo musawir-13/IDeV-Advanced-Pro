@@ -1,0 +1,27 @@
+{
+  "name": "minimax-m3.1-flash:cloud",
+  "model": "minimax-m3.1-flash:cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-minimax-m3_1-flash_cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "minimax",
+    "families": [
+      "minimax",
+      "cloud"
+    ],
+    "parameter_size": "CLOUD",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "As a next-generation Flash model, M3.1 Flash delivers a generational leap in agentic tasks, coding, Computer Use and cybersecurity, while making online inference nearly three times faster and reducing usage costs by 70%."
+}

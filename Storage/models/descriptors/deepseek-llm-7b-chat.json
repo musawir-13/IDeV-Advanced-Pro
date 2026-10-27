@@ -1,0 +1,27 @@
+{
+  "name": "deepseek-llm:7b-chat",
+  "model": "deepseek-llm:7b-chat",
+  "description": "An advanced language model crafted with 2 trillion bilingual tokens. (Type: 7b-chat)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b-chat"
+  ],
+  "updated": "December 11, 2023",
+  "downloads": "1,275,333",
+  "digest": "local-deepseek-llm_7b-chat",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "deepseek-llm",
+    "format": "local",
+    "family": "deepseek",
+    "families": [
+      "deepseek"
+    ],
+    "parameter_size": "7B-CHAT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

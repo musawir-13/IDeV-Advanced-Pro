@@ -1,0 +1,26 @@
+{
+  "name": "beam:cloud",
+  "model": "beam:cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-beam_cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "beam",
+    "families": [
+      "beam",
+      "cloud"
+    ],
+    "parameter_size": "CLOUD",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "Beam is an open model by Reflection designed to deliver strong performance for areas such as agentic tool use, coding and general reasoning with an emphasis on token efficient usage."
+}

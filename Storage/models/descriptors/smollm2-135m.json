@@ -1,0 +1,27 @@
+{
+  "name": "smollm2:135m",
+  "model": "smollm2:135m",
+  "description": "SmolLM2 is a family of compact language models available in three size: 135M, 360M, and 1.7B parameters. (Type: 135m)",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "135m"
+  ],
+  "updated": "November 1, 2024",
+  "downloads": "4,140,911",
+  "digest": "local-smollm2_135m",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "smollm2",
+    "format": "local",
+    "family": "smollm2",
+    "families": [
+      "smollm2"
+    ],
+    "parameter_size": "135M",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

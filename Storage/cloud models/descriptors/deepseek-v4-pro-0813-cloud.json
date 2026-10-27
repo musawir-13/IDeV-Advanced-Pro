@@ -1,0 +1,26 @@
+{
+  "name": "deepseek-v4-pro:0813-cloud",
+  "model": "deepseek-v4-pro:0813-cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-deepseek-v4-pro_0813-cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "deepseek",
+    "families": [
+      "deepseek",
+      "cloud"
+    ],
+    "parameter_size": "0813",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "DeepSeek-V4-Pro is a frontier Mixture-of-Experts model with a large context window and three reasoning modes."
+}

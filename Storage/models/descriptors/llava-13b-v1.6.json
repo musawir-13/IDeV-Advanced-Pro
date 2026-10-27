@@ -1,0 +1,27 @@
+{
+  "name": "llava:13b-v1.6",
+  "model": "llava:13b-v1.6",
+  "description": "🌋 LLaVA is a novel end-to-end trained large multimodal model that combines a vision encoder and Vicuna for general-purpose visual and language understanding. Updated to version 1.6. (Type: 13b-v1.6)",
+  "capabilities": [
+    "vision"
+  ],
+  "parameter_sizes": [
+    "13b-v1.6"
+  ],
+  "updated": "February 1, 2024",
+  "downloads": "15,237,228",
+  "digest": "local-llava_13b-v1_6",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "llava",
+    "format": "local",
+    "family": "llava",
+    "families": [
+      "llava"
+    ],
+    "parameter_size": "13B-V1.6",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

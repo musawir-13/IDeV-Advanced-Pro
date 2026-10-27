@@ -1,0 +1,27 @@
+{
+  "name": "nemotron",
+  "model": "nemotron",
+  "description": "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by NVIDIA to improve the helpfulness of LLM generated responses to user queries.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "70b"
+  ],
+  "updated": "October 16, 2024",
+  "downloads": "644,730",
+  "digest": "local-nemotron",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "nemotron",
+    "families": [
+      "nemotron"
+    ],
+    "parameter_size": "70b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

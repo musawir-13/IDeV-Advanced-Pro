@@ -1,0 +1,28 @@
+{
+  "name": "olmo-3:7b-think",
+  "model": "olmo-3:7b-think",
+  "description": "Olmo is a series of Open language models designed to enable the science of language models. These models are pre-trained on the Dolma 3 dataset and post-trained on the Dolci datasets. (Type: 7b-think)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "7b-think"
+  ],
+  "updated": "December 16, 2025",
+  "downloads": "477,197",
+  "digest": "local-olmo-3_7b-think",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "olmo-3",
+    "format": "local",
+    "family": "olmo",
+    "families": [
+      "olmo"
+    ],
+    "parameter_size": "7B-THINK",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

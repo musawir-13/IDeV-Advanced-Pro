@@ -1,0 +1,28 @@
+{
+  "name": "nous-hermes2",
+  "model": "nous-hermes2",
+  "description": "The powerful family of models by Nous Research that excels at scientific discussion and coding tasks.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "10.7b",
+    "34b"
+  ],
+  "updated": "January 2, 2024",
+  "downloads": "1,129,240",
+  "digest": "local-nous-hermes2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "nous",
+    "families": [
+      "nous"
+    ],
+    "parameter_size": "10.7b, 34b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

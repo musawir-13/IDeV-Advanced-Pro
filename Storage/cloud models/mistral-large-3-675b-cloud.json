@@ -1,0 +1,26 @@
+{
+  "name": "mistral-large-3:675b-cloud",
+  "model": "mistral-large-3:675b-cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-mistral-large-3_675b-cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "mistral",
+    "families": [
+      "mistral",
+      "cloud"
+    ],
+    "parameter_size": "675B",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "cloud"
+  ],
+  "description": "A general-purpose multimodal mixture-of-experts model for production-grade tasks and enterprise workloads."
+}

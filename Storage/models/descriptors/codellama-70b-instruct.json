@@ -1,0 +1,27 @@
+{
+  "name": "codellama:70b-instruct",
+  "model": "codellama:70b-instruct",
+  "description": "A large language model that can use text prompts to generate and discuss code. (Type: 70b-instruct)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "70b-instruct"
+  ],
+  "updated": "July 18, 2024",
+  "downloads": "7,488,894",
+  "digest": "local-codellama_70b-instruct",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "codellama",
+    "format": "local",
+    "family": "codellama",
+    "families": [
+      "codellama"
+    ],
+    "parameter_size": "70B-INSTRUCT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

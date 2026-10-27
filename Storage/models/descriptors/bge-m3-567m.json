@@ -1,0 +1,27 @@
+{
+  "name": "bge-m3:567m",
+  "model": "bge-m3:567m",
+  "description": "BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-Functionality, Multi-Linguality, and Multi-Granularity. (Type: 567m)",
+  "capabilities": [
+    "embedding"
+  ],
+  "parameter_sizes": [
+    "567m"
+  ],
+  "updated": "August 7, 2024",
+  "downloads": "7,967,466",
+  "digest": "local-bge-m3_567m",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "bge-m3",
+    "format": "local",
+    "family": "bge",
+    "families": [
+      "bge"
+    ],
+    "parameter_size": "567M",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

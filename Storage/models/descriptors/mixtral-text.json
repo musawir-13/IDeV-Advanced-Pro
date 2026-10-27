@@ -1,0 +1,27 @@
+{
+  "name": "mixtral:text",
+  "model": "mixtral:text",
+  "description": "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in 8x7b and 8x22b parameter sizes. (Type: text)",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "text"
+  ],
+  "updated": "December 20, 2024",
+  "downloads": "2,930,827",
+  "digest": "local-mixtral_text",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "mixtral",
+    "format": "local",
+    "family": "mixtral",
+    "families": [
+      "mixtral"
+    ],
+    "parameter_size": "TEXT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "command-r",
+  "model": "command-r",
+  "description": "Command R is a Large Language Model optimized for conversational interaction and long context tasks.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "35b",
+    "v0.1"
+  ],
+  "updated": "August 30, 2024",
+  "downloads": "1,570,888",
+  "digest": "local-command-r",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "command",
+    "families": [
+      "command"
+    ],
+    "parameter_size": "35b, v0.1",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

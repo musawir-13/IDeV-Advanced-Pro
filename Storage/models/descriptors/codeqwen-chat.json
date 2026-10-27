@@ -1,0 +1,27 @@
+{
+  "name": "codeqwen:chat",
+  "model": "codeqwen:chat",
+  "description": "CodeQwen1.5 is a large language model pretrained on a large amount of code data. (Type: chat)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "chat"
+  ],
+  "updated": "June 24, 2024",
+  "downloads": "1,149,012",
+  "digest": "local-codeqwen_chat",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "codeqwen",
+    "format": "local",
+    "family": "codeqwen",
+    "families": [
+      "codeqwen"
+    ],
+    "parameter_size": "CHAT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

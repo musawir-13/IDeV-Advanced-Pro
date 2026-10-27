@@ -1,0 +1,29 @@
+{
+  "name": "ornith-1.5:35b",
+  "model": "ornith-1.5:35b",
+  "description": "Chirp Chirp! 🐦 We are introducing Ornith-1.5, a major step toward building foundation models through end-to-end self-improvement. (Type: 35b)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "35b"
+  ],
+  "updated": "October 20, 2026",
+  "downloads": "428,749",
+  "digest": "local-ornith-1_5_35b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "ornith-1.5",
+    "format": "local",
+    "family": "ornith",
+    "families": [
+      "ornith"
+    ],
+    "parameter_size": "35B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

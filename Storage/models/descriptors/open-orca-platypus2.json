@@ -1,0 +1,27 @@
+{
+  "name": "open-orca-platypus2",
+  "model": "open-orca-platypus2",
+  "description": "Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. Designed for chat and code generation.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "13b"
+  ],
+  "updated": "October 29, 2023",
+  "downloads": "527,737",
+  "digest": "local-open-orca-platypus2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "open",
+    "families": [
+      "open"
+    ],
+    "parameter_size": "13b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

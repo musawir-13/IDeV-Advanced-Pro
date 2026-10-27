@@ -1,0 +1,27 @@
+{
+  "name": "paraphrase-multilingual:278m",
+  "model": "paraphrase-multilingual:278m",
+  "description": "Sentence-transformers model that can be used for tasks like clustering or semantic search. (Type: 278m)",
+  "capabilities": [
+    "embedding"
+  ],
+  "parameter_sizes": [
+    "278m"
+  ],
+  "updated": "August 7, 2024",
+  "downloads": "955,155",
+  "digest": "local-paraphrase-multilingual_278m",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "paraphrase-multilingual",
+    "format": "local",
+    "family": "paraphrase",
+    "families": [
+      "paraphrase"
+    ],
+    "parameter_size": "278M",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

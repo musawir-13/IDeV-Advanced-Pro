@@ -1,0 +1,28 @@
+{
+  "name": "qwen3:4b",
+  "model": "qwen3:4b",
+  "description": "Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models. (Type: 4b)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "4b"
+  ],
+  "updated": "October 10, 2025",
+  "downloads": "41,632,422",
+  "digest": "local-qwen3_4b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen3",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "4B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

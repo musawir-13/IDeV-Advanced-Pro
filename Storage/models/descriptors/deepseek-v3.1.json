@@ -1,0 +1,28 @@
+{
+  "name": "deepseek-v3.1",
+  "model": "deepseek-v3.1",
+  "description": "DeepSeek-V3.1-Terminus is a hybrid model that supports both thinking mode and non-thinking mode.",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "671b"
+  ],
+  "updated": "September 27, 2025",
+  "downloads": "742,892",
+  "digest": "local-deepseek-v3_1",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "deepseek",
+    "families": [
+      "deepseek"
+    ],
+    "parameter_size": "671b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "notus:7b-v1",
+  "model": "notus:7b-v1",
+  "description": "A 7B chat model fine-tuned with high-quality data and based on Zephyr. (Type: 7b-v1)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b-v1"
+  ],
+  "updated": "December 29, 2023",
+  "downloads": "559,008",
+  "digest": "local-notus_7b-v1",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "notus",
+    "format": "local",
+    "family": "notus",
+    "families": [
+      "notus"
+    ],
+    "parameter_size": "7B-V1",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

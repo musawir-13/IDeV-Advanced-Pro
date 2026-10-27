@@ -1,0 +1,28 @@
+{
+  "name": "clef-flash:9b-mxfp8",
+  "model": "clef-flash:9b-mxfp8",
+  "description": "Clef-Flash is a 9B multimodal model that turns a state and a schema of typed questions into decisions. (Type: 9b-mxfp8)",
+  "capabilities": [
+    "vision",
+    "decision"
+  ],
+  "parameter_sizes": [
+    "9b-mxfp8"
+  ],
+  "updated": "October 14, 2026",
+  "downloads": "41,821",
+  "digest": "local-clef-flash_9b-mxfp8",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "clef-flash",
+    "format": "local",
+    "family": "clef",
+    "families": [
+      "clef"
+    ],
+    "parameter_size": "9B-MXFP8",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

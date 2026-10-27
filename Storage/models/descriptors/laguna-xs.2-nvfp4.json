@@ -1,0 +1,28 @@
+{
+  "name": "laguna-xs.2:nvfp4",
+  "model": "laguna-xs.2:nvfp4",
+  "description": "Laguna XS.2 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work on a local machine. (Type: nvfp4)",
+  "capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "nvfp4"
+  ],
+  "updated": "July 25, 2026",
+  "downloads": "39,873",
+  "digest": "local-laguna-xs_2_nvfp4",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "laguna-xs.2",
+    "format": "local",
+    "family": "laguna",
+    "families": [
+      "laguna"
+    ],
+    "parameter_size": "NVFP4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "qwen3.5:35b-a3b-nvfp4",
+  "model": "qwen3.5:35b-a3b-nvfp4",
+  "description": "Qwen 3.5 is a family of open-source multimodal models that delivers exceptional utility and performance. (Type: 35b-a3b-nvfp4)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "35b-a3b-nvfp4"
+  ],
+  "updated": "October 13, 2026",
+  "downloads": "23,504,379",
+  "digest": "local-qwen3_5_35b-a3b-nvfp4",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen3.5",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "35B-A3B-NVFP4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

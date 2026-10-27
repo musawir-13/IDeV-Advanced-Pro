@@ -1,0 +1,27 @@
+{
+  "name": "opencoder:1.5b",
+  "model": "opencoder:1.5b",
+  "description": "OpenCoder is an open and reproducible code LLM family which includes 1.5B and 8B models, supporting chat in English and Chinese languages. (Type: 1.5b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "1.5b"
+  ],
+  "updated": "November 18, 2024",
+  "downloads": "676,354",
+  "digest": "local-opencoder_1_5b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "opencoder",
+    "format": "local",
+    "family": "opencoder",
+    "families": [
+      "opencoder"
+    ],
+    "parameter_size": "1.5B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

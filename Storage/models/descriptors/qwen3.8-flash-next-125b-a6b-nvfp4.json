@@ -1,0 +1,29 @@
+{
+  "name": "qwen3.8-flash-next:125b-a6b-nvfp4",
+  "model": "qwen3.8-flash-next:125b-a6b-nvfp4",
+  "description": "This experimental preview of the architecture that will underpin Qwen4. (Type: 125b-a6b-nvfp4)",
+  "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "parameter_sizes": [
+    "125b-a6b-nvfp4"
+  ],
+  "updated": "September 5, 2026",
+  "downloads": "225,811",
+  "digest": "local-qwen3_8-flash-next_125b-a6b-nvfp4",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen3.8-flash-next",
+    "format": "local",
+    "family": "qwen3",
+    "families": [
+      "qwen3"
+    ],
+    "parameter_size": "125B-A6B-NVFP4",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

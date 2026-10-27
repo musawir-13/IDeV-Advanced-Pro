@@ -1,0 +1,27 @@
+{
+  "name": "nemotron-mini",
+  "model": "nemotron-mini",
+  "description": "A commercial-friendly small language model by NVIDIA optimized for roleplay, RAG QA, and function calling.",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "4b"
+  ],
+  "updated": "September 18, 2024",
+  "downloads": "735,120",
+  "digest": "local-nemotron-mini",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "nemotron",
+    "families": [
+      "nemotron"
+    ],
+    "parameter_size": "4b",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

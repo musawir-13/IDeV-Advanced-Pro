@@ -1,0 +1,27 @@
+{
+  "name": "deepseek-coder:instruct",
+  "model": "deepseek-coder:instruct",
+  "description": "DeepSeek Coder is a capable coding model trained on two trillion code and natural language tokens. (Type: instruct)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "instruct"
+  ],
+  "updated": "December 28, 2023",
+  "downloads": "4,770,159",
+  "digest": "local-deepseek-coder_instruct",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "deepseek-coder",
+    "format": "local",
+    "family": "deepseek",
+    "families": [
+      "deepseek"
+    ],
+    "parameter_size": "INSTRUCT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

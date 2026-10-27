@@ -1,0 +1,27 @@
+{
+  "name": "wizardlm2:7b",
+  "model": "wizardlm2:7b",
+  "description": "State of the art large language model from Microsoft AI with improved performance on complex chat, multilingual, reasoning and agent use cases. (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "April 16, 2024",
+  "downloads": "1,223,023",
+  "digest": "local-wizardlm2_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "wizardlm2",
+    "format": "local",
+    "family": "wizardlm2",
+    "families": [
+      "wizardlm2"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

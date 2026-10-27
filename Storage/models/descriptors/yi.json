@@ -1,0 +1,37 @@
+{
+  "name": "yi",
+  "model": "yi",
+  "description": "Yi 1.5 is a high-performing, bilingual language model.",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "6b",
+    "9b",
+    "34b",
+    "v1.5",
+    "6b-200k",
+    "6b-chat",
+    "6b-v1.5",
+    "9b-chat",
+    "9b-v1.5",
+    "34b-chat",
+    "34b-v1.5"
+  ],
+  "updated": "May 13, 2024",
+  "downloads": "1,559,069",
+  "digest": "local-yi",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "",
+    "format": "local",
+    "family": "yi",
+    "families": [
+      "yi"
+    ],
+    "parameter_size": "6b, 9b, 34b, v1.5, 6b-200k, 6b-chat, 6b-v1.5, 9b-chat, 9b-v1.5, 34b-chat, 34b-v1.5",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

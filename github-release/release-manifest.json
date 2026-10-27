@@ -1,0 +1,36 @@
+{
+  "productName": "IDeV Advanced Pro",
+  "version": "1.0.0",
+  "buildDate": "2026-10-27T12:32:50Z",
+  "platform": "win32",
+  "architecture": "x64",
+  "developer": "IDeV",
+  "repository": "https://github.com/musawir-13/IDeV-Advanced-Pro",
+  "installer": {
+    "filename": "IDeV-Advanced-Pro-Setup-1.0.0.exe",
+    "sizeBytes": 93950109,
+    "sizeFormatted": "89.59 MB",
+    "sha256": "e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc",
+    "downloadUrl": "https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe"
+  },
+  "capabilities": {
+    "totalCatalogModels": 1201,
+    "localModelFamilies": 244,
+    "localModelVariants": 1175,
+    "cloudModelVariants": 26,
+    "multimodalVision": true,
+    "hardwareGovernor": true,
+    "clipboardScreenshotPaste": true,
+    "nativeFileDialogs": true,
+    "centralizedStorage": true
+  },
+  "systemRequirements": {
+    "os": "Windows 10 or Windows 11 (64-bit)",
+    "processor": "Intel Core i3 / AMD Ryzen 3 or higher",
+    "memory": "8 GB RAM minimum (16 GB recommended)",
+    "storage": "250 MB free disk space for app installation",
+    "graphics": "Integrated graphics or dedicated NVIDIA/AMD GPU"
+  },
+  "releaseStatus": "approved",
+  "verifiedBy": "QA & Security Release Engineering"
+}

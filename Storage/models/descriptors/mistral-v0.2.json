@@ -1,0 +1,27 @@
+{
+  "name": "mistral:v0.2",
+  "model": "mistral:v0.2",
+  "description": "The 7B model released by Mistral AI, updated to version 0.3. (Type: v0.2)",
+  "capabilities": [
+    "tools"
+  ],
+  "parameter_sizes": [
+    "v0.2"
+  ],
+  "updated": "July 13, 2025",
+  "downloads": "34,027,584",
+  "digest": "local-mistral_v0_2",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "mistral",
+    "format": "local",
+    "family": "mistral",
+    "families": [
+      "mistral"
+    ],
+    "parameter_size": "V0.2",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

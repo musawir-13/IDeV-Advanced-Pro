@@ -1,0 +1,27 @@
+{
+  "name": "codebooga:34b",
+  "model": "codebooga:34b",
+  "description": "A high-performing code instruct model created by merging two existing code models. (Type: 34b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "34b"
+  ],
+  "updated": "October 29, 2023",
+  "downloads": "520,646",
+  "digest": "local-codebooga_34b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "codebooga",
+    "format": "local",
+    "family": "codebooga",
+    "families": [
+      "codebooga"
+    ],
+    "parameter_size": "34B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

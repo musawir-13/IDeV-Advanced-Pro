@@ -1,0 +1,27 @@
+{
+  "name": "falcon3:3b",
+  "model": "falcon3:3b",
+  "description": "A family of efficient AI models under 10B parameters performant in science, math, and coding through innovative training techniques. (Type: 3b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "3b"
+  ],
+  "updated": "December 17, 2024",
+  "downloads": "2,636,174",
+  "digest": "local-falcon3_3b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "falcon3",
+    "format": "local",
+    "family": "falcon3",
+    "families": [
+      "falcon3"
+    ],
+    "parameter_size": "3B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

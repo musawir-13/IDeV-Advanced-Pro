@@ -1,0 +1,27 @@
+{
+  "name": "tinydolphin:v2.8",
+  "model": "tinydolphin:v2.8",
+  "description": "An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset by Eric Hartford and based on TinyLlama. (Type: v2.8)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "v2.8"
+  ],
+  "updated": "January 30, 2024",
+  "downloads": "748,031",
+  "digest": "local-tinydolphin_v2_8",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "tinydolphin",
+    "format": "local",
+    "family": "tinydolphin",
+    "families": [
+      "tinydolphin"
+    ],
+    "parameter_size": "V2.8",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

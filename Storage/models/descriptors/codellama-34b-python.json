@@ -1,0 +1,27 @@
+{
+  "name": "codellama:34b-python",
+  "model": "codellama:34b-python",
+  "description": "A large language model that can use text prompts to generate and discuss code. (Type: 34b-python)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "34b-python"
+  ],
+  "updated": "July 18, 2024",
+  "downloads": "7,488,894",
+  "digest": "local-codellama_34b-python",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "codellama",
+    "format": "local",
+    "family": "codellama",
+    "families": [
+      "codellama"
+    ],
+    "parameter_size": "34B-PYTHON",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

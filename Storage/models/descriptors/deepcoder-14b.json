@@ -1,0 +1,27 @@
+{
+  "name": "deepcoder:14b",
+  "model": "deepcoder:14b",
+  "description": "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a 1.5B version also available. (Type: 14b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "14b"
+  ],
+  "updated": "April 8, 2025",
+  "downloads": "970,771",
+  "digest": "local-deepcoder_14b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "deepcoder",
+    "format": "local",
+    "family": "deepcoder",
+    "families": [
+      "deepcoder"
+    ],
+    "parameter_size": "14B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

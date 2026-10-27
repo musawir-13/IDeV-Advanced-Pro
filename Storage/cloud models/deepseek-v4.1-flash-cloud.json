@@ -1,0 +1,27 @@
+{
+  "name": "deepseek-v4.1-flash:cloud",
+  "model": "deepseek-v4.1-flash:cloud",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "digest": "cloud-deepseek-v4_1-flash_cloud",
+  "details": {
+    "parent_model": "",
+    "format": "cloud",
+    "family": "deepseek",
+    "families": [
+      "deepseek",
+      "cloud"
+    ],
+    "parameter_size": "CLOUD",
+    "quantization_level": "cloud",
+    "context_window": "128k"
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+  ],
+  "description": "Designed for greater capability, faster inference, higher throughput, and scaling to larger models."
+}

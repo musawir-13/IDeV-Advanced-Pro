@@ -1,0 +1,27 @@
+{
+  "name": "qwen2-math:72b-instruct",
+  "model": "qwen2-math:72b-instruct",
+  "description": "Qwen2 Math is a series of specialized math language models built upon the Qwen2 LLMs, which significantly outperforms the mathematical capabilities of open-source models and even closed-source models (e.g., GPT4o). (Type: 72b-instruct)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "72b-instruct"
+  ],
+  "updated": "August 30, 2024",
+  "downloads": "1,162,910",
+  "digest": "local-qwen2-math_72b-instruct",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "qwen2-math",
+    "format": "local",
+    "family": "qwen2",
+    "families": [
+      "qwen2"
+    ],
+    "parameter_size": "72B-INSTRUCT",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "mistrallite:7b",
+  "model": "mistrallite:7b",
+  "description": "MistralLite is a fine-tuned model based on Mistral with enhanced capabilities of processing long contexts. (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "November 2, 2023",
+  "downloads": "541,965",
+  "digest": "local-mistrallite_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "mistrallite",
+    "format": "local",
+    "family": "mistrallite",
+    "families": [
+      "mistrallite"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

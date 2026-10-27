@@ -1,0 +1,27 @@
+{
+  "name": "meditron:70b",
+  "model": "meditron:70b",
+  "description": "Open-source medical large language model adapted from Llama 2 to the medical domain. (Type: 70b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "70b"
+  ],
+  "updated": "December 5, 2023",
+  "downloads": "921,319",
+  "digest": "local-meditron_70b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "meditron",
+    "format": "local",
+    "family": "meditron",
+    "families": [
+      "meditron"
+    ],
+    "parameter_size": "70B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}

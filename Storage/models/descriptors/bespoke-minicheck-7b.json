@@ -1,0 +1,27 @@
+{
+  "name": "bespoke-minicheck:7b",
+  "model": "bespoke-minicheck:7b",
+  "description": "A state-of-the-art fact-checking model developed by Bespoke Labs. (Type: 7b)",
+  "capabilities": [
+    "completion"
+  ],
+  "parameter_sizes": [
+    "7b"
+  ],
+  "updated": "September 18, 2024",
+  "downloads": "549,345",
+  "digest": "local-bespoke-minicheck_7b",
+  "modified_at": "2026-10-27T00:00:00.000Z",
+  "size": 0,
+  "details": {
+    "parent_model": "bespoke-minicheck",
+    "format": "local",
+    "family": "bespoke",
+    "families": [
+      "bespoke"
+    ],
+    "parameter_size": "7B",
+    "quantization_level": "local",
+    "context_window": "128k"
+  }
+}
