@@ -11,7 +11,7 @@ Welcome to **IDeV Advanced Pro v3.8.9**, a production release of the privacy-fir
   - **Free**: Default out-of-the-box tier for all profiles. 100% offline local model inference, unlimited conversations, and local tool settings with zero fees and no internet requirement.
   - **Ultimate**: Unlocked exclusively through an authoritative 38-digit product key. Grants 60-day access to premier cloud models (`☁️`), multimodal reasoning, and web search intelligence.
 - **Cryptographic Entitlement Engine**: Server-side Ed25519 digital signatures, machine-bound identity fingerprints, single-profile bindings, and clock rollback tamper detection.
-- **Settings UI Integration**: Dedicated "Account Tier" and "Ultimate License" card with real-time hyphen formatting, status badges, profile/device binding display, and expiration countdown.
+- **Licensing Architecture**: Cryptographic entitlement verification with real-time status validation, profile/device binding display, and expiration countdown.
 - **Administrative CLI**: Integrated `bin/license-admin.js` for issuing, listing, and revoking 38-digit licenses.
 - **Comprehensive QA Test Suite**: 30 passing automated security and anti-bypass tests (`tests/security_and_licensing.test.js`).
 

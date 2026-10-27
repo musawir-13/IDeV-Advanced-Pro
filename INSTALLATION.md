@@ -76,6 +76,6 @@ To remove IDeV Advanced Pro from your system:
 ## 6. Troubleshooting
 
 - **App displays connection notice**: Verify that your local inference engine is running on `http://127.0.0.1:11434`.
-- **Windows SmartScreen prompt**: Because this is a newly built release, click **More info** > **Run anyway** if prompted by Windows SmartScreen.
+- **Windows SmartScreen notice**: Because this release executable is self-packaged without a commercial EV code-signing certificate, Windows SmartScreen flags it as unrecognized by default. Do not bypass this warning blindly. Verify that the file was downloaded strictly from the official repository release and compare the SHA-256 hash against the published checksum (`d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19`) before running. Do not install the file if the checksum does not match.
 - **Port 2020 conflict**: If another application uses port 2020, set the environment variable `PORT=2021` before launching.
 - For complete diagnostics, see [docs/troubleshooting.md](docs/troubleshooting.md).

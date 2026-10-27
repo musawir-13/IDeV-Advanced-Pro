@@ -32,18 +32,18 @@ $env:PORT = "2025"
 
 ---
 
-### 3. Windows SmartScreen Prompt During Installation
+### 3. Windows SmartScreen Notice & Code Signing
 
-**Cause:** The release binary is newly generated and published directly from the open-source repository.
+**Cause:** The installer binary is self-packaged from source and is currently **unsigned** (no commercial EV code-signing certificate is attached). By design, Windows SmartScreen presents an unrecognized publisher warning for newly published, unsigned binaries.
 
-**Resolution:**
-1. Click **More info** on the Windows SmartScreen dialog.
-2. Click **Run anyway**.
-3. Verify the installer hash before installation to confirm binary integrity:
+**Responsible Verification Procedure:**
+1. **Verify Download Origin**: Ensure the installer was downloaded directly from the official GitHub release at `https://github.com/musawir-13/IDeV-Advanced-Pro/releases/tag/v3.8.9`.
+2. **Verify SHA-256 Integrity**: Open PowerShell in your download folder and verify the checksum:
    ```powershell
    Get-FileHash -Algorithm SHA256 .\IDeV-Advanced-Pro-Setup-3.8.9.exe
    # Expected: d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19
    ```
+3. **Safety Guidance**: A matching checksum confirms binary integrity (the file has not been altered or corrupted in transit), but does not substitute for a commercial publisher signature. If the checksum does not match or the download source is unverified, **do not install the executable**.
 
 ---
 

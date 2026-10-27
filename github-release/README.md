@@ -18,7 +18,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011%20(64--bit)-0078d4?style=flat-square" alt="Platform" />
   <img src="https://img.shields.io/badge/Release-v3.8.9-008080?style=flat-square" alt="Version" />
-  <img src="https://img.shields.io/badge/Privacy-100%25%20Local%20First-2e7d32?style=flat-square" alt="Privacy" />
+  <img src="https://img.shields.io/badge/Privacy-Local%20First-2e7d32?style=flat-square" alt="Privacy" />
   <img src="https://img.shields.io/badge/Catalog-1%2C201%20Configurations-4527a0?style=flat-square" alt="Catalog" />
   <img src="https://img.shields.io/badge/Status-Verified%20Release-success?style=flat-square" alt="Status" />
 </p>
@@ -30,18 +30,18 @@
 <p align="center">
   <img src="assets/screenshots/idev-advanced-pro-main-workspace.png" alt="IDeV Advanced Pro Workspace" width="92%" />
   <br />
-  <em>IDeV Advanced Pro — clean, distraction-free desktop interface featuring categorized model selection, reasoning toggle, and multimodal prompt composer.</em>
+  <em>IDeV Advanced Pro — desktop workspace featuring categorized model selection, reasoning toggle, and multimodal prompt composer.</em>
 </p>
 
 ---
 
 ## 2. Product Overview & Current Version
 
-**IDeV Advanced Pro** (Current Version: **`3.8.9`**) is an autonomous desktop artificial intelligence workspace engineered specifically for Windows 10 and Windows 11 (64-bit). Developed and maintained under the engineering and quality assurance standards of **IDeV Limited**, it provides an uncompromised, native desktop environment for software engineers, security researchers, technical writers, and creators.
+**IDeV Advanced Pro** (Current Version: **`3.8.9`**) is a desktop artificial intelligence workspace engineered for Windows 10 and Windows 11 (64-bit). Developed and maintained under the engineering and quality assurance standards of **IDeV Limited**, it provides a native desktop environment for software engineers, security researchers, technical writers, and creators.
 
-Unlike browser-dependent wrappers or cloud-mandatory tools, IDeV Advanced Pro delivers genuine workstation autonomy:
-- **Device-Bound Autonomy**: Run state-of-the-art open-weight models directly on your personal computer with 100% data confidentiality and zero external dependency.
-- **Multimodal Vision Intelligence**: Paste screenshots directly from the clipboard (`Ctrl+V`), drag and drop diagrams, and automatically route visual queries to vision-capable weights without configuration hurdles.
+Core architectural features:
+- **Local-First Autonomy**: Run open-weight models directly on your personal computer via local inference (`http://127.0.0.1:11434`). Prompts, tokens, and image attachments remain strictly on-device when operating local models, without external internet transmission.
+- **Multimodal Vision Intelligence**: Paste screenshots directly from the clipboard (`Ctrl+V`), drag and drop diagrams, and automatically route visual queries to installed vision weights without configuration hurdles.
 - **Adaptive System Governor**: An intelligent resource manager monitors hardware parameters in real time, preventing memory exhaustion and preserving operating system responsiveness.
 - **Unified Branding Accessibility**: Master brand mark featuring high-contrast pure white (`#FFFFFF`) typography across both GitHub dark and light themes (contrast ratio: 16.6:1).
 
@@ -55,20 +55,20 @@ IDeV Advanced Pro enforces **strictly two user-facing tiers**:
 |---|:---:|:---:|
 | **Local Model Inference** | **Available** | **Available** |
 | **Local Chat History** | **Available** | **Available** |
-| **Local Tool Settings** | **Available** | **Available** |
-| **Cloud Models** | **Locked** | **Available** (With active entitlement) |
+| **Local Workspace Settings** | **Available** | **Available** |
+| **Cloud Models (`:cloud`)** | **Locked** | **Available** (With active entitlement) |
 | **Cloud-Only Web Search** | **Locked** | **Available** (With active entitlement) |
 | **Product Key Activation** | Available (Key entry form visible) | Already Activated |
-| **Device Binding** | No | Required (Ed25519 hardware fingerprint) |
-| **Profile Binding** | No | Required (Single authorized profile) |
+| **Device Binding** | None | Required (Hardware entropy fingerprint bound via Ed25519 signature) |
+| **Profile Binding** | None | Required (Single authorized profile) |
 | **Entitlement Duration** | Permanent Local Access | 60 Days from activation |
 | **Local Use During Cloud Outage** | **Available** | **Available** |
 | **Cloud Use After Expiry** | No | No (Gracefully reverts to Free tier) |
 | **Access After Revocation** | Free tier access remains intact | Ultimate cloud access terminated |
 
 > [!NOTE]
-> **Tier Simplicity**  
-> There are no intermediate or extra tiers (no Pro, Premium, Enterprise, Gold, or VIP). Free users have complete, permanent, offline access to local models. Ultimate is unlocked exclusively through valid 38-digit product key activation.
+> **Tier Simplicity & Operational Boundaries**  
+> There are no intermediate or commercial tiers (no Pro, Premium, Enterprise, Gold, or VIP). Free users have complete, permanent, offline access to local models. Ultimate is unlocked exclusively through valid 38-digit product key activation. In standalone desktop mode (Mode B), activation and device binding are evaluated via the local cryptographic authority; global network-wide single-use enforcement requires connecting to a centralized licensing server (Mode A).
 
 ### Free Tier Usage
 Every user starts on the Free tier. Free users can run all local open-weight models (e.g. `deepseek-r1:7b`, `qwen3.5:2b`, `llama3.2:3b`), paste multimodal images, adjust threads, and store chats indefinitely without spending anything or creating cloud accounts.
@@ -85,13 +85,11 @@ For comprehensive licensing architecture, device binding, and administrative key
 
 ---
 
-## 4. Release Quality & Verification — v3.8.9
+## 4. Release Verification & Quality Matrix — v3.8.9
 
 > [!IMPORTANT]
 > **Engineering & Quality Assurance Release Statement**  
-> IDeV Advanced Pro v3.8.9 is released under the engineering, quality assurance and release-management guidelines established by IDeV Limited. The release undergoes documented validation covering applicable code checks, functional tests, regression checks, and installation or packaging verification. The verification status and any known limitations are documented below.  
->  
-> Release v3.8.9 passed all 30 security, anti-bypass, and licensing test cases alongside full package verification checks. Testing reduces the likelihood of defects but cannot guarantee the absence of every bug.
+> IDeV Advanced Pro v3.8.9 is validated against the documented release checklist. All automated unit and security tests have been executed locally with zero failures. Testing reduces the likelihood of defects but cannot guarantee the absence of every bug or resistance to every conceivable attack.
 
 ### Verification Matrix
 
@@ -99,13 +97,13 @@ For comprehensive licensing architecture, device binding, and administrative key
 |---|:---:|---|
 | **Version Consistency** | **PASS** | Package manifest (`package.json`), build configuration, binary PE metadata (ProductVersion `3.8.9.0`), installer metadata, and runtime API (`/api/version`) all unified to `3.8.9`. |
 | **Build & Packaging** | **PASS** | Reproducible NSIS installer generated via `electron-builder`: `IDeV-Advanced-Pro-Setup-3.8.9.exe` (94,040,662 bytes / 89.68 MB). |
-| **Security & Anti-Bypass Suite** | **PASS** | 30 out of 30 automated security tests passed (`tests/security_and_licensing.test.js`) verifying 38-digit key validation, profile/device binding, clock rollback detection, and execution gating. |
+| **Security & Authorization Suite** | **PASS** | 30 automated test cases passed (`tests/security_and_licensing.test.js`) verifying 38-digit key validation, profile/device binding, clock rollback detection, and route gating. |
 | **Static Code Checks** | **PASS** | JavaScript AST syntax verification (`node -c`) for `main.js`, `server.js`, `lib/`, and `preload.js`; dependency isolation verified. |
-| **Functional Tests** | **PASS** | Internal server initialized on port 2088: `/api/version` returned `{ version: '3.8.9' }`, root `/` returned 200 OK, and `/api/tags` resolved 1,201 model catalog entries. |
+| **Functional Tests** | **PASS** | Internal server initialized on port 2020: `/api/version` returned `{ version: '3.8.9' }`, root `/` returned 200 OK, and `/api/tags` resolved 1,201 model catalog entries. |
 | **Regression Tests** | **PASS** | Asar package inspected: confirmed zero private files; developer stores (`Storage/models/` and `Storage/cloud models/`) strictly excluded. |
 | **Installation Checks** | **PASS** | Windows NSIS installer validated; binary version metadata confirmed; valid uninstaller generated; per-user directory isolation verified. |
 | **Branding Accessibility** | **PASS** | Word “ADVANCED” rendered in pure white (`#FFFFFF`) with transparent inner counters; 16.6:1 contrast ratio verified. |
-| **Known Limitations** | **DOCUMENTED** | Local model execution requires local inference service active on `127.0.0.1:11434`; Windows SmartScreen notice on newly published binaries. |
+| **Known Limitations** | **DOCUMENTED** | Local model execution requires local inference service active on `127.0.0.1:11434`; setup executable is currently unsigned (no EV commercial certificate attached). |
 
 ---
 
@@ -151,7 +149,7 @@ Manage your workspace preferences, connection endpoints, and appearance themes t
 
 ## 7. Official Download & Artifact Verification
 
-The genuine, production-verified Windows setup executable is available from the official release distribution:
+The verified Windows setup executable is published directly in the official release:
 
 | Property | Verified Value |
 |---|---|
@@ -162,6 +160,7 @@ The genuine, production-verified Windows setup executable is available from the 
 | **SHA-256 Checksum** | `d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19` |
 | **Direct Download Link** | [Download IDeV-Advanced-Pro-Setup-3.8.9.exe](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe) |
 | **Checksum File** | [IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe.sha256) |
+| **Code Signing Status** | **Unsigned** (Self-packaged open-source build) |
 
 ### Cryptographic Checksum Verification (PowerShell)
 To verify binary integrity before installation, execute in PowerShell:
@@ -190,22 +189,24 @@ SHA256          D5375FEAA52D3E91C6A1DC7D3C720E6585E70B533055A0C06ED70D7F5D7D5B19
 
 ---
 
-## 9. Installation Instructions
+## 9. Installation & Binary Verification
 
 1. **Download the Setup Wizard**:
    Obtain [`IDeV-Advanced-Pro-Setup-3.8.9.exe`](https://github.com/musawir-13/IDeV-Advanced-Pro/releases/download/v3.8.9/IDeV-Advanced-Pro-Setup-3.8.9.exe).
-2. **Launch the Installer**:
-   Double-click the downloaded executable to start the IDeV Setup Wizard.
-3. **Choose Installation Options**:
+2. **Verify Checksum Before Running**:
+   Compare the computed SHA-256 hash in PowerShell against the published checksum (`d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19`). Do not proceed if the hash does not match.
+3. **Launch the Installer**:
+   Run `IDeV-Advanced-Pro-Setup-3.8.9.exe` to launch the Setup Wizard.
+4. **Choose Installation Options**:
    Select your preferred installation destination (defaults to `%LOCALAPPDATA%\Programs\IDeV Advanced Pro`).
-4. **Complete Setup & Launch**:
+5. **Complete Setup & Launch**:
    Click **Install**, check **Run IDeV Advanced Pro** on the final screen, and click **Finish**.
 
 For complete details, see the [Installation Guide](INSTALLATION.md).
 
 ---
 
-## 10. Upgrade Instructions (From v1.0.0 or Earlier)
+## 10. Upgrade Instructions (From Earlier Versions)
 
 Upgrades to version `3.8.9` are seamless and non-destructive:
 1. **Run the v3.8.9 Installer**: Download and execute `IDeV-Advanced-Pro-Setup-3.8.9.exe`.
@@ -226,8 +227,8 @@ Upgrades to version `3.8.9` are seamless and non-destructive:
 
 ## 12. Privacy & Data Architecture
 
-- **Local-Bound Autonomy**: All prompts, system messages, and generated tokens remain on your personal computer when using local models.
-- **Zero Telemetry**: IDeV Advanced Pro contains no tracking SDKs, telemetry beacons, or advertising frameworks.
+- **Local Processing**: All prompts, system messages, and generated tokens remain on your personal computer when interacting with local models.
+- **No First-Party Telemetry**: IDeV Advanced Pro bundles no tracking SDKs, analytics beacons, or advertising libraries.
 - **Explicit Cloud Boundaries**: Models requiring internet transmission are visibly marked with `☁️` badges so you always maintain full awareness of data boundaries.
 - **Strict Storage Protection**: Developer model directories (`Storage/models/` and `Storage/cloud models/`) are exclusively retained in the private development environment and are strictly excluded from distribution packages.
 
@@ -238,7 +239,7 @@ Review our full [Privacy Policy](PRIVACY.md) and [Security Policy](SECURITY.md).
 ## 13. Known Issues & Limitations
 
 1. **Local Inference Dependency**: Local model execution requires an active inference service on `127.0.0.1:11434`. If the service is stopped, the application will display a clear connection notice.
-2. **Windows SmartScreen Notice**: Because this release executable is newly generated directly from GitHub, Windows SmartScreen may present an initial unrecognized application prompt. Click **More info** > **Run anyway** to proceed.
+2. **Windows SmartScreen Notice & Code Signing**: The current release executable is self-packaged from source and is currently **unsigned** (no commercial EV code-signing certificate is attached). Windows SmartScreen will display an unrecognized publisher prompt by default. Do not bypass this prompt without verification: confirm the download origin is the official repository release and verify the SHA-256 checksum in PowerShell against release metadata before running.
 3. **Port Conflicts**: The internal UI server binds to port `2020` by default. If port 2020 is occupied by another tool, set the environment variable `$env:PORT="2025"` before launch.
 
 See the [Troubleshooting Guide](docs/troubleshooting.md) for step-by-step diagnostic procedures.

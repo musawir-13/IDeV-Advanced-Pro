@@ -16,7 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Ed25519-signed entitlements with device identity binding (`Storage/security/device_identity.json`) and profile binding.
   - 38-digit product key generation, HMAC-SHA256 checksums, and single-use registry tracking.
   - Clock rollback and system tampering detection.
-  - Settings UI "Account Tier" and "Ultimate License" management interface.
+  - Backend activation and entitlement enforcement via internal licensing endpoints.
   - Administrative CLI tool (`bin/license-admin.js`) for key lifecycle operations.
   - 30-case automated security and anti-bypass QA test suite (`tests/security_and_licensing.test.js`).
 

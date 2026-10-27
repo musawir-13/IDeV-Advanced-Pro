@@ -3,25 +3,26 @@
 **Product:** IDeV Advanced Pro (v3.8.9)  
 **Developer:** IDeV Limited  
 
-IDeV Advanced Pro is built with a privacy-first foundation, empowering users with complete control and transparency over their conversations, documents, and data.
+IDeV Advanced Pro is built with a local-first foundation, providing users with transparent control over their prompts, documents, and data.
 
 ---
 
-## 1. Local Processing vs. Cloud Processing
+## 1. Local Processing vs. Cloud Services
 
-IDeV Advanced Pro strictly differentiates between **Local Model Processing** and **Optional Cloud Model Connections**:
+IDeV Advanced Pro strictly differentiates between local operations and optional external services:
 
-### A. Local Model Processing
-When you select and interact with local models (such as `deepseek-r1`, `qwen2.5`, `llama3.3`, `d3`, `phi4`, etc.):
-- **Device-Bound Execution**: All inference runs directly on your personal computer via your local inference service (`127.0.0.1:11434`).
-- **No Internet Transmission**: Prompts, input tokens, responses, and attached documents remain on your machine and never leave your local device.
-- **Offline Capable**: Local model processing functions completely without internet access.
+### A. Local Model Processing (Default)
+When you interact with local models (such as `deepseek-r1:7b`, `qwen3.5:2b`, `llama3.2:3b`, etc.):
+- **Device-Bound Execution**: All inference runs directly on your personal computer via your local inference service (`http://127.0.0.1:11434`).
+- **No External Transmission**: Prompts, input tokens, model outputs, and attached files remain strictly on your local machine and are not transmitted over the internet.
+- **Offline Capable**: Local model processing functions completely without internet connectivity.
 
-### B. Cloud Model Connections
-When you explicitly select a model marked with a cloud badge (such as `deepseek-v4.1-flash:cloud`, `gemma4:31b-cloud`, `glm-5.3-flash:cloud`, or `kimi-k3:cloud`):
-- **Remote Processing**: Requests for cloud models are transmitted to and processed by the corresponding remote model provider.
-- **Provider Policies**: Transmitted prompts and attachments are subject to the data handling terms and privacy policies of the respective cloud provider.
-- **Transparent Indicator**: Every cloud model is visibly labeled with a cloud indicator in the model selector, ensuring you always know whether an operation is local or remote before sending a message.
+### B. Cloud Models (`:cloud`) & Web Intelligence (Ultimate Tier)
+When an authorized user explicitly selects a model marked with a cloud badge (`☁️`) or enables web search:
+- **Remote Model Execution**: Requests for cloud models are transmitted to and processed by the corresponding remote model provider.
+- **Web Search & Fetch**: Search queries and target URLs are transmitted externally over HTTPS to fetch public web contents.
+- **Provider Policies**: Transmitted prompts and attachments are subject to the data handling terms and privacy policies of the respective remote cloud providers.
+- **Transparent Indicator**: Every cloud model is visibly labeled with a `☁️` indicator, ensuring you always know whether an operation is local or remote before dispatching a message.
 
 ---
 
@@ -33,7 +34,7 @@ All persistent user data is kept inside your dedicated local application storage
 - **User Settings**: Stored locally in `Storage/settings/settings.json`.
 - **Attached Files & Images**: Processed in-memory or stored locally; never synced to any proprietary IDeV server.
 
-IDeV does **not** operate external tracking servers, telemetry harvesters, or centralized user databases.
+IDeV Limited does not operate external tracking servers, telemetry harvesters, or centralized user conversation databases.
 
 ---
 
@@ -41,16 +42,16 @@ IDeV does **not** operate external tracking servers, telemetry harvesters, or ce
 
 When you attach files, paste screenshots (`Ctrl+V`), or select documents:
 - Files are converted to local data streams for model processing.
-- For local models, image feature processing occurs locally using your machine's multimodal inference pipeline.
+- For local models, image feature processing occurs locally using your machine's multimodal vision model.
 - For cloud models, image data is transmitted to the chosen cloud provider as part of the multimodal request payload.
 
 ---
 
-## 4. Third-Party Services & Telemetry
+## 4. Telemetry & Analytics Audit
 
-- **No Third-Party Analytics**: IDeV Advanced Pro does not bundle Google Analytics, Mixpanel, or telemetry daemons.
-- **No Advertising**: The application contains no ad networks, tracking cookies, or commercial trackers.
-- **External Links**: Clicking external links (such as model documentation or GitHub project links) will open them in your default web browser, governed by your browser's privacy settings.
+- **No First-Party Analytics**: IDeV Advanced Pro bundles no Google Analytics, Mixpanel, or custom telemetry SDKs in its application source.
+- **No Commercial Trackers**: The application contains no advertising networks, tracking cookies, or commercial trackers.
+- **External Web Links**: Clicking external documentation or repository links opens them in your default web browser, governed by your browser's security and privacy configuration.
 
 ---
 
