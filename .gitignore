@@ -22,6 +22,8 @@ Storage/cloud models/
 # User Private Data & Conversation History
 Storage/chats/
 Storage/settings/
+Storage/security/
+Storage/profiles/
 
 # Environment, Secrets & Local Credentials
 .env

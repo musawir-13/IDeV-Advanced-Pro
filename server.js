@@ -13,6 +13,29 @@ try {
   if (pkg && pkg.version) APP_VERSION = pkg.version;
 } catch (e) {}
 
+// Licensing & Cloud Entitlements Architecture
+const {
+  issueProductKey,
+  activateProductKey,
+  getActiveEntitlement,
+  revokeLicense,
+  listLicenses,
+  ACTIVE_ENTITLEMENT_FILE
+} = require('./lib/license_authority');
+const { formatProductKeyDisplay, validateProductKeyFormat, normalizeProductKey } = require('./lib/crypto_utils');
+const { isCloudRequired, authorizeRequest } = require('./lib/cloud_authorizer');
+const {
+  registerUser,
+  loginUser,
+  validateSession,
+  logoutUser,
+  sendVerificationChallenge,
+  verifyChallenge,
+  getInfrastructureStatus
+} = require('./lib/auth_service');
+const { getDeviceIdentity } = require('./lib/device_identity');
+const { createFreeTierEntitlement } = require('./lib/entitlement_schema');
+
 // App Storage Architecture (Per-user runtime storage)
 const STORAGE_DIR = path.join(__dirname, 'Storage');
 const MODELS_DIR = path.join(STORAGE_DIR, 'models');
@@ -387,6 +410,12 @@ const server = http.createServer(async (req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
 
+  // Resolve session profile for entitlement context
+  const authHeader = req.headers['authorization'] || '';
+  const sessionToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+  const sessionUser = sessionToken ? validateSession(sessionToken) : null;
+  const currentProfileId = sessionUser ? sessionUser.userId : 'default_user';
+
   // -------------------------------------------------------------
   // 1. COMPLETELY LOCAL USER PROFILE (/api/me)
   // Strips all external Ollama account connections & subscriptions.
@@ -491,6 +520,12 @@ const server = http.createServer(async (req, res) => {
       try {
         const raw = await readBody(req);
         const updates = JSON.parse(raw);
+        if (updates.WebSearchEnabled === true) {
+          const auth = authorizeRequest(req, ':cloud', currentProfileId);
+          if (!auth.authorized) {
+            updates.WebSearchEnabled = false;
+          }
+        }
         settings = { ...settings, ...updates };
         saveJSON(SETTINGS_FILE, settings);
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -507,8 +542,201 @@ const server = http.createServer(async (req, res) => {
   // 4. CLOUD CONNECTION & CLOUD MODELS CATALOG
   // -------------------------------------------------------------
   if (pathname === '/api/v1/cloud') {
+    const active = getActiveEntitlement(currentProfileId);
+    const isCloudActive = Boolean(active.evaluation && active.evaluation.active);
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ enabled: true, active: true, disabled: false, source: "idev" }));
+    res.end(JSON.stringify({
+      enabled: isCloudActive,
+      active: isCloudActive,
+      disabled: !isCloudActive,
+      source: "idev",
+      tier: active.tier || 'free',
+      status: active.evaluation ? active.evaluation.status : (active.status || 'FREE'),
+      remainingDays: active.evaluation ? active.evaluation.remainingDays : 0,
+      expiresAt: active.expiresAt
+    }));
+    return;
+  }
+
+  // -------------------------------------------------------------
+  // 4B. LICENSING & CLOUD ENTITLEMENTS API
+  // -------------------------------------------------------------
+  if (pathname === '/api/v1/license/status') {
+    const active = getActiveEntitlement(currentProfileId);
+    const device = getDeviceIdentity();
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      tier: active.tier || 'free',
+      status: active.evaluation ? active.evaluation.status : (active.status || 'FREE'),
+      active: Boolean(active.evaluation && active.evaluation.active),
+      licenseId: active.licenseId || 'free_tier_local_only',
+      boundProfile: active.boundProfileId || null,
+      boundDevice: active.boundDeviceFingerprint || device.fingerprint,
+      remainingDays: active.evaluation ? active.evaluation.remainingDays : 0,
+      remainingHours: active.evaluation ? active.evaluation.remainingHours : 0,
+      expiresAt: active.expiresAt || null,
+      error: active.evaluation && active.evaluation.error ? active.evaluation.error : null
+    }));
+    return;
+  }
+
+  if (pathname === '/api/v1/license/activate' && req.method === 'POST') {
+    try {
+      const raw = await readBody(req);
+      const { productKey } = JSON.parse(raw);
+      const result = activateProductKey(productKey, currentProfileId);
+      if (result.success) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          success: true,
+          message: 'Product key activated successfully! 60-day Cloud Entitlement active.',
+          entitlement: {
+            tier: result.entitlement.tier,
+            status: result.entitlement.status,
+            expiresAt: result.entitlement.expiresAt,
+            boundProfile: result.entitlement.boundProfileId
+          }
+        }));
+      } else {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          success: false,
+          error: result.error,
+          code: result.code
+        }));
+      }
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: e.message }));
+    }
+    return;
+  }
+
+  if (pathname === '/api/v1/license/deactivate' && req.method === 'POST') {
+    try {
+      fs.writeFileSync(ACTIVE_ENTITLEMENT_FILE, JSON.stringify(createFreeTierEntitlement(), null, 2), { encoding: 'utf8' });
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, message: 'License deactivated. Returned to Free local tier.' }));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: e.message }));
+    }
+    return;
+  }
+
+  // -------------------------------------------------------------
+  // 4C. PRODUCTION ACCOUNT AUTHENTICATION & VERIFICATION API
+  // -------------------------------------------------------------
+  if (pathname === '/api/v1/auth/infrastructure') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(getInfrastructureStatus()));
+    return;
+  }
+
+  if (pathname === '/api/v1/auth/register' && req.method === 'POST') {
+    try {
+      const raw = await readBody(req);
+      const payload = JSON.parse(raw);
+      const result = registerUser(payload);
+      if (result.success) {
+        res.writeHead(201, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      } else {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      }
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: e.message }));
+    }
+    return;
+  }
+
+  if (pathname === '/api/v1/auth/login' && req.method === 'POST') {
+    try {
+      const raw = await readBody(req);
+      const { identifier, password } = JSON.parse(raw);
+      const result = loginUser(identifier, password);
+      if (result.success) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      } else {
+        res.writeHead(401, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      }
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: e.message }));
+    }
+    return;
+  }
+
+  if (pathname === '/api/v1/auth/profile' && req.method === 'GET') {
+    if (sessionUser) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, profile: sessionUser }));
+    } else {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        success: true,
+        profile: {
+          userId: 'default_user',
+          displayName: 'Local Guest User',
+          email: null,
+          emailVerified: false,
+          phone: null,
+          phoneVerified: false,
+          isLocalProfile: true
+        }
+      }));
+    }
+    return;
+  }
+
+  if (pathname === '/api/v1/auth/logout' && req.method === 'POST') {
+    if (sessionToken) logoutUser(sessionToken);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: true, message: 'Logged out successfully.' }));
+    return;
+  }
+
+  if (pathname === '/api/v1/auth/send-verification' && req.method === 'POST') {
+    try {
+      const raw = await readBody(req);
+      const { userId, channel } = JSON.parse(raw);
+      const targetUserId = userId || (sessionUser ? sessionUser.userId : null);
+      if (!targetUserId) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, error: 'User ID is required.' }));
+        return;
+      }
+      const result = await sendVerificationChallenge(targetUserId, channel || 'email');
+      const statusCode = result.success ? 200 : (result.status === 'BLOCKED' ? 501 : 400);
+      res.writeHead(statusCode, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(result));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: e.message }));
+    }
+    return;
+  }
+
+  if (pathname === '/api/v1/auth/verify-challenge' && req.method === 'POST') {
+    try {
+      const raw = await readBody(req);
+      const { challengeId, code } = JSON.parse(raw);
+      const result = verifyChallenge(challengeId, code);
+      if (result.success) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      } else {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      }
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: false, error: e.message }));
+    }
     return;
   }
 
@@ -524,17 +752,30 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // Local stub for web search/fetch without external Ollama token errors
-  if (pathname === '/api/web_search') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ results: [] }));
-    return;
-  }
+  // Web search/fetch: strictly enforce cloud entitlement
+  if (pathname === '/api/web_search' || pathname === '/api/web_fetch') {
+    const auth = authorizeRequest(req, null, currentProfileId);
+    if (!auth.authorized) {
+      res.writeHead(403, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        error: auth.error,
+        code: auth.code || 'ENTITLEMENT_REQUIRED',
+        tier: 'free',
+        status: auth.status
+      }));
+      return;
+    }
 
-  if (pathname === '/api/web_fetch') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ title: "", content: "" }));
-    return;
+    if (pathname === '/api/web_search') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ results: [] }));
+      return;
+    }
+    if (pathname === '/api/web_fetch') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ title: "", content: "" }));
+      return;
+    }
   }
 
   // -------------------------------------------------------------
@@ -647,6 +888,21 @@ const server = http.createServer(async (req, res) => {
       const raw = await readBody(req);
       const payload = JSON.parse(raw);
       let { model, prompt, attachments } = payload;
+
+      // Enforce cloud entitlement boundary
+      if (isCloudRequired(model, pathname)) {
+        const auth = authorizeRequest(req, model, currentProfileId);
+        if (!auth.authorized) {
+          res.writeHead(403, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({
+            error: auth.error,
+            code: auth.code || 'ENTITLEMENT_REQUIRED',
+            tier: 'free',
+            status: auth.status
+          }));
+          return;
+        }
+      }
 
       const hasImages = Array.isArray(attachments) && attachments.some(a => {
         const fn = (typeof a === 'string' ? '' : a.filename) || '';
@@ -1043,6 +1299,22 @@ const server = http.createServer(async (req, res) => {
     try {
       const raw = await readBody(req);
       const payload = JSON.parse(raw);
+
+      // Enforce cloud entitlement boundary
+      if (isCloudRequired(payload.model, pathname)) {
+        const auth = authorizeRequest(req, payload.model, currentProfileId);
+        if (!auth.authorized) {
+          res.writeHead(403, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({
+            error: auth.error,
+            code: auth.code || 'ENTITLEMENT_REQUIRED',
+            tier: 'free',
+            status: auth.status
+          }));
+          return;
+        }
+      }
+
       payload.model = await resolveLocalModel(payload.model);
 
       const msgs = payload.messages || [];
@@ -1252,6 +1524,55 @@ const server = http.createServer(async (req, res) => {
         return;
       }
     } catch (e) {}
+  }
+
+  // -------------------------------------------------------------
+  // 11B. DIRECT /api/generate INTERCEPTION & CLOUD GATING
+  // -------------------------------------------------------------
+  if (pathname === '/api/generate' && req.method === 'POST') {
+    try {
+      const raw = await readBody(req);
+      const payload = JSON.parse(raw);
+      if (isCloudRequired(payload.model, pathname)) {
+        const auth = authorizeRequest(req, payload.model, currentProfileId);
+        if (!auth.authorized) {
+          res.writeHead(403, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({
+            error: auth.error,
+            code: auth.code || 'ENTITLEMENT_REQUIRED',
+            tier: 'free',
+            status: auth.status
+          }));
+          return;
+        }
+      }
+      payload.model = await resolveLocalModel(payload.model);
+      const proxyReq = http.request(
+        `${OLLAMA_HOST}/api/generate`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        },
+        proxyRes => {
+          setCorsAndIframeHeaders(res);
+          res.writeHead(proxyRes.statusCode, proxyRes.headers);
+          proxyRes.pipe(res);
+        }
+      );
+      proxyReq.on('error', err => {
+        if (!res.headersSent) {
+          res.writeHead(502, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: `Unable to connect to Ollama local engine: ${err.message}` }));
+        }
+      });
+      proxyReq.write(JSON.stringify(payload));
+      proxyReq.end();
+      return;
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: e.message }));
+      return;
+    }
   }
 
   // -------------------------------------------------------------

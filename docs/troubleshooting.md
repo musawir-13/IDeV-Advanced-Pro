@@ -42,7 +42,7 @@ $env:PORT = "2025"
 3. Verify the installer hash before installation to confirm binary integrity:
    ```powershell
    Get-FileHash -Algorithm SHA256 .\IDeV-Advanced-Pro-Setup-3.8.9.exe
-   # Expected: a55e18d0d7f0e79f19a6b49d4d0f225e5ecdde8d3c2a864da34bd3c34278dc61
+   # Expected: d5375feaa52d3e91c6a1dc7d3c720e6585e70b533055a0c06ed70d7f5d7d5b19
    ```
 
 ---
