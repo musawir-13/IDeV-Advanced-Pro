@@ -6,14 +6,12 @@ Welcome to **IDeV Advanced Pro v3.8.9**, a production release of the privacy-fir
 
 ## What's New in v3.8.9
 
-### 🔐 Two-Tier Licensing & 38-Digit Product Key System
-- **Strictly Two Tiers (Free & Ultimate)**:
-  - **Free**: Default out-of-the-box tier for all profiles. 100% offline local model inference, unlimited conversations, and local tool settings with zero fees and no internet requirement.
-  - **Ultimate**: Unlocked exclusively through an authoritative 38-digit product key. Grants 60-day access to premier cloud models (`☁️`), multimodal reasoning, and web search intelligence.
-- **Cryptographic Entitlement Engine**: Server-side Ed25519 digital signatures, machine-bound identity fingerprints, single-profile bindings, and clock rollback tamper detection.
-- **Licensing Architecture**: Cryptographic entitlement verification with real-time status validation, profile/device binding display, and expiration countdown.
-- **Administrative CLI**: Integrated `bin/license-admin.js` for issuing, listing, and revoking 38-digit licenses.
-- **Comprehensive QA Test Suite**: 30 passing automated security and anti-bypass tests (`tests/security_and_licensing.test.js`).
+### 🔓 Direct Desktop Workspace Architecture & Cloud Decoupling
+- **Direct Workspace Access**: Open and use IDeV Advanced Pro immediately without account registration, sign-in, password reset, or OTP verification.
+- **Complete Tier Elimination**: No Free vs. Ultimate subscription tiers. The application operates as a single, unrestricted desktop tool.
+- **No Product Key Activation**: Removed 38-digit product key prompts, software activation timers, and 60-day license limits.
+- **Functional Cloud Toggle**: Cloud models (`☁️`) and web search can be enabled or disabled directly in Settings without licensing gating.
+- **Comprehensive QA Test Suite**: 17 passing automated test cases (`tests/direct_access_and_workspace.test.js`) verifying unauthenticated startup, direct workspace access, cloud toggle behavior, and data preservation.
 
 ### 🎨 Brand Identity & Visual Accessibility Correction
 - **Pure White "ADVANCED" Typography**: Corrected the word **“ADVANCED”** across all master logos, web marks, downscaled assets, and Windows application icons to pure white (`#FFFFFF`, `rgb(255, 255, 255)`).

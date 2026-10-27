@@ -8,17 +8,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [3.8.9] — 2026-10-27
 
+### Removed
+- **Application Authentication & Account Registration**: Removed all sign-in, sign-up, email verification, SMS/OTP challenges, password recovery, and online user session dependencies.
+- **Product Licensing & 38-Digit Key Activation**: Removed 38-digit product key activation, 60-day license timers, license verification endpoints, and license registry tracking.
+- **Subscription Tier Restrictions**: Completely removed Free vs. Ultimate tier restrictions, tier selectors, and product-key gating on cloud features.
+
 ### Added
-- **Two-Tier System (Free & Ultimate)**:
-  - **Free Tier**: 100% offline local model inference, unlimited conversations, and full workspace settings with zero cost.
-  - **Ultimate Tier**: 60-day cloud model execution, multimodal vision intelligence, and web search activated via 38-digit product keys.
-- **Cryptographic Licensing Engine**:
-  - Ed25519-signed entitlements with device identity binding (`Storage/security/device_identity.json`) and profile binding.
-  - 38-digit product key generation, HMAC-SHA256 checksums, and single-use registry tracking.
-  - Clock rollback and system tampering detection.
-  - Backend activation and entitlement enforcement via internal licensing endpoints.
-  - Administrative CLI tool (`bin/license-admin.js`) for key lifecycle operations.
-  - 30-case automated security and anti-bypass QA test suite (`tests/security_and_licensing.test.js`).
+- **Direct Workspace Access**: Desktop application launches directly into the normal workspace without requiring credentials, online accounts, or product keys.
+- **Functional Cloud Feature Toggle**: Cloud models (`☁️`) and web search are governed strictly by user preference via the **Cloud** toggle in Settings, eliminating all application-level licensing restrictions.
+- **Direct Access Test Suite**: Automated verification suite (`tests/direct_access_and_workspace.test.js`) covering direct unauthenticated startup, direct workspace access, cloud toggle behavior, and storage preservation.
 
 ### Changed
 - **Authoritative Version Upgrade**: Upgraded application and package metadata across all desktop, runtime, installer, and documentation layers to `3.8.9`.

@@ -6,106 +6,78 @@
 
 ---
 
-## 1. Operating Modes Overview
+## 1. Architecture Overview
 
-IDeV Advanced Pro operates in two architectural modes:
+IDeV Advanced Pro operates as a direct-access, local-first desktop artificial intelligence workspace:
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│                     OPERATION MODES                    │
+│             DIRECT WORKSPACE ARCHITECTURE              │
 ├────────────────────────────┬───────────────────────────┤
-│ Mode B: Standalone Local   │ Mode A: Production Online │
-│ (Default / Zero-Config)    │ (Full Enterprise Auth)    │
+│ Core Desktop Workspace     │ Optional Cloud Services   │
 ├────────────────────────────┼───────────────────────────┤
-│ • 100% Offline Local Model │ • Online PBKDF2 Sessions  │
-│   Inference                │ • External SMTP/SMS OTP   │
-│ • Local Account Profiles   │ • Centralized Authority   │
-│ • 38-Digit Local License   │ • Distributed Device Sync │
-│ • No External Credentials  │ • Twilio / SendGrid Pipe  │
+│ • 100% Offline Local Model │ • Optional Cloud Toggle   │
+│   Inference                │ • External Provider APIs  │
+│ • Zero Account Credentials │ • Remote Cloud Models     │
+│ • Zero Product Keys        │ • Web Search / Retrieval  │
+│ • Local File Storage       │ • Direct HTTPS Routing    │
 └────────────────────────────┴───────────────────────────┘
 ```
 
 ---
 
-## 2. Mode B: Standalone Local Deployment (Default)
+## 2. Desktop Workspace Deployment (Default)
 
-Mode B requires zero external service configuration. It is the default out-of-the-box configuration for single-user workstations:
+The standard installation requires zero external infrastructure configuration:
 
 - **Local Inference Engine**: Connects to `http://127.0.0.1:11434`.
-- **Database/Storage**: Plain JSON documents under `Storage/` (`chats/`, `settings/`, `security/`, `profiles/`).
-- **Product Key Validation**: Handled by the internal cryptographic authority (`lib/license_authority.js`).
-- **External Challenge Delivery**: Marked honestly as `BLOCKED` via the `/api/v1/auth/infrastructure` diagnostic endpoint.
+- **Database/Storage**: Plain JSON documents under `Storage/` (`chats/`, `settings/`).
+- **Internal Server**: Binds to `127.0.0.1` on port `2020` by default.
+- **Direct Access**: No user account, registration, login screen, or product key is required.
 
 ---
 
-## 3. Mode A: Production Online Enterprise Deployment
+## 3. Server Configuration & Environment Variables
 
-To enable genuine email verification and SMS OTP delivery, supply the appropriate provider credentials through environment variables or a `.env` file (never committed to git):
+You can configure runtime parameters via environment variables when launching the application:
 
 ### Configuration Parameters
 
 ```ini
-# Server Binding
-PORT=2088
-HOST=127.0.0.1
+# Server Binding Port (defaults to 2020)
+PORT=2020
 
-# SMTP Email Verification Provider
-SMTP_HOST=smtp.mailprovider.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=no-reply@yourdomain.com
-SMTP_PASS=your-secure-smtp-password
-SMTP_FROM="IDeV Advanced Pro Security" <no-reply@yourdomain.com>
-
-# Twilio SMS Verification Provider (Optional)
-TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-TWILIO_AUTH_TOKEN=your_twilio_auth_token
-TWILIO_PHONE_NUMBER=+1234567890
+# Local Inference Host (defaults to http://127.0.0.1:11434)
+OLLAMA_HOST=http://127.0.0.1:11434
 ```
 
-> [!CAUTION]
-> **Credential Hygiene**  
-> Never commit `.env` files, private signing keys, or cloud provider tokens to the git repository. Ensure `.env` is listed in `.gitignore`.
-
----
-
-## 4. Administrative Key Issuance & Provisioning
-
-To issue an Ultimate product key for a customer or enterprise workstation:
-
+To run on an alternate port:
 ```powershell
-# 1. Open a PowerShell prompt in the application root directory
-cd "C:\Program Files\IDeV Advanced Pro" # or your installation root
-
-# 2. Issue a new 38-digit key
-node bin/license-admin.js issue --customer "Client Organization" --notes "60-Day Workstation Seat"
-```
-
-The tool generates a high-entropy 38-digit key with a cryptographically verifiable HMAC-SHA256 checksum:
-```text
-=== NEW 38-DIGIT PRODUCT KEY ISSUED ===
-Raw Key:          98729104820194829104820194829104820194
-Display Grouped:  98729-10482-01948-29104-82019-48291-04820-194
-License ID:       lic_7b29e01f4c3a
-Tier Granted:     Ultimate
-Entitlement:      60-day Ultimate Cloud Access (Single Device, Single Profile)
-Status:           ISSUED
-=======================================
+$env:PORT = "2025"
+& "$env:LOCALAPPDATA\Programs\IDeV Advanced Pro\IDeV Advanced Pro.exe"
 ```
 
 ---
 
-## 5. Security & Verification Diagnostics
+## 4. Cloud Feature Enablement
 
-Verify the running server's security and licensing status using standard curl or browser requests:
+Cloud features are governed by user preference in Settings:
+- When the **Cloud** toggle is **OFF** (default), external operations are disabled and blocked for privacy.
+- When the **Cloud** toggle is **ON**, cloud models (`:cloud`) and web intelligence route directly to configured providers without requiring an application license.
+
+---
+
+## 5. Diagnostics & Health Endpoints
+
+Verify the running server status using standard HTTP requests:
 
 ```bash
 # Check runtime version
-curl http://127.0.0.1:2088/api/version
+curl http://127.0.0.1:2020/api/version
 
-# Check effective entitlement status
-curl http://127.0.0.1:2088/api/v1/license/status
+# Check direct profile
+curl http://127.0.0.1:2020/api/me
 
-# Check infrastructure connectivity mode
-curl http://127.0.0.1:2088/api/v1/auth/infrastructure
+# Check cloud feature status
+curl http://127.0.0.1:2020/api/v1/cloud
 ```

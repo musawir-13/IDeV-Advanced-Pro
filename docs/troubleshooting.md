@@ -65,13 +65,11 @@ All conversations are stored in plain, readable JSON files on your local drive:
 
 ---
 
-### 6. Product Key Activation & Licensing Diagnostics
+### 6. Cloud Features & Network Diagnostics
 
-- **"Cloud feature access requires an active Ultimate tier license"**:
-  - The Free tier permits only offline local models. To unlock cloud models (`:cloud`) and web intelligence, enter your 38-digit product key in **Settings** > **Ultimate License**.
-- **"Malformed product key" or "Expected 38 digits"**:
-  - Ensure all 38 decimal digits are entered. The key format separator hyphens are optional and ignored during validation.
-- **"Key is bound to another profile or device"**:
-  - Each 38-digit Ultimate license is bound to a single local profile and hardware machine. Contact your administrator to issue a replacement key if you have migrated to a new computer.
-- **"System clock tampering detected"**:
-  - Ensure your Windows system clock is synchronized with internet time (NTP). Rolling the system clock back will disable active entitlements.
+- **"Cloud features are currently disabled"**:
+  - By default, IDeV Advanced Pro operates in Local-First mode with external network features turned off for privacy. To use remote cloud models (`:cloud`) or web search, open **Settings** and turn the **Cloud** toggle ON.
+- **Remote Cloud Provider Unreachable**:
+  - Verify that your internet connection is active.
+  - If using third-party cloud providers requiring API credentials, verify that your API key is correctly configured in your provider settings.
+  - If a remote provider is experiencing an outage, you can continue running local models (e.g. `deepseek-r1:7b`, `qwen2.5:7b`) with zero interruption.

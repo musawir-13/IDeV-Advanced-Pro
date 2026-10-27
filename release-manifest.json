@@ -27,14 +27,14 @@
     "clipboardScreenshotPaste": true,
     "nativeFileDialogs": true,
     "centralizedStorage": true,
-    "ed25519CryptographicLicensing": true,
-    "productKey38Digits": true
+    "directWorkspaceAccess": true,
+    "functionalCloudToggle": true
   },
-  "tiers": {
-    "supportedTiers": ["free", "ultimate"],
-    "defaultTier": "free",
-    "cloudEntitlementDurationDays": 60,
-    "productKeyFormat": "38-digit decimal string"
+  "accessModel": {
+    "type": "direct_desktop_workspace",
+    "authenticationRequired": false,
+    "productKeyRequired": false,
+    "tiersEnforced": false
   },
   "systemRequirements": {
     "os": "Windows 10 or Windows 11 (64-bit)",

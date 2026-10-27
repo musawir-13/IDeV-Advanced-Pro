@@ -47,41 +47,15 @@ Core architectural features:
 
 ---
 
-## 3. Access Tiers: Free vs. Ultimate
+## 3. Direct Workspace Access & Feature Architecture
 
-IDeV Advanced Pro enforces **strictly two user-facing tiers**:
+IDeV Advanced Pro operates as a direct-access desktop workstation without application-level authentication, account creation, or software licensing restrictions:
 
-| Capability | Free Tier | Ultimate Tier |
-|---|:---:|:---:|
-| **Local Model Inference** | **Available** | **Available** |
-| **Local Chat History** | **Available** | **Available** |
-| **Local Workspace Settings** | **Available** | **Available** |
-| **Cloud Models (`:cloud`)** | **Locked** | **Available** (With active entitlement) |
-| **Cloud-Only Web Search** | **Locked** | **Available** (With active entitlement) |
-| **Product Key Activation** | Available (Key entry form visible) | Already Activated |
-| **Device Binding** | None | Required (Hardware entropy fingerprint bound via Ed25519 signature) |
-| **Profile Binding** | None | Required (Single authorized profile) |
-| **Entitlement Duration** | Permanent Local Access | 60 Days from activation |
-| **Local Use During Cloud Outage** | **Available** | **Available** |
-| **Cloud Use After Expiry** | No | No (Gracefully reverts to Free tier) |
-| **Access After Revocation** | Free tier access remains intact | Ultimate cloud access terminated |
-
-> [!NOTE]
-> **Tier Simplicity & Operational Boundaries**  
-> There are no intermediate or commercial tiers (no Pro, Premium, Enterprise, Gold, or VIP). Free users have complete, permanent, offline access to local models. Ultimate is unlocked exclusively through valid 38-digit product key activation. In standalone desktop mode (Mode B), activation and device binding are evaluated via the local cryptographic authority; global network-wide single-use enforcement requires connecting to a centralized licensing server (Mode A).
-
-### Free Tier Usage
-Every user starts on the Free tier. Free users can run all local open-weight models (e.g. `deepseek-r1:7b`, `qwen3.5:2b`, `llama3.2:3b`), paste multimodal images, adjust threads, and store chats indefinitely without spending anything or creating cloud accounts.
-
-### Ultimate Tier Activation (38-Digit Key)
-To unlock premier cloud models (`☁️`) and web intelligence:
-1. Open **Settings** from the bottom-left gear icon.
-2. Under the **Cloud** toggle, locate the **Ultimate License** section.
-3. Enter your authoritative **38-digit product key** (formatted as `XXXXX-XXXXX-XXXXX-...`).
-4. Click **Activate Key**.
-5. The authority cryptographically signs the entitlement and binds it to your local machine fingerprint and active profile for **60 days**.
-
-For comprehensive licensing architecture, device binding, and administrative key management, see [AUTHENTICATION_AND_LICENSING.md](AUTHENTICATION_AND_LICENSING.md).
+- **No IDeV Account Required**: Launch and use the workspace immediately. No username, password, email verification, or phone OTP is required.
+- **No Product Key Activation**: There is no 38-digit key entry, software activation timer, or 60-day license expiration.
+- **Unified User Experience**: The workspace operates as a single, unrestricted desktop tool without Free vs. Ultimate subscription tiers.
+- **Offline-First by Design**: All core local inference operations, chats, multimodal vision processing, and workspace preferences run strictly on your machine.
+- **Functional Cloud Toggle**: Cloud models (`☁️`) and web search can be enabled or disabled via the **Cloud** toggle in Settings. When enabled, requests route directly to configured providers without requiring an application license.
 
 ---
 
@@ -97,10 +71,10 @@ For comprehensive licensing architecture, device binding, and administrative key
 |---|:---:|---|
 | **Version Consistency** | **PASS** | Package manifest (`package.json`), build configuration, binary PE metadata (ProductVersion `3.8.9.0`), installer metadata, and runtime API (`/api/version`) all unified to `3.8.9`. |
 | **Build & Packaging** | **PASS** | Reproducible NSIS installer generated via `electron-builder`: `IDeV-Advanced-Pro-Setup-3.8.9.exe` (94,040,662 bytes / 89.68 MB). |
-| **Security & Authorization Suite** | **PASS** | 30 automated test cases passed (`tests/security_and_licensing.test.js`) verifying 38-digit key validation, profile/device binding, clock rollback detection, and route gating. |
-| **Static Code Checks** | **PASS** | JavaScript AST syntax verification (`node -c`) for `main.js`, `server.js`, `lib/`, and `preload.js`; dependency isolation verified. |
-| **Functional Tests** | **PASS** | Internal server initialized on port 2020: `/api/version` returned `{ version: '3.8.9' }`, root `/` returned 200 OK, and `/api/tags` resolved 1,201 model catalog entries. |
-| **Regression Tests** | **PASS** | Asar package inspected: confirmed zero private files; developer stores (`Storage/models/` and `Storage/cloud models/`) strictly excluded. |
+| **Direct Access Test Suite** | **PASS** | 17 automated test cases passed (`tests/direct_access_and_workspace.test.js`) verifying direct workspace startup, absence of login/key prompts, settings preservation, and cloud toggle enforcement. |
+| **Static Code Checks** | **PASS** | JavaScript AST syntax verification (`node -c`) for `main.js`, `server.js`, and `preload.js`; dependency isolation verified. |
+| **Functional Tests** | **PASS** | Internal server initialized on port 2020: `/api/version` returned `{ version: '3.8.9' }`, root `/` returned 200 OK, and `/api/tags` resolved model catalog entries. |
+| **Storage Safety** | **PASS** | Per-user conversations (`Storage/chats/`) and settings (`Storage/settings/`) preserved; developer model stores strictly excluded. |
 | **Installation Checks** | **PASS** | Windows NSIS installer validated; binary version metadata confirmed; valid uninstaller generated; per-user directory isolation verified. |
 | **Branding Accessibility** | **PASS** | Word “ADVANCED” rendered in pure white (`#FFFFFF`) with transparent inner counters; 16.6:1 contrast ratio verified. |
 | **Known Limitations** | **DOCUMENTED** | Local model execution requires local inference service active on `127.0.0.1:11434`; setup executable is currently unsigned (no EV commercial certificate attached). |
@@ -116,7 +90,7 @@ For comprehensive licensing architecture, device binding, and administrative key
 | **Multimodal Vision** | Clipboard screenshot paste (`Ctrl+V`), image file drop, native vision routing | **Verified** |
 | **Hardware Governor** | Thread bounding (`cpuCores - 1`), context memory cap, 5-minute idle model auto-unloading | **Verified** |
 | **Desktop Integration** | Native Windows multi-file dialogs, system tray support, native right-click edit menu | **Verified** |
-| **Cryptographic Licensing** | Ed25519 entitlement signing, 38-digit key validation, single-device binding | **Verified** |
+| **Direct Access Architecture** | Direct startup into desktop workspace with zero sign-in or product-key requirement | **Verified** |
 | **Dynamic Diagnostic API** | Real-time version check via `/api/version` synchronized with package manifest | **Verified** |
 | **Storage Isolation** | User conversations, settings, and model catalog definitions centralized under `Storage/` | **Verified** |
 
@@ -249,7 +223,6 @@ See the [Troubleshooting Guide](docs/troubleshooting.md) for step-by-step diagno
 ## 14. Documentation & References
 
 - 📖 [Installation Guide](INSTALLATION.md)
-- 🔒 [Authentication & Licensing Architecture](AUTHENTICATION_AND_LICENSING.md)
 - 🚀 [Deployment & Infrastructure Guide](DEPLOYMENT.md)
 - 🛡️ [Security Policy & Vulnerability Reporting](SECURITY.md)
 - 📜 [Privacy Policy](PRIVACY.md)

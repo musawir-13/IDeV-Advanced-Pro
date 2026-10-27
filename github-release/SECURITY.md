@@ -23,18 +23,16 @@ Security updates and patches are provided exclusively for the current active rel
 
 IDeV Advanced Pro v3.8.9 implements defense-in-depth security principles across its desktop client and server layers:
 
-- **Server-Side Authorization Gating**: Client UI state does not determine permissions. Requests to remote cloud endpoints (`:cloud`) and web intelligence routes are gated at the server layer (`lib/cloud_authorizer.js`) and rejected with HTTP 403 `ENTITLEMENT_REQUIRED` for unentitled users.
-- **Cryptographic Entitlement Signatures**: Entitlements are signed with Ed25519 digital signatures. Any unauthorized local modification to entitlement documents results in signature verification failure and immediate fallback to the Free tier.
-- **Device & Profile Binding**: Entitlements are bound to a local hardware entropy fingerprint (SHA-256 digest of system parameters) and the active profile ID.
-- **Clock Rollback Detection**: Backwards system clock tampering exceeding 1 hour triggers immediate state invalidation (`TAMPERED`).
-- **Secret & Credential Handling**: User passwords are encrypted using PBKDF2 with SHA-512 (100,000 iterations and 32-byte salts). Product keys are stored as SHA-256 hashes (`IDEV-LIC:<key>`) in the local registry to prevent raw key exposure.
+- **Direct Desktop Architecture**: The application operates directly without requiring an IDeV account, sign-in, OTP verification, or product-key activation. No online account credentials or passwords are required or stored.
+- **Server-Side Feature Gating**: Cloud endpoints (`:cloud`) and web intelligence routes respect the user's explicit Cloud toggle in Settings. When Cloud is disabled, external network operations are blocked at the internal server layer and return HTTP 403 `CLOUD_DISABLED`.
+- **User Data Confidentiality**: Core local model operations execute against `http://127.0.0.1:11434`. Conversations, prompts, and multimodal attachments remain strictly on the local machine when running local models.
 - **Private Storage Isolation**: Developer models (`Storage/models/` and `Storage/cloud models/`) are strictly excluded from repository tracking, installer builds, and runtime distributions.
+- **Provider Security**: If third-party cloud services are configured, user-supplied credentials are used exclusively for direct communication with the designated provider.
 
 ### Documented Security Boundaries & Limitations
 - **Code Signing Status**: The Windows setup executable is self-packaged from source and is currently **unsigned** (no commercial EV code-signing certificate is attached). Windows SmartScreen will display an unrecognized publisher prompt by default. Users must verify the SHA-256 checksum against trusted release metadata prior to installation.
-- **Local Key Storage**: Device keys and entitlement tokens are stored as JSON files under `Storage/security/` with user-level filesystem permissions (`0o600`). They are **not** hardware-sealed via Windows DPAPI or TPM hardware in the standalone desktop client.
-- **Standalone vs. Global Enforcement**: In standalone desktop mode (Mode B), the license registry is stored on the local drive. A standalone offline client cannot independently prevent a key from being redeemed on a separate, disconnected computer with its own clean registry. Global network-wide single-use enforcement requires deploying a centralized shared licensing server (Mode A).
-- **Test Suite Scope**: The 30 automated test cases in `tests/security_and_licensing.test.js` validate client-side authorization logic, signature verification, and route gating. They do not constitute third-party penetration testing or distributed network validation.
+- **Local Inference Dependency**: Offline model execution requires an active inference service on `127.0.0.1:11434`.
+- **Test Suite Scope**: Automated tests in `tests/direct_access_and_workspace.test.js` validate workspace startup, feature gating, route isolation, and storage preservation.
 
 ---
 

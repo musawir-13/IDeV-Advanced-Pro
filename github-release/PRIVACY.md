@@ -17,8 +17,8 @@ When you interact with local models (such as `deepseek-r1:7b`, `qwen3.5:2b`, `ll
 - **No External Transmission**: Prompts, input tokens, model outputs, and attached files remain strictly on your local machine and are not transmitted over the internet.
 - **Offline Capable**: Local model processing functions completely without internet connectivity.
 
-### B. Cloud Models (`:cloud`) & Web Intelligence (Ultimate Tier)
-When an authorized user explicitly selects a model marked with a cloud badge (`☁️`) or enables web search:
+### B. Cloud Models (`:cloud`) & Web Intelligence (Optional Cloud Toggle)
+When you enable Cloud in Settings and explicitly select a model marked with a cloud badge (`☁️`) or enable web search:
 - **Remote Model Execution**: Requests for cloud models are transmitted to and processed by the corresponding remote model provider.
 - **Web Search & Fetch**: Search queries and target URLs are transmitted externally over HTTPS to fetch public web contents.
 - **Provider Policies**: Transmitted prompts and attachments are subject to the data handling terms and privacy policies of the respective remote cloud providers.
