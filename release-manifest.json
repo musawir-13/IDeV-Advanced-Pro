@@ -1,16 +1,16 @@
 {
   "productName": "IDeV Advanced Pro",
   "version": "1.0.0",
-  "buildDate": "2026-10-27T13:46:00Z",
+  "buildDate": "2026-10-27T14:11:00Z",
   "platform": "win32",
   "architecture": "x64",
   "developer": "IDeV",
   "repository": "https://github.com/musawir-13/IDeV-Advanced-Pro",
   "installer": {
     "filename": "IDeV-Advanced-Pro-Setup-1.0.0.exe",
-    "sizeBytes": 94144413,
-    "sizeFormatted": "89.78 MB",
-    "sha256": "a2bea77be3cf620bfc0eccad048d9f2b03d0b0c809548e28175d8c3326bd5f58",
+    "sizeBytes": 94040397,
+    "sizeFormatted": "89.68 MB",
+    "sha256": "e4d6da8de8bd49659a6b6ea96bf28c0dafc3892b77a9917cd8c8aa16b4dba5ae",
     "downloadUrl": "https://github.com/musawir-13/IDeV-Advanced-Pro/releases/latest/download/IDeV-Advanced-Pro-Setup-1.0.0.exe"
   },
   "privacySafeguards": {
