@@ -1,46 +1,64 @@
 # Troubleshooting Guide — IDeV Advanced Pro
 
-Common issues and verified solutions for IDeV Advanced Pro.
+This guide outlines common diagnostic steps and resolutions for **IDeV Advanced Pro**.
 
 ---
 
-## 1. Local Engine Connection Issues
+## Common Issues & Solutions
 
-**Symptom**: App shows a notification stating "Unable to connect to Ollama local engine".  
-**Cause**: The local Ollama service is not currently running on `127.0.0.1:11434`.  
-**Resolution**:
-1. Check your Windows system tray for the Ollama icon.
-2. If not running, launch Ollama from the Windows Start menu or run `ollama serve` in PowerShell.
-3. Refresh the application with `Ctrl+R`.
+### 1. Model Selector Shows "Loading..." or Connection Warning
+
+**Cause:** The application cannot establish a connection with the local inference engine on `http://127.0.0.1:11434`.
+
+**Resolution:**
+1. Verify that your local inference engine service is running:
+   - Open a browser and visit `http://127.0.0.1:11434`.
+   - You should see: `Ollama is running`.
+2. If it is not running, launch it from your Start Menu or execute `ollama serve` in PowerShell.
+3. Once started, IDeV Advanced Pro will automatically detect the service and populate the model list.
 
 ---
 
-## 2. Port 2020 Conflict
+### 2. Port Conflict (Port 2020 Already in Use)
 
-**Symptom**: Application fails to launch or reports `EADDRINUSE`.  
-**Cause**: Another application or an orphaned instance is using port 2020.  
-**Resolution**:
-Set an alternate port before launching:
-```cmd
-set PORT=2021
-"IDeV Advanced Pro.exe"
+**Cause:** Another local development tool or process is bound to port 2020.
+
+**Resolution:**
+Launch IDeV Advanced Pro with an alternate port by setting the `PORT` environment variable:
+```powershell
+$env:PORT = "2025"
+& "$env:LOCALAPPDATA\Programs\IDeV Advanced Pro\IDeV Advanced Pro.exe"
 ```
 
 ---
 
-## 3. Multimodal Projector (mmproj) Errors
+### 3. Windows SmartScreen Prompt During Installation
 
-**Symptom**: When asking about an image, the model outputs an error regarding `mmproj`.  
-**Resolution**:
-IDeV Advanced Pro automatically routes requests with images to installed vision models (`qwen3.5:2b`, `qwen3.5:4b`, etc.). Ensure you have at least one vision-capable model installed in your local Ollama runtime:
-```cmd
-ollama pull qwen3.5:2b
-```
+**Cause:** The release binary is newly generated and published directly from the open-source repository.
+
+**Resolution:**
+1. Click **More info** on the Windows SmartScreen dialog.
+2. Click **Run anyway**.
+3. Verify the installer hash before installation to confirm binary integrity:
+   ```powershell
+   Get-FileHash -Algorithm SHA256 .\IDeV-Advanced-Pro-Setup-1.0.0.exe
+   # Expected: e4367b7d78d3e9ad5eaf964f2f08b87505147cab0b25a5e8e94884088f7f10fc
+   ```
 
 ---
 
-## 4. Windows SmartScreen Dialog
+### 4. High System Memory Utilization
 
-**Symptom**: Windows displays "Windows protected your PC" on first install.  
-**Resolution**:
-Click **More info** followed by **Run anyway**. This is standard for newly released software builds that have not yet accumulated SmartScreen download history.
+**Cause:** A large model (e.g. 14B or larger) has been loaded into system memory.
+
+**Resolution:**
+- IDeV Advanced Pro includes an automated **Hardware Governor** that automatically unloads idle models after 5 minutes of inactivity (`keep_alive: 5m`).
+- To manually free memory immediately, switch to a smaller model (such as `qwen3.5:2b`) or restart the application.
+
+---
+
+### 5. Chat History and Settings Backup
+
+All conversations are stored in plain, readable JSON files on your local drive:
+- **Location:** `Storage/chats/`
+- To create a backup, copy the `Storage/` directory to your preferred backup drive.

@@ -39,5 +39,5 @@ Welcome to the initial public release of **IDeV Advanced Pro** (v1.0.0), a priva
 ## Getting Started
 1. Download and run `IDeV-Advanced-Pro-Setup-1.0.0.exe`.
 2. Follow the setup wizard to install the application.
-3. Ensure your local Ollama engine is running (`http://127.0.0.1:11434`).
+3. Ensure your compatible local inference engine is running (`http://127.0.0.1:11434`).
 4. Launch **IDeV Advanced Pro** from your desktop or start menu and start chatting!

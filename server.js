@@ -428,7 +428,7 @@ const server = http.createServer(async (req, res) => {
     let port = 57698;
     try {
       const { execSync } = require('child_process');
-      const out = execSync('powershell -Command "(Get-NetTCPConnection | Where-Object { $_.OwningProcess -in (Get-Process -Name \'ollama app\').Id -and $_.State -eq \'Listen\' }).LocalPort"').toString().trim();
+      const out = execSync('powershell -Command "(Get-NetTCPConnection -ErrorAction SilentlyContinue | Where-Object { $_.OwningProcess -in (Get-Process -Name \'ollama app\' -ErrorAction SilentlyContinue).Id -and $_.State -eq \'Listen\' }).LocalPort"').toString().trim();
       if (out && !isNaN(out)) port = parseInt(out, 10);
     } catch (e) {}
 
@@ -1113,6 +1113,18 @@ const server = http.createServer(async (req, res) => {
     } catch (e) {
       // Fall through to regular proxy if parsing fails
     }
+  }
+
+  if (pathname === '/api/version') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ version: '1.0.0' }));
+    return;
+  }
+
+  if (pathname === '/api/experimental/model-recommendations') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ recommendations: [] }));
+    return;
   }
 
   // -------------------------------------------------------------
